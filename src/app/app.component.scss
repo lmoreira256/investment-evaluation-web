@@ -1,0 +1,40 @@
+.container {
+    height: 100vh;
+}
+
+.sidenav-content {
+    background: #EEEEEE;
+    color: #393E46;
+    height: 100%;
+}
+
+.sidenav {
+    background: #00ADB5;
+    color: #222831;
+}
+
+.button {
+    background: #393E46;
+    display: grid;
+    cursor: pointer;
+    color: #EEEEEE;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    margin-bottom: 1px;
+}
+
+.activebutton {
+    background: #EEEEEE;
+    color: #222831;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+}
