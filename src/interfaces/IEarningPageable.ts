@@ -1,7 +1,7 @@
-import { IStockHistoric } from "./IStockHistoric"
+import { IEarning } from "./IEarning"
 
-export interface IPageable {
-    content: IStockHistoric[]
+export interface IEarningPageable {
+    content: IEarning[]
     empty: boolean
     first: boolean
     last: boolean

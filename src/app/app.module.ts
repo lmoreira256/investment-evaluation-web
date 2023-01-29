@@ -13,6 +13,7 @@ import { MaterialModule } from '../material.module';
 import { CustomMatPaginatorIntl } from 'src/config/CustomMatPaginatorIntl';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import Formatter from 'src/utils/Formatter';
+import { HistoricTableComponent } from './earning/historic-table/historic-table.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import Formatter from 'src/utils/Formatter';
     DashboardComponent,
     StockComponent,
     PageNotFoundComponent,
-    EarningComponent
+    EarningComponent,
+    HistoricTableComponent
   ],
   imports: [
     BrowserModule,

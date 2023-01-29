@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IPageable } from 'src/interfaces/IPageable';
+import { IStockHistoricPageable } from 'src/interfaces/IStockHistoricPageable';
 
 @Injectable({
     providedIn: 'root',
@@ -12,7 +12,7 @@ export class StockHistoricService {
     ) { }
 
     list(page: string) {
-        return this.http.get<IPageable>(`http://localhost:6960/stock/historic${page.length > 0 ? '?page=' + page : ''}`)
+        return this.http.get<IStockHistoricPageable>(`http://localhost:6960/stock/historic${page.length > 0 ? '?page=' + page : ''}`)
     }
 
 }

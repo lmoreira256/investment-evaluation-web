@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IPageable } from 'src/interfaces/IPageable';
+import { IStockHistoricPageable } from 'src/interfaces/IStockHistoricPageable';
 import { IStockHistoric } from 'src/interfaces/IStockHistoric';
 import { StockHistoricService } from 'src/services/stock-historic.service';
 import { PageEvent } from '@angular/material/paginator';
@@ -14,7 +14,7 @@ import Formatter from '../../utils/Formatter';
 export class DashboardComponent {
 
   pageIndex: string = '0';
-  pageable: IPageable = null as any;
+  pageable: IStockHistoricPageable = null as any;
   dataSource: IStockHistoric[] = [];
   displayedColumns: string[] = ['actualValue', 'amount', 'cashReturn', 'profitability', 'purchaseValue', 'historicType', 'createdAt'];
 
@@ -34,7 +34,7 @@ export class DashboardComponent {
 
   getStockHistorics() {
     this.stockHistoricService.list(this.pageIndex)
-      .subscribe((data: IPageable) => {
+      .subscribe((data: IStockHistoricPageable) => {
         this.dataSource = data.content
         this.pageable = data;
       })
