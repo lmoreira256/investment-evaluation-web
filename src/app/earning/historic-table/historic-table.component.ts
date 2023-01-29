@@ -15,7 +15,7 @@ export class HistoricTableComponent {
   pageIndex: string = '0';
   dataSource: IEarning[] = [];
   pageable: IEarningPageable = null as any;
-  displayedColumns: string[] = ['stockName', 'currentValue', 'description', 'createdAt'];
+  displayedColumns: string[] = ['stockName', 'amountPaid', 'description', 'payday'];
 
   constructor(
     public formatter: Formatter,
