@@ -4,6 +4,7 @@ import { IStockHistoric } from 'src/interfaces/IStockHistoric';
 import { StockHistoricService } from 'src/services/stock-historic.service';
 import { PageEvent } from '@angular/material/paginator';
 import { StockHistoricTypeEnum } from 'src/enums/StockHistoricTypeEnum';
+import Formatter from '../../utils/Formatter';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,6 +19,7 @@ export class DashboardComponent {
   displayedColumns: string[] = ['actualValue', 'amount', 'cashReturn', 'profitability', 'purchaseValue', 'historicType', 'createdAt'];
 
   constructor(
+    public formatter: Formatter,
     private stockHistoricService: StockHistoricService
   ) { }
 
@@ -36,22 +38,6 @@ export class DashboardComponent {
         this.dataSource = data.content
         this.pageable = data;
       })
-  }
-
-  formatDate(date: Date) {
-    return new Date(date).toLocaleDateString("pt-br");
-  }
-
-  formatCurrency(value: number) {
-    return value.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
-  }
-
-  formatPercent(value: number) {
-    return (value / 100).toLocaleString(undefined, { style: 'percent', minimumFractionDigits: 2 });
-  }
-
-  formatEnum(value: string) {
-    return StockHistoricTypeEnum[value as keyof typeof StockHistoricTypeEnum];
   }
 
 }

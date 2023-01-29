@@ -12,6 +12,7 @@ import { StockHistoricService } from 'src/services/stock-historic.service';
 import { MaterialModule } from '../material.module';
 import { CustomMatPaginatorIntl } from 'src/config/CustomMatPaginatorIntl';
 import { MatPaginatorIntl } from '@angular/material/paginator';
+import Formatter from 'src/utils/Formatter';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MatPaginatorIntl } from '@angular/material/paginator';
   ],
   providers: [
     StockHistoricService,
+    Formatter,
     {
       provide: MatPaginatorIntl,
       useClass: CustomMatPaginatorIntl
