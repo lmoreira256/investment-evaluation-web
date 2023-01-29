@@ -1,7 +1,7 @@
 export interface IEarning {
     id: string,
     stockName: string,
-    currentValue: number,
+    amountPaid: number,
     description: String,
-    createdAt: Date
+    payday: Date
 }
