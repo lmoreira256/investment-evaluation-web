@@ -14,6 +14,7 @@ import { CustomMatPaginatorIntl } from 'src/config/CustomMatPaginatorIntl';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import Formatter from 'src/utils/Formatter';
 import { HistoricTableComponent } from './earning/historic-table/historic-table.component';
+import { StockTableComponent } from './stock/stock-table/stock-table.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HistoricTableComponent } from './earning/historic-table/historic-table.
     StockComponent,
     PageNotFoundComponent,
     EarningComponent,
-    HistoricTableComponent
+    HistoricTableComponent,
+    StockTableComponent
   ],
   imports: [
     BrowserModule,

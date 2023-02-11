@@ -3,7 +3,6 @@ import { IStockHistoricPageable } from 'src/interfaces/IStockHistoricPageable';
 import { IStockHistoric } from 'src/interfaces/IStockHistoric';
 import { StockHistoricService } from 'src/services/stock-historic.service';
 import { PageEvent } from '@angular/material/paginator';
-import { StockHistoricTypeEnum } from 'src/enums/StockHistoricTypeEnum';
 import Formatter from '../../utils/Formatter';
 
 @Component({

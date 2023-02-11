@@ -1,5 +1,6 @@
-export enum StockHistoricTypeEnum {
+export enum StockTypeEnum {
     GENERAL = 'Geral',
     REAL_ESTATE_FUND = 'Fundos Imobiliários',
-    STOCK = 'Ações'
+    STOCK = 'Ações',
+    BDR = 'BDR',
 }

@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { StockHistoricTypeEnum } from "src/enums/StockHistoricTypeEnum";
+import { StockTypeEnum } from "src/enums/StockHistoricTypeEnum";
 
 @Injectable({
     providedIn: 'root',
@@ -23,7 +23,7 @@ export default class Formatter {
     }
 
     formatEnum(value: string) {
-        return StockHistoricTypeEnum[value as keyof typeof StockHistoricTypeEnum];
+        return StockTypeEnum[value as keyof typeof StockTypeEnum];
     }
 
 
