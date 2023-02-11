@@ -37,7 +37,7 @@
 
                 <ng-container matColumnDef="createdAt">
                     <th mat-header-cell *matHeaderCellDef> Data de Criação </th>
-                    <td mat-cell *matCellDef="let element">{{ formatter.formatDate(element.createdAt) }}</td>
+                    <td mat-cell *matCellDef="let element">{{ formatter.formatDateTime(element.createdAt) }}</td>
                 </ng-container>
 
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

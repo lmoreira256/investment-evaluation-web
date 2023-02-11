@@ -7,9 +7,13 @@ h1 {
 }
 
 .table {
-    height: 632px;
+    height: 633px;
+    background: #FFF;
+    display: grid;
 }
 
-table {
-    height: 576px;
+
+mat-paginator {
+    border-top: 1px solid #E6E6E6;
+    align-self: flex-end;
 }

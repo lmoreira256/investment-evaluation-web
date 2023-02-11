@@ -10,6 +10,10 @@ export default class Formatter {
         return new Date(date).toLocaleDateString("pt-br");
     }
 
+    formatDateTime(date: Date) {
+        return new Date(date).toLocaleString("pt-br");
+    }
+
     formatCurrency(value: number) {
         return value.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
     }
