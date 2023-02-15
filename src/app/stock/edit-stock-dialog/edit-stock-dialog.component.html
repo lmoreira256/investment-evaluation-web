@@ -1,0 +1,81 @@
+<h1 mat-dialog-title>{{ stock.active }}</h1>
+<div mat-dialog-content>
+  <h3 mat-dialog-subtitle>{{ stock.description }}</h3>
+  <mat-divider></mat-divider>
+  <form>
+    <table cellspacing="10">
+      <tr>
+        <td>
+          <mat-form-field>
+            <mat-label>Quantidade</mat-label>
+            <input
+              type="number"
+              matInput
+              [(ngModel)]="stock.amount"
+              name="amount"
+            />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label>Valor atual</mat-label>
+            <input
+              matInput
+              currencyMask
+              [(ngModel)]="stock.currentValue"
+              name="currentValue"
+            />
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field>
+            <mat-label>Valor de compra</mat-label>
+            <input
+              matInput
+              currencyMask
+              [(ngModel)]="stock.purchaseValue"
+              name="purchaseValue"
+            />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label>Média de compra</mat-label>
+            <input
+              matInput
+              currencyMask
+              [(ngModel)]="stock.averagePurchase"
+              name="averagePurchase"
+            />
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <mat-divider></mat-divider>
+  <div class="summary">
+    <h1>Resumo:</h1>
+    <h3>
+      Retorno (R$):
+      {{ formatter.formatCurrency(stock.currentValue - stock.purchaseValue) }}
+    </h3>
+    <h3>
+      Retorno (%):
+      {{
+        stock.currentValue
+          ? formatter.formatPercent(
+              (stock.currentValue * 100) / stock.purchaseValue - 100
+            )
+          : "0,00%"
+      }}
+    </h3>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="closeDialog()" color="warn">
+    Cancelar
+  </button>
+  <button mat-raised-button color="primary" (click)="save()">Salvar</button>
+</div>

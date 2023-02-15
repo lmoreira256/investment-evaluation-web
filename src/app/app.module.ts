@@ -15,6 +15,19 @@ import { MatPaginatorIntl } from '@angular/material/paginator';
 import Formatter from 'src/utils/Formatter';
 import { HistoricTableComponent } from './earning/historic-table/historic-table.component';
 import { StockTableComponent } from './stock/stock-table/stock-table.component';
+import { EditStockDialogComponent } from './stock/edit-stock-dialog/edit-stock-dialog.component';
+import { FormsModule } from '@angular/forms';
+import { CurrencyMaskModule,CurrencyMaskConfig, CURRENCY_MASK_CONFIG } from 'ng2-currency-mask';
+
+export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
+  align: 'left',
+  allowNegative: true,
+  decimal: ',',
+  precision: 2,
+  prefix: 'R$ ',
+  suffix: '',
+  thousands: '.',
+};
 
 @NgModule({
   declarations: [
@@ -24,23 +37,27 @@ import { StockTableComponent } from './stock/stock-table/stock-table.component';
     PageNotFoundComponent,
     EarningComponent,
     HistoricTableComponent,
-    StockTableComponent
+    StockTableComponent,
+    EditStockDialogComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    CurrencyMaskModule,
   ],
   providers: [
     StockHistoricService,
     Formatter,
     {
       provide: MatPaginatorIntl,
-      useClass: CustomMatPaginatorIntl
-    }
+      useClass: CustomMatPaginatorIntl,
+    },
+    { provide: CURRENCY_MASK_CONFIG, useValue: CustomCurrencyMaskConfig },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

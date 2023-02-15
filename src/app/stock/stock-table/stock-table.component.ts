@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { PageEvent } from '@angular/material/paginator';
 import { IStock } from 'src/interfaces/IStock';
 import { IStockPageable } from 'src/interfaces/IStockPageable';
 import { StockService } from 'src/services/stock.service';
 import Formatter from 'src/utils/Formatter';
+import { EditStockDialogComponent } from '../edit-stock-dialog/edit-stock-dialog.component';
 
 @Component({
   selector: 'app-stock-table',
@@ -29,22 +31,33 @@ export class StockTableComponent {
 
   constructor(
     public formatter: Formatter,
+    public dialog: MatDialog,
     private stockService: StockService
   ) {}
 
   ngOnInit() {
-    this.getEarnings();
+    this.getStocks();
   }
 
   handlePageEvent(e: PageEvent) {
     this.pageIndex = e.pageIndex.toString();
-    this.getEarnings();
+    this.getStocks();
   }
 
-  getEarnings() {
+  getStocks() {
     this.stockService.list(this.pageIndex).subscribe((data: IStockPageable) => {
       this.dataSource = data.content;
       this.pageable = data;
+    });
+  }
+
+  openDialog(stock: IStock): void {
+    const dialogRef = this.dialog.open(EditStockDialogComponent, {
+      data: JSON.parse(JSON.stringify(stock)),
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.getStocks();
     });
   }
 }

@@ -3,10 +3,10 @@ export interface IStock {
     active: String
     description: String
     amount: Number
-    currentValue: Number
-    cashReturn: Number
-    profitability: Number
-    purchaseValue: Number
+    currentValue: number
+    cashReturn: number
+    profitability: number
+    purchaseValue: number
     averagePurchase: Number
     stockType: Number
     createdAt: Date
