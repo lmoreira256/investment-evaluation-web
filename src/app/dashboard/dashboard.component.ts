@@ -8,19 +8,26 @@ import Formatter from '../../utils/Formatter';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
-
   pageIndex: string = '0';
   pageable: IStockHistoricPageable = null as any;
   dataSource: IStockHistoric[] = [];
-  displayedColumns: string[] = ['actualValue', 'amount', 'cashReturn', 'profitability', 'purchaseValue', 'historicType', 'createdAt'];
+  displayedColumns: string[] = [
+    'actualValue',
+    'amount',
+    'cashReturn',
+    'profitability',
+    'purchaseValue',
+    'historicType',
+    'createdAt',
+  ];
 
   constructor(
     public formatter: Formatter,
     private stockHistoricService: StockHistoricService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.getStockHistorics();
@@ -32,11 +39,17 @@ export class DashboardComponent {
   }
 
   getStockHistorics() {
-    this.stockHistoricService.list(this.pageIndex)
+    this.stockHistoricService
+      .list(this.pageIndex)
       .subscribe((data: IStockHistoricPageable) => {
-        this.dataSource = data.content
+        this.dataSource = data.content;
         this.pageable = data;
-      })
+      });
   }
 
+  createStockHistoric() {
+    this.stockHistoricService.post().subscribe(() => {
+      this.getStockHistorics();
+    });
+  }
 }
