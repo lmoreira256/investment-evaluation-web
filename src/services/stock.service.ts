@@ -15,11 +15,18 @@ export class StockService {
     );
   }
 
+  listAll() {
+    return this.http.get<IStockPageable>('http://localhost:6960/stock/list');
+  }
+
   get(id: string) {
     return this.http.get<IStock>(`http://localhost:6960/stock/${id}`);
   }
 
   put(stock: IStock) {
-    return this.http.put<IStock>(`http://localhost:6960/stock/${stock.id}`, stock);
+    return this.http.put<IStock>(
+      `http://localhost:6960/stock/${stock.id}`,
+      stock
+    );
   }
 }

@@ -18,6 +18,8 @@ import { StockTableComponent } from './stock/stock-table/stock-table.component';
 import { EditStockDialogComponent } from './stock/edit-stock-dialog/edit-stock-dialog.component';
 import { FormsModule } from '@angular/forms';
 import { CurrencyMaskModule,CurrencyMaskConfig, CURRENCY_MASK_CONFIG } from 'ng2-currency-mask';
+import { StockListComponent } from './components/stock-list/stock-list.component';
+import { ItemComponent } from './components/stock-list/item/item.component';
 
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
   align: 'left',
@@ -39,6 +41,8 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     HistoricTableComponent,
     StockTableComponent,
     EditStockDialogComponent,
+    StockListComponent,
+    ItemComponent,
   ],
   imports: [
     BrowserModule,

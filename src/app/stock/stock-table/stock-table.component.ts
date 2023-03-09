@@ -18,7 +18,6 @@ export class StockTableComponent {
   pageable: IStockPageable = null as any;
   displayedColumns: string[] = [
     'active',
-    'description',
     'amount',
     'currentValue',
     'cashReturn',
