@@ -14,10 +14,15 @@ import { CustomMatPaginatorIntl } from 'src/config/CustomMatPaginatorIntl';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import Formatter from 'src/utils/Formatter';
 import { HistoricTableComponent } from './earning/historic-table/historic-table.component';
-import { StockTableComponent } from './stock/stock-table/stock-table.component';
 import { EditStockDialogComponent } from './stock/edit-stock-dialog/edit-stock-dialog.component';
 import { FormsModule } from '@angular/forms';
-import { CurrencyMaskModule,CurrencyMaskConfig, CURRENCY_MASK_CONFIG } from 'ng2-currency-mask';
+import {
+  CurrencyMaskModule,
+  CurrencyMaskConfig,
+  CURRENCY_MASK_CONFIG,
+} from 'ng2-currency-mask';
+import { StockListComponent } from './stock/stock-list/stock-list.component';
+import { ItemComponent } from './stock/stock-list/item/item.component';
 
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
   align: 'left',
@@ -37,8 +42,9 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     PageNotFoundComponent,
     EarningComponent,
     HistoricTableComponent,
-    StockTableComponent,
     EditStockDialogComponent,
+    StockListComponent,
+    ItemComponent,
   ],
   imports: [
     BrowserModule,

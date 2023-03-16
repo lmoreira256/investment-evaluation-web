@@ -1,6 +1,6 @@
 export enum StockTypeEnum {
-    GENERAL = 'Geral',
-    REAL_ESTATE_FUND = 'Fundos Imobiliários',
-    STOCK = 'Ações',
-    BDR = 'BDR',
+  GENERAL = 'Geral',
+  REAL_ESTATE_FUND = 'Fundo Imobiliário',
+  STOCK = 'Ação',
+  BDR = 'BDR',
 }
