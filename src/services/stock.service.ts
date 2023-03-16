@@ -16,7 +16,7 @@ export class StockService {
   }
 
   listAll() {
-    return this.http.get<IStockPageable>('http://localhost:6960/stock/list');
+    return this.http.get<IStockPageable>('http://localhost:6960/stock');
   }
 
   get(id: string) {
