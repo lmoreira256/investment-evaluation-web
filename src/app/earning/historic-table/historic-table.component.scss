@@ -1,10 +1,15 @@
 .table {
-    height: 633px;
-    background: #FFF;
-    display: grid;
+  height: 633px;
+  background: #fff;
+  display: grid;
 }
 
 mat-paginator {
-    border-top: 1px solid #E6E6E6;
-    align-self: flex-end;
+  border-top: 1px solid #e6e6e6;
+  align-self: flex-end;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
 }

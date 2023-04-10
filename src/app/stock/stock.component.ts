@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { IStock } from 'src/interfaces/IStock';
-import { IStockPageable } from 'src/interfaces/IStockPageable';
-import { StockService } from 'src/services/stock.service';
 import Formatter from 'src/utils/Formatter';
 
 @Component({
@@ -13,15 +10,5 @@ import Formatter from 'src/utils/Formatter';
 export class StockComponent {
   items: any;
 
-  constructor(
-    public formatter: Formatter,
-    public dialog: MatDialog,
-    private stockService: StockService
-  ) {}
-
-  getStocks() {
-    this.stockService.listAll().subscribe((data) => {
-      this.items = data;
-    });
-  }
+  constructor(public formatter: Formatter, public dialog: MatDialog) {}
 }

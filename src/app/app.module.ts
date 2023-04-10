@@ -23,6 +23,8 @@ import {
 } from 'ng2-currency-mask';
 import { StockListComponent } from './stock/stock-list/stock-list.component';
 import { ItemComponent } from './stock/stock-list/item/item.component';
+import { NewEarningDialogComponent } from './earning/new-earning-dialog/new-earning-dialog.component';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
   align: 'left',
@@ -45,6 +47,7 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     EditStockDialogComponent,
     StockListComponent,
     ItemComponent,
+    NewEarningDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +66,7 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
       useClass: CustomMatPaginatorIntl,
     },
     { provide: CURRENCY_MASK_CONFIG, useValue: CustomCurrencyMaskConfig },
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-br' },
   ],
   bootstrap: [AppComponent],
 })
