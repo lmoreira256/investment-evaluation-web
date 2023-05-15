@@ -1,2 +1,7 @@
-<h1>Swing Trade</h1>
+<div class="title">
+  <h1>Swing Trade</h1>
+  <button mat-raised-button color="primary" (click)="createStock()">
+    Adicionar ativo
+  </button>
+</div>
 <app-item *ngFor="let item of data" [item]="item" (click)="openDialog(item)" />

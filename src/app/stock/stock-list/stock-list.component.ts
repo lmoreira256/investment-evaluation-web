@@ -34,4 +34,8 @@ export class StockListComponent {
       this.data = data;
     });
   }
+
+  createStock() {
+    
+  }
 }
