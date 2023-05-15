@@ -39,12 +39,10 @@ export class DashboardComponent {
   }
 
   getStockHistorics() {
-    this.stockHistoricService
-      .list(this.pageIndex)
-      .subscribe((data: IStockHistoricPageable) => {
-        this.dataSource = data.content;
-        this.pageable = data;
-      });
+    this.stockHistoricService.list(this.pageIndex).subscribe((data: any) => {
+      this.dataSource = data.content;
+      this.pageable = data;
+    });
   }
 
   createStockHistoric() {

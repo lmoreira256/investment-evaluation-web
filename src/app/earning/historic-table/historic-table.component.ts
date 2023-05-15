@@ -39,12 +39,10 @@ export class HistoricTableComponent {
   }
 
   getEarnings() {
-    this.earningService
-      .list(this.pageIndex)
-      .subscribe((data: IEarningPageable) => {
-        this.dataSource = data.content;
-        this.pageable = data;
-      });
+    this.earningService.list(this.pageIndex).subscribe((data: any) => {
+      this.dataSource = data.content;
+      this.pageable = data;
+    });
   }
 
   createEarning() {

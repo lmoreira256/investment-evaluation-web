@@ -1,18 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IEarningPageable } from 'src/interfaces/IEarningPageable';
+import { HostService } from './host.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class EarningService {
-
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor(private hostService: HostService) {}
 
   list(page: string) {
-    return this.http.get<IEarningPageable>(`http://localhost:6960/earning${page.length > 0 ? '?page=' + page : ''}`)
+    return this.hostService.get(
+      `earning${page.length > 0 ? '?page=' + page : ''}`
+    );
   }
-
 }
