@@ -46,6 +46,10 @@ export class HistoricTableComponent {
   }
 
   createEarning() {
-    this.dialog.open(NewEarningDialogComponent);
+    const dialogRef = this.dialog.open(NewEarningDialogComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      this.getEarnings();
+    });
   }
 }

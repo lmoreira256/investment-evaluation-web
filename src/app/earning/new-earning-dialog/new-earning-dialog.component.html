@@ -2,39 +2,45 @@
 <div mat-dialog-content>
   <mat-divider></mat-divider>
   <form>
-    <table cellspacing="10">
-      <tr>
-        <td>
-          <mat-form-field appearance="fill">
-            <mat-label>Ativo</mat-label>
-            <mat-select [(ngModel)]="earning.stockId" name="stockId">
-              <mat-option *ngFor="let stock of stocks" [value]="stock.id">
-                {{ stock.active }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field>
-            <mat-label>Valor</mat-label>
-            <input
-              matInput
-              currencyMask
-              [(ngModel)]="earning.amountPaid"
-              name="amountPaid"
-            />
-          </mat-form-field>
-        </td>
-      </tr>
-      <tr>
-        <mat-card>
-          <mat-calendar
-            [(ngModel)]="earning.payday"
-            name="payday"
-          ></mat-calendar>
-        </mat-card>
-      </tr>
-    </table>
+    <div class="container">
+      <mat-form-field appearance="fill">
+        <mat-label>Ativo</mat-label>
+        <mat-select [(ngModel)]="earning.stockId" name="stockId">
+          <mat-option *ngFor="let stock of stocks" [value]="stock.id">
+            {{ stock.active }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Valor</mat-label>
+        <input
+          matInput
+          currencyMask
+          [(ngModel)]="earning.amountPaid"
+          name="amountPaid"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="calendario">
+        <mat-label>Data de Pagamento</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          (dateInput)="changePayDay($event)"
+        />
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field style="width: 100%">
+        <mat-label>Descrição</mat-label>
+        <input matInput [(ngModel)]="earning.description" name="description" />
+      </mat-form-field>
+    </div>
   </form>
 </div>
 <div mat-dialog-actions>

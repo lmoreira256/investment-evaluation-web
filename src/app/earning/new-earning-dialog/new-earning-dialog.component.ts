@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { MatDialogRef } from '@angular/material/dialog';
 import { IEarning } from 'src/interfaces/IEarning';
+import { EarningService } from 'src/services/earning.service';
 import { StockService } from 'src/services/stock.service';
 import Formatter from 'src/utils/Formatter';
 
@@ -16,7 +18,8 @@ export class NewEarningDialogComponent {
   constructor(
     public formatter: Formatter,
     public dialogRef: MatDialogRef<NewEarningDialogComponent>,
-    private stockService: StockService
+    private stockService: StockService,
+    private earningService: EarningService
   ) {}
 
   ngOnInit() {
@@ -33,5 +36,14 @@ export class NewEarningDialogComponent {
     this.dialogRef.close();
   }
 
-  save() {}
+  save() {
+    console.log('this.earning: ', this.earning);
+    this.earningService.create(this.earning).subscribe(() => {
+      this.closeDialog();
+    });
+  }
+
+  changePayDay(event: MatDatepickerInputEvent<Date>) {
+    this.earning.payday = event.value || new Date();
+  }
 }
