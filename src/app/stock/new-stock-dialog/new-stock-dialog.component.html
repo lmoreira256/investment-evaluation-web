@@ -1,0 +1,114 @@
+<h1 mat-dialog-title>Nova Ação</h1>
+<div mat-dialog-content>
+  <mat-divider></mat-divider>
+  <form>
+    <table cellspacing="10">
+      <tr>
+        <td>
+          <mat-form-field>
+            <mat-label>Ativo</mat-label>
+            <input matInput [(ngModel)]="stock.active" name="active" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label>Descrição</mat-label>
+            <input
+              matInput
+              [(ngModel)]="stock.description"
+              name="description"
+            />
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field>
+            <mat-label>Quantidade</mat-label>
+            <input
+              type="number"
+              [(ngModel)]="stock.amount"
+              matInput
+              name="amount"
+            />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field appearance="fill">
+            <mat-label>Tipo</mat-label>
+            <mat-select [(ngModel)]="stock.stockType" name="stockType">
+              <mat-option value="STOCK">Ação</mat-option>
+              <mat-option value="REAL_ESTATE_FUND">FII</mat-option>
+              <mat-option value="BDR">BDR</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field>
+            <mat-label>Valor de compra</mat-label>
+            <input
+              matInput
+              [(ngModel)]="stock.purchaseValue"
+              currencyMask
+              name="purchaseValue"
+            />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label>Valor Atual</mat-label>
+            <input
+              matInput
+              [(ngModel)]="stock.currentValue"
+              currencyMask
+              name="currentValue"
+            />
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field>
+            <mat-label>Média de compra</mat-label>
+            <input
+              matInput
+              [(ngModel)]="stock.averagePurchase"
+              currencyMask
+              name="averagePurchase"
+            />
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <mat-divider></mat-divider>
+  <div class="summary">
+    <h1>Resumo:</h1>
+    <h3>
+      Retorno (R$):
+      {{
+        stock.currentValue
+          ? formatter.formatCurrency(stock.currentValue - stock.purchaseValue)
+          : "R$ 0,00"
+      }}
+    </h3>
+    <h3>
+      Retorno (%):
+      {{
+        stock.currentValue
+          ? formatter.formatPercent(
+              (stock.currentValue * 100) / stock.purchaseValue - 100
+            )
+          : "0,00%"
+      }}
+    </h3>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button (click)="closeDialog()" color="warn">
+    Cancelar
+  </button>
+  <button mat-raised-button color="primary" (click)="save()">Salvar</button>
+</div>

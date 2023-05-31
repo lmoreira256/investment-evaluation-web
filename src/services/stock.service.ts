@@ -27,4 +27,8 @@ export class StockService {
   put(stock: IStock) {
     return this.hostService.put(`stock/${stock.id}`, stock);
   }
+
+  post(stock: IStock) {
+    return this.hostService.post('stock', stock);
+  }
 }

@@ -6,8 +6,7 @@ import { IStockHistoricPageable } from 'src/interfaces/IStockHistoricPageable';
   providedIn: 'root',
 })
 export class HostService {
-  //private host: string = 'http://ec2-18-231-190-42.sa-east-1.compute.amazonaws.com:6960/';
-
+  //private host: string = 'http://ec2-18-228-6-178.sa-east-1.compute.amazonaws.com:6960/';
   private host: string = 'http://localhost:6960/';
 
   constructor(private http: HttpClient) {}

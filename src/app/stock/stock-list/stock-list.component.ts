@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { EditStockDialogComponent } from 'src/app/stock/edit-stock-dialog/edit-stock-dialog.component';
 import { IStock } from 'src/interfaces/IStock';
 import { StockService } from 'src/services/stock.service';
+import { NewStockDialogComponent } from '../new-stock-dialog/new-stock-dialog.component';
 
 @Component({
   selector: 'app-stock-list',
@@ -36,6 +37,10 @@ export class StockListComponent {
   }
 
   createStock() {
-    
+    const dialogRef = this.dialog.open(NewStockDialogComponent);
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.getStocks();
+    });
   }
 }
