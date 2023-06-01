@@ -1,7 +1,7 @@
 <div>
   <div class="title">
     <h1>Histórico de Proventos</h1>
-    <button mat-raised-button color="primary" (click)="createEarning()">
+    <button mat-raised-button (click)="createEarning()">
       Adicionar provento
     </button>
   </div>
@@ -9,8 +9,10 @@
   <div class="mat-elevation-z8 table">
     <table mat-table [dataSource]="dataSource">
       <ng-container matColumnDef="stockName">
-        <th mat-header-cell *matHeaderCellDef>Nome do Ativo</th>
-        <td mat-cell *matCellDef="let element">{{ element.stockName }}</td>
+        <th mat-header-cell class="center" *matHeaderCellDef>Nome do Ativo</th>
+        <td mat-cell class="center" *matCellDef="let element">
+          {{ element.stockName }}
+        </td>
       </ng-container>
 
       <ng-container matColumnDef="amountPaid">
