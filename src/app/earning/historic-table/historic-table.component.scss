@@ -48,3 +48,28 @@ mat-paginator {
 .mat-mdc-row:hover .mat-mdc-cell:last-child {
   border-right: 2px solid #0500f5;
 }
+
+.container-value {
+  display: flex;
+  align-items: center;
+
+  .value {
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
+
+.possitive-info {
+  background: #00bf5c;
+  width: 4px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.possitive-icon {
+  color: #00bf5c;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  margin-right: 2px;
+}

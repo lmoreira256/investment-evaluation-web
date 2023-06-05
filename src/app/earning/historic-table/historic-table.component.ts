@@ -18,9 +18,9 @@ export class HistoricTableComponent {
   pageable: IEarningPageable = null as any;
   displayedColumns: string[] = [
     'stockName',
+    'payday',
     'amountPaid',
     'description',
-    'payday',
   ];
 
   constructor(
