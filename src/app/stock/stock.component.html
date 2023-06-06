@@ -1,7 +1,57 @@
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" position="end" mode="over">
-    <p>Auto-resizing sidenav</p>
-    <p>Lorem, ipsum dolor sit amet consectetur.</p>
+<mat-drawer-container autosize>
+  <mat-drawer #drawer class="drawer-container" position="end" mode="over">
+    <div *ngIf="stockService.stockSelected">
+      <div class="active-title">
+        <div class="stock-info">
+          <h1>{{ stockService.stockSelected.active }}</h1>
+          <p>{{ stockService.stockSelected.description }}</p>
+        </div>
+        <div class="value-info">
+          <mat-icon
+            *ngIf="stockService.stockSelected.cashReturn > 0"
+            class="icon positive"
+          >
+            arrow_upward
+          </mat-icon>
+          <mat-icon
+            *ngIf="stockService.stockSelected.cashReturn < 0"
+            class="icon negative"
+          >
+            arrow_downward
+          </mat-icon>
+          <div class="value-container">
+            <span
+              class="value"
+              [ngClass]="
+                stockService.stockSelected.cashReturn > 0
+                  ? 'positive'
+                  : 'negative'
+              "
+            >
+              {{
+                formatter.formatCurrency(stockService.stockSelected.cashReturn)
+              }}
+            </span>
+            <span
+              class="value"
+              [ngClass]="
+                stockService.stockSelected.profitability > 0
+                  ? 'positive'
+                  : 'negative'
+              "
+            >
+              {{
+                formatter.formatPercent(
+                  stockService.stockSelected.profitability
+                )
+              }}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <p>Lorem, ipsum dolor sit amet consectetur.</p>
+    </div>
   </mat-drawer>
 
   <div class="stock-table">

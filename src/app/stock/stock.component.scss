@@ -1,4 +1,59 @@
 .stock-table {
   height: 100vh;
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
+}
+
+.drawer-container {
+  width: 600px;
+  height: 100vh;
+  background: #f3f3f3;
+}
+
+.active-title {
+  height: 100px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+p {
+  color: #989898;
+}
+
+.stock-info {
+  width: 50%;
+}
+
+.value-info {
+  border-left: 2px solid #f3f3f3;
+  padding: 20px;
+  display: flex;
+}
+
+.negative {
+  color: red;
+}
+
+.positive {
+  color: #2a7bea;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 5px;
+  font-size: 53px;
+}
+
+.value-container {
+  font-weight: 500;
+  font-size: 21px;
+  align-items: center;
+  display: grid;
 }

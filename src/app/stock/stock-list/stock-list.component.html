@@ -10,7 +10,7 @@
     <app-item
       *ngFor="let item of data"
       [item]="item"
-      (click)="drawer.toggle()"
+      (click)="openDialog(item)"
     />
   </div>
 </div>

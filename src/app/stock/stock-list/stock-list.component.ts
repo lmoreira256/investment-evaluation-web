@@ -24,6 +24,10 @@ export class StockListComponent {
   }
 
   openDialog(stock: IStock): void {
+    this.stockService.stockSelected = stock;
+    console.log(this.stockService.stockSelected);
+    this.drawer.toggle();
+
     return;
     const dialogRef = this.dialog.open(EditStockDialogComponent, {
       data: JSON.parse(JSON.stringify(stock)),

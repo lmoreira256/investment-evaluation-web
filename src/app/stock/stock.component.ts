@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { StockService } from 'src/services/stock.service';
 import Formatter from 'src/utils/Formatter';
 
 @Component({
@@ -10,5 +11,5 @@ import Formatter from 'src/utils/Formatter';
 export class StockComponent {
   items: any;
 
-  constructor(public formatter: Formatter, public dialog: MatDialog) {}
+  constructor(public formatter: Formatter, public dialog: MatDialog, public stockService: StockService) {}
 }
