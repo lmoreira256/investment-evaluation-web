@@ -14,6 +14,9 @@ export class StockListComponent {
   @Input()
   data: any;
 
+  @Input()
+  drawer: any;
+
   constructor(public dialog: MatDialog, private stockService: StockService) {}
 
   ngOnInit() {
@@ -21,6 +24,7 @@ export class StockListComponent {
   }
 
   openDialog(stock: IStock): void {
+    return;
     const dialogRef = this.dialog.open(EditStockDialogComponent, {
       data: JSON.parse(JSON.stringify(stock)),
     });

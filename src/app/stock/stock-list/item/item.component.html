@@ -1,7 +1,35 @@
-<div class="mat-elevation-z8 item">
+<div class="item">
   <div class="info-div">
     <span class="title elipsis">{{ item.active }}</span>
     <span class="description elipsis">{{ item.description }}</span>
+  </div>
+
+  <div class="value-div">
+    <div class="return-container">
+      <span
+        [ngClass]="item.cashReturn > 0 ? 'positive-info' : 'negative-info'"
+      ></span>
+      <mat-icon *ngIf="item.cashReturn > 0" class="icon positive"
+        >arrow_upward</mat-icon
+      >
+      <mat-icon *ngIf="item.cashReturn < 0" class="icon negative"
+        >arrow_downward</mat-icon
+      >
+      <div class="return-value-container">
+        <span
+          class="value"
+          [ngClass]="item.cashReturn > 0 ? 'positive' : 'negative'"
+        >
+          {{ formatter.formatCurrency(item.cashReturn) }}
+        </span>
+        <span
+          class="value"
+          [ngClass]="item.profitability > 0 ? 'positive' : 'negative'"
+        >
+          {{ formatter.formatPercent(item.profitability) }}
+        </span>
+      </div>
+    </div>
   </div>
 
   <div class="value-div">
@@ -12,20 +40,6 @@
   <div class="value-div">
     <span class="column-title">Valor Atual</span>
     <span class="value">{{ formatter.formatCurrency(item.currentValue) }}</span>
-  </div>
-
-  <div class="value-div">
-    <span class="column-title">Retorno</span>
-    <span
-      class="value"
-      [ngClass]="item.cashReturn > 0 ? 'positive' : 'negative'"
-      >{{ formatter.formatCurrency(item.cashReturn) }}</span
-    >
-    <span
-      class="value"
-      [ngClass]="item.profitability > 0 ? 'positive' : 'negative'"
-      >{{ formatter.formatPercent(item.profitability) }}</span
-    >
   </div>
 
   <div class="value-div">

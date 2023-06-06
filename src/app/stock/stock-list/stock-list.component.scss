@@ -2,3 +2,24 @@
   display: flex;
   justify-content: space-between;
 }
+
+.container {
+  padding: 35px;
+}
+
+.list {
+  scroll-behavior: smooth;
+  height: 87vh;
+  display: block;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  height: 0px;
+  width: 0px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
