@@ -21,21 +21,20 @@ export class StockListComponent {
 
   ngOnInit() {
     this.getStocks();
+    this.drawerEvent();
+  }
+
+  drawerEvent() {
+    this.drawer.openedChange.subscribe((isOpen: boolean) => {
+      if (!isOpen) {
+        this.getStocks();
+      }
+    });
   }
 
   openDialog(stock: IStock): void {
-    this.stockService.stockSelected = stock;
-    console.log(this.stockService.stockSelected);
+    this.stockService.stockSelected = JSON.parse(JSON.stringify(stock));
     this.drawer.toggle();
-
-    return;
-    const dialogRef = this.dialog.open(EditStockDialogComponent, {
-      data: JSON.parse(JSON.stringify(stock)),
-    });
-
-    dialogRef.afterClosed().subscribe(() => {
-      this.getStocks();
-    });
   }
 
   getStocks() {
@@ -49,6 +48,13 @@ export class StockListComponent {
 
     dialogRef.afterClosed().subscribe(() => {
       this.getStocks();
+    });
+  }
+
+  saveStock() {
+    this.stockService.put(this.stockService.stockSelected).subscribe(() => {
+      this.stockService.stockSelected = null;
+      this.drawer.toggle();
     });
   }
 }

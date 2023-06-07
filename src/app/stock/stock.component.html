@@ -101,7 +101,10 @@
           <span>Rentabilidade (R$)</span>
           <span>
             {{
-              formatter.formatCurrency(stockService.stockSelected.cashReturn)
+              formatter.formatCurrency(
+                stockService.stockSelected.currentValue -
+                  stockService.stockSelected.purchaseValue
+              )
             }}
           </span>
         </div>
@@ -110,7 +113,13 @@
           <span>Rentabilidade (%)</span>
           <span>
             {{
-              formatter.formatPercent(stockService.stockSelected.profitability)
+              stockService.stockSelected.currentValue
+                ? formatter.formatPercent(
+                    (stockService.stockSelected.currentValue * 100) /
+                      stockService.stockSelected.purchaseValue -
+                      100
+                  )
+                : "0,00%"
             }}
           </span>
         </div>
@@ -118,7 +127,9 @@
         <div
           class="display"
           [ngClass]="
-            stockService.stockSelected.cashReturn > 0
+            stockService.stockSelected.currentValue -
+              stockService.stockSelected.purchaseValue >
+            0
               ? 'display-positive'
               : 'display-negative'
           "
@@ -126,7 +137,9 @@
           <div
             class="display-container"
             [ngClass]="
-              stockService.stockSelected.cashReturn > 0
+              stockService.stockSelected.currentValue -
+                stockService.stockSelected.purchaseValue >
+              0
                 ? 'display-container-positive'
                 : 'display-container-negative'
             "
@@ -136,15 +149,20 @@
               <span class="value">
                 {{
                   formatter.formatCurrency(
-                    stockService.stockSelected.cashReturn
+                    stockService.stockSelected.currentValue -
+                      stockService.stockSelected.purchaseValue
                   )
                 }}
               </span>
               <span class="percentage">
                 ({{
-                  formatter.formatPercent(
-                    stockService.stockSelected.profitability
-                  )
+                  stockService.stockSelected.currentValue
+                    ? formatter.formatPercent(
+                        (stockService.stockSelected.currentValue * 100) /
+                          stockService.stockSelected.purchaseValue -
+                          100
+                      )
+                    : "0,00%"
                 }})
               </span>
             </div>
@@ -153,8 +171,16 @@
       </div>
 
       <div class="action-buttons">
-        <button mat-raised-button color="warn">Cancelar</button>
-        <button mat-raised-button color="primary">Salvar</button>
+        <button mat-raised-button color="warn" (click)="drawer.toggle()">
+          Cancelar
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="saveStock(); drawer.toggle()"
+        >
+          Salvar
+        </button>
       </div>
     </div>
   </mat-drawer>

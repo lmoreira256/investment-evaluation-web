@@ -11,5 +11,15 @@ import Formatter from 'src/utils/Formatter';
 export class StockComponent {
   items: any;
 
-  constructor(public formatter: Formatter, public dialog: MatDialog, public stockService: StockService) {}
+  constructor(
+    public formatter: Formatter,
+    public dialog: MatDialog,
+    public stockService: StockService
+  ) {}
+
+  saveStock() {
+    this.stockService.put(this.stockService.stockSelected).subscribe(() => {
+      this.stockService.stockSelected = null;
+    });
+  }
 }
