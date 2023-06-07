@@ -50,7 +50,112 @@
         </div>
       </div>
 
-      <p>Lorem, ipsum dolor sit amet consectetur.</p>
+      <div class="stock-values">
+        <h2>Valor Patrimonial</h2>
+
+        <mat-form-field>
+          <mat-label>Quantidade</mat-label>
+          <input
+            type="number"
+            matInput
+            [(ngModel)]="stockService.stockSelected.amount"
+            name="amount"
+          />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Média de compra</mat-label>
+          <input
+            matInput
+            currencyMask
+            [(ngModel)]="stockService.stockSelected.averagePurchase"
+            name="averagePurchase"
+          />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Valor de compra</mat-label>
+          <input
+            matInput
+            currencyMask
+            [(ngModel)]="stockService.stockSelected.purchaseValue"
+            name="purchaseValue"
+          />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Valor atual</mat-label>
+          <input
+            matInput
+            currencyMask
+            [(ngModel)]="stockService.stockSelected.currentValue"
+            name="currentValue"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="return-value">
+        <h2>Lucro e Prejuízo</h2>
+
+        <div class="info">
+          <span>Rentabilidade (R$)</span>
+          <span>
+            {{
+              formatter.formatCurrency(stockService.stockSelected.cashReturn)
+            }}
+          </span>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="info">
+          <span>Rentabilidade (%)</span>
+          <span>
+            {{
+              formatter.formatPercent(stockService.stockSelected.profitability)
+            }}
+          </span>
+        </div>
+
+        <div
+          class="display"
+          [ngClass]="
+            stockService.stockSelected.cashReturn > 0
+              ? 'display-positive'
+              : 'display-negative'
+          "
+        >
+          <div
+            class="display-container"
+            [ngClass]="
+              stockService.stockSelected.cashReturn > 0
+                ? 'display-container-positive'
+                : 'display-container-negative'
+            "
+          >
+            <span class="total">Total</span>
+            <div>
+              <span class="value">
+                {{
+                  formatter.formatCurrency(
+                    stockService.stockSelected.cashReturn
+                  )
+                }}
+              </span>
+              <span class="percentage">
+                ({{
+                  formatter.formatPercent(
+                    stockService.stockSelected.profitability
+                  )
+                }})
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <button mat-raised-button color="warn">Cancelar</button>
+        <button mat-raised-button color="primary">Salvar</button>
+      </div>
     </div>
   </mat-drawer>
 
