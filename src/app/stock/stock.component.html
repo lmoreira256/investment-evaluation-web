@@ -3,55 +3,6 @@
     <app-edit-stock-drawer *ngIf="stockService.stockSelected">
     </app-edit-stock-drawer>
     <!-- <div *ngIf="stockService.stockSelected">
-      <div class="active-title">
-        <div class="stock-info">
-          <h1>{{ stockService.stockSelected.active }}</h1>
-          <p>{{ stockService.stockSelected.description }}</p>
-        </div>
-        <div class="value-info">
-          <mat-icon
-            *ngIf="stockService.stockSelected.cashReturn > 0"
-            class="icon positive"
-          >
-            arrow_upward
-          </mat-icon>
-          <mat-icon
-            *ngIf="stockService.stockSelected.cashReturn < 0"
-            class="icon negative"
-          >
-            arrow_downward
-          </mat-icon>
-          <div class="value-container">
-            <span
-              class="value"
-              [ngClass]="
-                stockService.stockSelected.cashReturn > 0
-                  ? 'positive'
-                  : 'negative'
-              "
-            >
-              {{
-                formatter.formatCurrency(stockService.stockSelected.cashReturn)
-              }}
-            </span>
-            <span
-              class="value"
-              [ngClass]="
-                stockService.stockSelected.profitability > 0
-                  ? 'positive'
-                  : 'negative'
-              "
-            >
-              {{
-                formatter.formatPercent(
-                  stockService.stockSelected.profitability
-                )
-              }}
-            </span>
-          </div>
-        </div>
-      </div>
-
       <div class="stock-values">
         <h2>Valor Patrimonial</h2>
 

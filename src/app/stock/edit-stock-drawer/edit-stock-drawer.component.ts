@@ -7,6 +7,4 @@ import Formatter from 'src/utils/Formatter';
   templateUrl: './edit-stock-drawer.component.html',
   styleUrls: ['./edit-stock-drawer.component.scss'],
 })
-export class EditStockDrawerComponent {
-  constructor(public formatter: Formatter, public stockService: StockService) {}
-}
+export class EditStockDrawerComponent {}

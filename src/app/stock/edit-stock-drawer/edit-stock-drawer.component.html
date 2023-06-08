@@ -1,43 +1,6 @@
 <div class="edit-stock-drawer">
   <div class="stock-info">
-    <div class="information">
-      <h1>{{ stockService.stockSelected.active }}</h1>
-      <p>{{ stockService.stockSelected.description }}</p>
-    </div>
-    <div class="return-information">
-      <mat-icon
-        class="icon"
-        [ngClass]="
-          stockService.stockSelected.cashReturn > 0 ? 'positive' : 'negative'
-        "
-      >
-        {{
-          stockService.stockSelected.cashReturn > 0
-            ? "arrow_upward"
-            : "arrow_downward"
-        }}
-      </mat-icon>
-      <div class="return-value">
-        <span
-          [ngClass]="
-            stockService.stockSelected.cashReturn > 0 ? 'positive' : 'negative'
-          "
-        >
-          {{ formatter.formatCurrency(stockService.stockSelected.cashReturn) }}
-        </span>
-        <span
-          [ngClass]="
-            stockService.stockSelected.profitability > 0
-              ? 'positive'
-              : 'negative'
-          "
-        >
-          {{
-            formatter.formatPercent(stockService.stockSelected.profitability)
-          }}
-        </span>
-      </div>
-    </div>
+    <app-stock-info></app-stock-info>
   </div>
 
   <div class="stock-value">

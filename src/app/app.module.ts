@@ -26,6 +26,7 @@ import { NewEarningDialogComponent } from './earning/new-earning-dialog/new-earn
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { NewStockDialogComponent } from './stock/new-stock-dialog/new-stock-dialog.component';
 import { EditStockDrawerComponent } from './stock/edit-stock-drawer/edit-stock-drawer.component';
+import { StockInfoComponent } from './stock/edit-stock-drawer/stock-info/stock-info.component';
 
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
   align: 'left',
@@ -50,6 +51,7 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     NewEarningDialogComponent,
     NewStockDialogComponent,
     EditStockDrawerComponent,
+    StockInfoComponent,
   ],
   imports: [
     BrowserModule,
