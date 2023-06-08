@@ -2,7 +2,6 @@ import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { IStock } from 'src/interfaces/IStock';
 import { StockService } from 'src/services/stock.service';
-import { NewStockDialogComponent } from '../new-stock-dialog/new-stock-dialog.component';
 
 @Component({
   selector: 'app-stock-list',
@@ -18,36 +17,9 @@ export class StockListComponent {
 
   constructor(public dialog: MatDialog, private stockService: StockService) {}
 
-  ngOnInit() {
-    this.getStocks();
-    this.drawerEvent();
-  }
-
-  drawerEvent() {
-    this.drawer.openedChange.subscribe((isOpen: boolean) => {
-      if (!isOpen) {
-        this.getStocks();
-      }
-    });
-  }
-
-  openDialog(stock: IStock): void {
+  editStock(stock: IStock): void {
     this.stockService.stockSelected = JSON.parse(JSON.stringify(stock));
     this.drawer.toggle();
-  }
-
-  getStocks() {
-    this.stockService.listAll().subscribe((data) => {
-      this.data = data;
-    });
-  }
-
-  createStock() {
-    const dialogRef = this.dialog.open(NewStockDialogComponent);
-
-    dialogRef.afterClosed().subscribe(() => {
-      this.getStocks();
-    });
   }
 
   saveStock() {

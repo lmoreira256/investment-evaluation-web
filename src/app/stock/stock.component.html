@@ -186,6 +186,13 @@
   </mat-drawer>
 
   <div class="stock-table">
-    <app-stock-list [data]="items" [drawer]="drawer" />
+    <div class="title">
+      <h1>Swing Trade</h1>
+      <button mat-raised-button color="primary" (click)="createStock()">
+        Adicionar ativo
+      </button>
+    </div>
+
+    <!--<app-stock-list [data]="items" [drawer]="drawer" />-->
   </div>
 </mat-drawer-container>
