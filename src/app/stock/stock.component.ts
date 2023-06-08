@@ -22,6 +22,7 @@ export class StockComponent {
   ) {}
 
   ngOnInit() {
+    this.getStocks();
     this.drawerEvent();
   }
 
