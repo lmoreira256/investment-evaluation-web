@@ -1,0 +1,62 @@
+.stock-return {
+  height: 100%;
+  display: flex;
+
+  .stock-return-content {
+    width: 100%;
+
+    .info {
+      font-size: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    mat-divider {
+      margin: 10px 0;
+    }
+
+    .positive-border {
+      border-bottom: 2px solid #2a7bea;
+    }
+
+    .negative-border {
+      border-bottom: 2px solid red;
+    }
+
+    .display {
+      width: 100%;
+      margin-top: 20px;
+
+      .positive-backgroud {
+        background-color: #2a7bea;
+      }
+
+      .negative-backgroud {
+        background-color: red;
+      }
+
+      .display-content {
+        margin-left: 45%;
+        color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        height: 60px;
+        align-items: center;
+        padding: 0 15px;
+
+        .total {
+          font-size: 18px;
+        }
+
+        .percentage {
+          font-size: 16px;
+        }
+
+        .value {
+          font-size: 20px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

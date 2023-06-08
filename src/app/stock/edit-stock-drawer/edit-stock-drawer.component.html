@@ -4,14 +4,22 @@
   </div>
 
   <div class="stock-value">
-    <p>stock-value</p>
+    <app-stock-value></app-stock-value>
   </div>
 
   <div class="stock-return">
-    <p>stock-return</p>
+    <app-stock-return></app-stock-return>
   </div>
 
   <div class="buttons">
-    <p>buttons</p>
+    <div class="buttons-content">
+      <button mat-raised-button color="warn" (click)="drawer.toggle()">
+        Cancelar
+      </button>
+
+      <button mat-raised-button color="primary" (click)="saveStock()">
+        Salvar
+      </button>
+    </div>
   </div>
 </div>

@@ -1,8 +1,9 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { StockService } from 'src/services/stock.service';
 import Formatter from 'src/utils/Formatter';
 import { NewStockDialogComponent } from './new-stock-dialog/new-stock-dialog.component';
+import { MatDrawer } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-stock',
@@ -12,8 +13,8 @@ import { NewStockDialogComponent } from './new-stock-dialog/new-stock-dialog.com
 export class StockComponent {
   items: any;
 
-  @ViewChild('drawer')
-  public drawer: any;
+  @ViewChild('drawer', { static: true })
+  drawer: MatDrawer;
 
   constructor(
     public dialog: MatDialog,

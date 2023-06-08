@@ -21,11 +21,4 @@ export class StockListComponent {
     this.stockService.stockSelected = JSON.parse(JSON.stringify(stock));
     this.drawer.toggle();
   }
-
-  saveStock() {
-    this.stockService.put(this.stockService.stockSelected).subscribe(() => {
-      this.stockService.stockSelected = null;
-      this.drawer.toggle();
-    });
-  }
 }
