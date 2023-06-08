@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { EditStockDialogComponent } from 'src/app/stock/edit-stock-dialog/edit-stock-dialog.component';
 import { IStock } from 'src/interfaces/IStock';
 import { StockService } from 'src/services/stock.service';
 import { NewStockDialogComponent } from '../new-stock-dialog/new-stock-dialog.component';

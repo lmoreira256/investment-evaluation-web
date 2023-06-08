@@ -14,7 +14,6 @@ import { CustomMatPaginatorIntl } from 'src/config/CustomMatPaginatorIntl';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import Formatter from 'src/utils/Formatter';
 import { HistoricTableComponent } from './earning/historic-table/historic-table.component';
-import { EditStockDialogComponent } from './stock/edit-stock-dialog/edit-stock-dialog.component';
 import { FormsModule } from '@angular/forms';
 import {
   CurrencyMaskModule,
@@ -45,7 +44,6 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     PageNotFoundComponent,
     EarningComponent,
     HistoricTableComponent,
-    EditStockDialogComponent,
     StockListComponent,
     ItemComponent,
     NewEarningDialogComponent,
