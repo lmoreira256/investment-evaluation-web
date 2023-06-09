@@ -1,9 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { EditStockDialogComponent } from 'src/app/stock/edit-stock-dialog/edit-stock-dialog.component';
+import { MatDrawer } from '@angular/material/sidenav';
 import { IStock } from 'src/interfaces/IStock';
 import { StockService } from 'src/services/stock.service';
-import { NewStockDialogComponent } from '../new-stock-dialog/new-stock-dialog.component';
 
 @Component({
   selector: 'app-stock-list',
@@ -14,33 +12,13 @@ export class StockListComponent {
   @Input()
   data: any;
 
-  constructor(public dialog: MatDialog, private stockService: StockService) {}
+  @Input()
+  drawer: MatDrawer;
 
-  ngOnInit() {
-    this.getStocks();
-  }
+  constructor(private stockService: StockService) {}
 
-  openDialog(stock: IStock): void {
-    const dialogRef = this.dialog.open(EditStockDialogComponent, {
-      data: JSON.parse(JSON.stringify(stock)),
-    });
-
-    dialogRef.afterClosed().subscribe(() => {
-      this.getStocks();
-    });
-  }
-
-  getStocks() {
-    this.stockService.listAll().subscribe((data) => {
-      this.data = data;
-    });
-  }
-
-  createStock() {
-    const dialogRef = this.dialog.open(NewStockDialogComponent);
-
-    dialogRef.afterClosed().subscribe(() => {
-      this.getStocks();
-    });
+  editStock(stock: IStock): void {
+    this.stockService.stockSelected = JSON.parse(JSON.stringify(stock));
+    this.drawer.toggle();
   }
 }

@@ -1,0 +1,77 @@
+<div class="stock-return">
+  <div class="stock-return-content">
+    <h2>Lucro e Prejuízo</h2>
+
+    <div class="info">
+      <span>Rentabilidade (R$)</span>
+      <span>
+        {{
+          formatter.formatCurrency(
+            stockService.stockSelected.currentValue -
+              stockService.stockSelected.purchaseValue
+          )
+        }}
+      </span>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="info">
+      <span>Rentabilidade (%)</span>
+      <span>
+        {{
+          stockService.stockSelected.currentValue
+            ? formatter.formatPercent(
+                (stockService.stockSelected.currentValue * 100) /
+                  stockService.stockSelected.purchaseValue -
+                  100
+              )
+            : "0,00%"
+        }}
+      </span>
+    </div>
+
+    <div
+      class="display"
+      [ngClass]="
+        stockService.stockSelected.currentValue -
+          stockService.stockSelected.purchaseValue >
+        0
+          ? 'positive-border'
+          : 'negative-border'
+      "
+    >
+      <div
+        class="display-content"
+        [ngClass]="
+          stockService.stockSelected.currentValue -
+            stockService.stockSelected.purchaseValue >
+          0
+            ? 'positive-backgroud'
+            : 'negative-backgroud'
+        "
+      >
+        <span class="total">Total</span>
+        <div>
+          <span class="value">
+            {{
+              formatter.formatCurrency(
+                stockService.stockSelected.currentValue -
+                  stockService.stockSelected.purchaseValue
+              )
+            }}
+          </span>
+          <span class="percentage">
+            ({{
+              stockService.stockSelected.currentValue
+                ? formatter.formatPercent(
+                    (stockService.stockSelected.currentValue * 100) /
+                      stockService.stockSelected.purchaseValue -
+                      100
+                  )
+                : "0,00%"
+            }})
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

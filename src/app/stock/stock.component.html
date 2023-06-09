@@ -1,5 +1,21 @@
-<div>
-    <div class="stock-table">
-        <app-stock-list [data]="items" />
+<mat-drawer-container autosize>
+  <mat-drawer #drawer class="drawer-container" position="end" mode="over">
+    <app-edit-stock-drawer *ngIf="stockService.stockSelected" [drawer]="drawer">
+    </app-edit-stock-drawer>
+  </mat-drawer>
+
+  <div class="stock-table">
+    <div class="stock-table-content">
+      <div class="title">
+        <h1>Lista de Ativos</h1>
+        <button mat-raised-button color="primary" (click)="createStock()">
+          Adicionar ativo
+        </button>
+      </div>
+
+      <div class="stock-list">
+        <app-stock-list [data]="items" [drawer]="drawer" />
+      </div>
     </div>
-</div>
+  </div>
+</mat-drawer-container>

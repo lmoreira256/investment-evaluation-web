@@ -14,7 +14,6 @@ import { CustomMatPaginatorIntl } from 'src/config/CustomMatPaginatorIntl';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import Formatter from 'src/utils/Formatter';
 import { HistoricTableComponent } from './earning/historic-table/historic-table.component';
-import { EditStockDialogComponent } from './stock/edit-stock-dialog/edit-stock-dialog.component';
 import { FormsModule } from '@angular/forms';
 import {
   CurrencyMaskModule,
@@ -26,6 +25,10 @@ import { ItemComponent } from './stock/stock-list/item/item.component';
 import { NewEarningDialogComponent } from './earning/new-earning-dialog/new-earning-dialog.component';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { NewStockDialogComponent } from './stock/new-stock-dialog/new-stock-dialog.component';
+import { EditStockDrawerComponent } from './stock/edit-stock-drawer/edit-stock-drawer.component';
+import { StockInfoComponent } from './stock/edit-stock-drawer/stock-info/stock-info.component';
+import { StockValueComponent } from './stock/edit-stock-drawer/stock-value/stock-value.component';
+import { StockReturnComponent } from './stock/edit-stock-drawer/stock-return/stock-return.component';
 
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
   align: 'left',
@@ -45,11 +48,14 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     PageNotFoundComponent,
     EarningComponent,
     HistoricTableComponent,
-    EditStockDialogComponent,
     StockListComponent,
     ItemComponent,
     NewEarningDialogComponent,
     NewStockDialogComponent,
+    EditStockDrawerComponent,
+    StockInfoComponent,
+    StockValueComponent,
+    StockReturnComponent,
   ],
   imports: [
     BrowserModule,

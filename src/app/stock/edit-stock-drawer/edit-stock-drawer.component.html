@@ -1,0 +1,25 @@
+<div class="edit-stock-drawer">
+  <div class="stock-info">
+    <app-stock-info></app-stock-info>
+  </div>
+
+  <div class="stock-value">
+    <app-stock-value></app-stock-value>
+  </div>
+
+  <div class="stock-return">
+    <app-stock-return></app-stock-return>
+  </div>
+
+  <div class="buttons">
+    <div class="buttons-content">
+      <button mat-raised-button color="warn" (click)="drawer.toggle()">
+        Cancelar
+      </button>
+
+      <button mat-raised-button color="primary" (click)="saveStock()">
+        Salvar
+      </button>
+    </div>
+  </div>
+</div>

@@ -8,6 +8,8 @@ import { HostService } from './host.service';
   providedIn: 'root',
 })
 export class StockService {
+  public stockSelected: IStock | any;
+
   constructor(private hostService: HostService) {}
 
   list(page: string) {

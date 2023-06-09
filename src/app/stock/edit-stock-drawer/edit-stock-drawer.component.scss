@@ -1,0 +1,45 @@
+.edit-stock-drawer {
+  height: 100vh;
+  background-color: #ffffff;
+
+  .stock-value,
+  .stock-return,
+  .buttons {
+    background-color: #f3f3f3;
+  }
+
+  .stock-info,
+  .stock-value,
+  .stock-return,
+  .buttons {
+    padding: 0 40px;
+  }
+
+  .stock-info {
+    height: 17%;
+  }
+
+  .stock-value {
+    height: 47%;
+  }
+
+  .stock-return {
+    height: 25%;
+  }
+
+  .buttons {
+    height: 10%;
+    display: flex;
+    align-items: center;
+
+    .buttons-content {
+      width: 100%;
+      justify-content: end;
+      display: flex;
+
+      button {
+        margin-left: 15px;
+      }
+    }
+  }
+}

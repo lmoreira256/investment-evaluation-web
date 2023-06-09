@@ -1,10 +1,15 @@
 .item {
-  background: white;
-  margin: 10px 0;
+  background: #ffffff;
+  margin: 15px 0;
   padding: 15px;
   border-radius: 5px;
   display: flex;
   justify-content: space-between;
+  border: 2px solid transparent;
+}
+
+.item:hover {
+  border: 2px solid #0500f5;
 }
 
 .info-div {
@@ -44,4 +49,35 @@
 
 .positive {
   color: #2a7bea;
+}
+
+.positive-info,
+.negative-info {
+  width: 5px;
+  height: 40px;
+}
+
+.positive-info {
+  background-color: #2a7bea;
+}
+
+.negative-info {
+  background-color: red;
+}
+
+.return-container {
+  display: flex;
+  align-items: center;
+}
+
+.return-value-container {
+  display: grid;
+  align-items: center;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+  font-size: 32px;
 }

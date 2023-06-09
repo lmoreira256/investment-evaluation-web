@@ -1,3 +1,27 @@
 .stock-table {
-  padding: 35px;
+  height: 100vh;
+  background-color: #f3f3f3;
+}
+
+.drawer-container {
+  width: 600px;
+  height: 100vh;
+  background: #f3f3f3;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+}
+
+.stock-table-content {
+  padding: 50px;
+}
+
+.stock-list {
+  width: 100%;
+  height: calc(100vh - 155px);
+  margin-top: 15px;
 }
