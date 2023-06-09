@@ -1,4 +1,10 @@
 <div class="stock-info">
+  <img
+    [src]="
+      './assets/active_logos/' + stockService.stockSelected.active + '.png'
+    "
+  />
+
   <div class="information">
     <h1>{{ stockService.stockSelected.active }}</h1>
     <p>{{ stockService.stockSelected.description }}</p>
