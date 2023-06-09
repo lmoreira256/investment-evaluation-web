@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDrawer } from '@angular/material/sidenav';
 import { IStock } from 'src/interfaces/IStock';
 import { StockService } from 'src/services/stock.service';
 
@@ -13,9 +13,9 @@ export class StockListComponent {
   data: any;
 
   @Input()
-  drawer: any;
+  drawer: MatDrawer;
 
-  constructor(public dialog: MatDialog, private stockService: StockService) {}
+  constructor(private stockService: StockService) {}
 
   editStock(stock: IStock): void {
     this.stockService.stockSelected = JSON.parse(JSON.stringify(stock));

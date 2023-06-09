@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { MatDrawer } from '@angular/material/sidenav';
 import { StockService } from 'src/services/stock.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { StockService } from 'src/services/stock.service';
 })
 export class EditStockDrawerComponent {
   @Input()
-  drawer: any;
+  drawer: MatDrawer;
 
   constructor(public stockService: StockService) {}
 
