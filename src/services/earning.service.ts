@@ -1,7 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IEarning } from 'src/interfaces/IEarning';
-import { IEarningPageable } from 'src/interfaces/IEarningPageable';
 import { HostService } from './host.service';
 
 @Injectable({

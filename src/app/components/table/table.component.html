@@ -1,6 +1,5 @@
 <div class="mat-elevation-z8">
-  <span>teste</span>
-  <table mat-table [dataSource]="dataSource">
+  <table *ngIf="data" mat-table [dataSource]="data.content">
     <ng-container *ngFor="let column of columns" [matColumnDef]="column.name">
       <th
         [ngClass]="{ 'align-center': column.alignCenter }"
@@ -28,4 +27,13 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
+
+  <mat-paginator
+    #paginator
+    *ngIf="showPaginator && data"
+    (page)="handlePageEvent($event)"
+    [length]="data.totalElements"
+    [pageSize]="10"
+  >
+  </mat-paginator>
 </div>

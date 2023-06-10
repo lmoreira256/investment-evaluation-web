@@ -1,12 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { PageEvent } from '@angular/material/paginator';
-import { IEarning } from 'src/interfaces/IEarning';
-import { IEarningPageable } from 'src/interfaces/IEarningPageable';
 import { EarningService } from 'src/services/earning.service';
 import Formatter from 'src/utils/Formatter';
 import { NewEarningDialogComponent } from '../new-earning-dialog/new-earning-dialog.component';
 import { ITableColumn } from 'src/interfaces/ITableColumn';
+import { TableComponent } from 'src/app/components/table/table.component';
 
 @Component({
   selector: 'app-historic-table',
@@ -14,19 +12,13 @@ import { ITableColumn } from 'src/interfaces/ITableColumn';
   styleUrls: ['./historic-table.component.scss'],
 })
 export class HistoricTableComponent {
-  pageIndex: string = '0';
-  dataSource = [];
-  pageable: IEarningPageable = null as any;
-  displayedColumns: string[] = [
-    'stockName',
-    'payday',
-    'amountPaid',
-    'description',
-  ];
+  @ViewChild('table', { static: true })
+  table: TableComponent;
+
   columns: ITableColumn[] = [
     {
       name: 'stockName',
-      description: 'Nome do Ativo',
+      description: 'Ativo',
       type: 'text',
       alignCenter: true,
       returnView: false,
@@ -56,31 +48,15 @@ export class HistoricTableComponent {
 
   constructor(
     public formatter: Formatter,
-    private earningService: EarningService,
+    public earningService: EarningService,
     public dialog: MatDialog
   ) {}
-
-  ngOnInit() {
-    this.getEarnings();
-  }
-
-  handlePageEvent(e: PageEvent) {
-    this.pageIndex = e.pageIndex.toString();
-    this.getEarnings();
-  }
-
-  getEarnings() {
-    this.earningService.list(this.pageIndex).subscribe((data: any) => {
-      this.dataSource = data.content;
-      this.pageable = data;
-    });
-  }
 
   createEarning() {
     const dialogRef = this.dialog.open(NewEarningDialogComponent);
 
-    dialogRef.afterClosed().subscribe((result) => {
-      this.getEarnings();
+    dialogRef.afterClosed().subscribe(() => {
+      this.table.updateData();
     });
   }
 }
