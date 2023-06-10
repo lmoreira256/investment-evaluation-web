@@ -6,6 +6,7 @@ import { IEarningPageable } from 'src/interfaces/IEarningPageable';
 import { EarningService } from 'src/services/earning.service';
 import Formatter from 'src/utils/Formatter';
 import { NewEarningDialogComponent } from '../new-earning-dialog/new-earning-dialog.component';
+import { ITableColumn } from 'src/interfaces/ITableColumn';
 
 @Component({
   selector: 'app-historic-table',
@@ -14,13 +15,43 @@ import { NewEarningDialogComponent } from '../new-earning-dialog/new-earning-dia
 })
 export class HistoricTableComponent {
   pageIndex: string = '0';
-  dataSource: IEarning[] = [];
+  dataSource = [];
   pageable: IEarningPageable = null as any;
   displayedColumns: string[] = [
     'stockName',
     'payday',
     'amountPaid',
     'description',
+  ];
+  columns: ITableColumn[] = [
+    {
+      name: 'stockName',
+      description: 'Nome do Ativo',
+      type: 'text',
+      alignCenter: true,
+      returnView: false,
+    },
+    {
+      name: 'payday',
+      description: 'Data Pagamento',
+      type: 'date',
+      alignCenter: false,
+      returnView: false,
+    },
+    {
+      name: 'amountPaid',
+      description: 'Valor',
+      type: 'money',
+      alignCenter: false,
+      returnView: true,
+    },
+    {
+      name: 'description',
+      description: 'Descrição',
+      type: 'text',
+      alignCenter: false,
+      returnView: false,
+    },
   ];
 
   constructor(

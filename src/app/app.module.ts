@@ -29,6 +29,7 @@ import { EditStockDrawerComponent } from './stock/edit-stock-drawer/edit-stock-d
 import { StockInfoComponent } from './stock/edit-stock-drawer/stock-info/stock-info.component';
 import { StockValueComponent } from './stock/edit-stock-drawer/stock-value/stock-value.component';
 import { StockReturnComponent } from './stock/edit-stock-drawer/stock-return/stock-return.component';
+import { TableComponent } from './components/table/table.component';
 
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
   align: 'left',
@@ -56,6 +57,7 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     StockInfoComponent,
     StockValueComponent,
     StockReturnComponent,
+    TableComponent,
   ],
   imports: [
     BrowserModule,
