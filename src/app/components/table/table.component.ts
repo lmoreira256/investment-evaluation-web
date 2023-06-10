@@ -43,6 +43,18 @@ export class TableComponent {
       return this.formatter.formatDate(element[column.name]);
     }
 
+    if (column.type == 'percent') {
+      return this.formatter.formatPercent(element[column.name]);
+    }
+
+    if (column.type == 'datetime') {
+      return this.formatter.formatDateTime(element[column.name]);
+    }
+
+    if (column.type == 'activetype') {
+      return this.formatter.formatEnum(element[column.name]);
+    }
+
     return element[column.name];
   }
 

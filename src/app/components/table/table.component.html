@@ -14,8 +14,21 @@
           class="column-value"
         >
           <div *ngIf="column.returnView" class="return-view">
-            <span class="info"></span>
-            <mat-icon class="icon">{{ getIcon(element, column) }}</mat-icon>
+            <span
+              [ngClass]="
+                element[column.name] > 0
+                  ? 'positive-backgroud'
+                  : 'negative-backgroud'
+              "
+              class="info"
+            ></span>
+            <mat-icon
+              [ngClass]="
+                element[column.name] > 0 ? 'positive-color' : 'negative-color'
+              "
+              class="icon"
+              >{{ getIcon(element, column) }}</mat-icon
+            >
           </div>
           <span [ngClass]="{ 'money-value': column.type == 'money' }">{{
             mountValue(element, column)

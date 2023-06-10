@@ -1,24 +1,18 @@
 .stock-historic {
-    padding: 35px 35px 0 35px;
+  padding: 35px 35px 0 35px;
 }
 
 h1 {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .table {
-    height: 633px;
-    background: #FFF;
-    display: grid;
-}
-
-
-mat-paginator {
-    border-top: 1px solid #E6E6E6;
-    align-self: flex-end;
+  height: 633px;
+  background: #fff;
+  display: grid;
 }
 
 .stock-historic-title {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }

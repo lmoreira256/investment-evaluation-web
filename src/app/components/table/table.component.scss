@@ -34,18 +34,32 @@
   align-items: center;
 
   .info {
-    background: #00bf5c;
     width: 4px;
     height: 30px;
     margin-right: 5px;
   }
 
+  .positive-backgroud {
+    background: #2a7bea;
+  }
+
+  .negative-backgroud {
+    background: red;
+  }
+
   .icon {
-    color: #00bf5c;
     font-size: 20px;
     width: 20px;
     height: 20px;
     margin-right: 2px;
+  }
+
+  .positive-color {
+    color: #2a7bea;
+  }
+
+  .negative-color {
+    color: red;
   }
 
   .return-view {
