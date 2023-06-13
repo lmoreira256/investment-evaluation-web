@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IStockHistoricPageable } from 'src/interfaces/IStockHistoricPageable';
 import { IStockHistoric } from 'src/interfaces/IStockHistoric';
 import { StockHistoricService } from 'src/services/stock-historic.service';
 import { PageEvent } from '@angular/material/paginator';
 import Formatter from '../../utils/Formatter';
 import { ITableColumn } from 'src/interfaces/ITableColumn';
+import { TableComponent } from '../components/table/table.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,18 +13,8 @@ import { ITableColumn } from 'src/interfaces/ITableColumn';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
-  pageIndex: string = '0';
-  pageable: IStockHistoricPageable = null as any;
-  dataSource: IStockHistoric[] = [];
-  displayedColumns: string[] = [
-    'actualValue',
-    'amount',
-    'cashReturn',
-    'profitability',
-    'purchaseValue',
-    'historicType',
-    'createdAt',
-  ];
+  @ViewChild('table', { static: true })
+  table: TableComponent;
 
   columns: ITableColumn[] = [
     {
@@ -82,25 +73,9 @@ export class DashboardComponent {
     public stockHistoricService: StockHistoricService
   ) {}
 
-  ngOnInit() {
-    this.getStockHistorics();
-  }
-
-  handlePageEvent(e: PageEvent) {
-    this.pageIndex = e.pageIndex.toString();
-    this.getStockHistorics();
-  }
-
-  getStockHistorics() {
-    this.stockHistoricService.list(this.pageIndex).subscribe((data: any) => {
-      this.dataSource = data.content;
-      this.pageable = data;
-    });
-  }
-
   createStockHistoric() {
     this.stockHistoricService.post().subscribe(() => {
-      this.getStockHistorics();
+      this.table.updateData();
     });
   }
 }

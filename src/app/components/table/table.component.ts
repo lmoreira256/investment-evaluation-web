@@ -78,6 +78,10 @@ export class TableComponent {
   }
 
   updateData() {
-    this.paginator.firstPage();
+    if (this.paginator.pageIndex == 0) {
+      this.callGetDataFunction();
+    } else {
+      this.paginator.firstPage();
+    }
   }
 }
