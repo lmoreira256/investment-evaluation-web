@@ -3,6 +3,12 @@
   background: #fff;
 }
 
+h1 {
+  margin: 0;
+  font-size: 25px;
+  color: black;
+}
+
 .mdc-button {
   background-color: #0500f5 !important;
   color: #fff !important;
@@ -16,6 +22,7 @@ mat-paginator {
 .title {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 30px;
 }
 
 .center {
