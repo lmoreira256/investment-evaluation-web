@@ -1,4 +1,14 @@
-.earning-historic {
-    padding: 35px;
-    width: 700px;
+.earning {
+  height: 100vh;
+  background-color: #f3f3f3;
+
+  .earning-content {
+    padding: 50px;
+
+    h1 {
+      margin: 0;
+      font-size: 25px;
+      color: black;
+    }
+  }
 }

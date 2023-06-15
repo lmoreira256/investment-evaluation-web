@@ -1,6 +1,16 @@
 .stock-table {
   height: 100vh;
   background-color: #f3f3f3;
+
+  .stock-table-content {
+    padding: 50px;
+
+    h1 {
+      margin: 0;
+      font-size: 25px;
+      color: black;
+    }
+  }
 }
 
 .drawer-container {
@@ -14,10 +24,6 @@
   justify-content: space-between;
   align-items: center;
   height: 40px;
-}
-
-.stock-table-content {
-  padding: 50px;
 }
 
 .stock-list {
