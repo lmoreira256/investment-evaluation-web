@@ -1,7 +1,7 @@
 export interface IListColumn {
-  field: string;
+  fieldOne: string;
+  fieldTwo: string;
   name: string;
-  description: string;
   type: string;
   formatType: string;
 }

@@ -3,46 +3,46 @@
     <div *ngFor="let column of columns">
       <img
         *ngIf="column.type == 'image'"
-        [src]="'./assets/active_logos/' + item[column.field] + '.png'"
+        [src]="'./assets/active_logos/' + item[column.fieldOne] + '.png'"
       />
 
       <div *ngIf="column.type == 'info'" class="info">
         <div>
-          <span class="title elipsis">{{ item[column.field] }}</span>
+          <span class="title elipsis">{{ item[column.fieldOne] }}</span>
           <br />
-          <span class="description elipsis">{{
-            item[column.description]
-          }}</span>
+          <span class="description elipsis">{{ item[column.fieldTwo] }}</span>
         </div>
       </div>
 
       <div *ngIf="column.type == 'value-info'" class="value-info">
         <span
-          [ngClass]="item[column.field] > 0 ? 'positive-info' : 'negative-info'"
+          [ngClass]="
+            item[column.fieldOne] > 0 ? 'positive-info' : 'negative-info'
+          "
         >
         </span>
 
-        <mat-icon *ngIf="item[column.field] > 0" class="icon positive">
+        <mat-icon *ngIf="item[column.fieldOne] > 0" class="icon positive">
           arrow_upward
         </mat-icon>
 
-        <mat-icon *ngIf="item[column.field] < 0" class="icon negative">
+        <mat-icon *ngIf="item[column.fieldOne] < 0" class="icon negative">
           arrow_downward
         </mat-icon>
 
         <div>
           <span
             class="value"
-            [ngClass]="item[column.field] > 0 ? 'positive' : 'negative'"
+            [ngClass]="item[column.fieldOne] > 0 ? 'positive' : 'negative'"
           >
-            {{ formatter.formatCurrency(item[column.field]) }}
+            {{ formatter.formatCurrency(item[column.fieldOne]) }}
           </span>
           <br />
           <span
             class="value"
-            [ngClass]="item[column.description] > 0 ? 'positive' : 'negative'"
+            [ngClass]="item[column.fieldTwo] > 0 ? 'positive' : 'negative'"
           >
-            {{ formatter.formatPercent(item[column.description]) }}
+            {{ formatter.formatPercent(item[column.fieldTwo]) }}
           </span>
         </div>
       </div>
@@ -53,23 +53,23 @@
           <br />
 
           <span *ngIf="column.formatType == 'currency'" class="value">
-            {{ formatter.formatCurrency(item[column.field]) }}
+            {{ formatter.formatCurrency(item[column.fieldOne]) }}
           </span>
 
           <span *ngIf="column.formatType == 'stockType'" class="value">
-            {{ formatter.formatEnum(item[column.field]) }}
+            {{ formatter.formatEnum(item[column.fieldOne]) }}
           </span>
 
           <span *ngIf="column.formatType == 'dateTime'" class="value">
-            {{ formatter.formatDateTime(item[column.field]) }}
+            {{ formatter.formatDateTime(item[column.fieldOne]) }}
           </span>
 
           <span *ngIf="column.formatType == 'date'" class="value">
-            {{ formatter.formatDate(item[column.field]) }}
+            {{ formatter.formatDate(item[column.fieldOne]) }}
           </span>
 
           <span *ngIf="column.formatType == ''" class="value">
-            {{ item[column.field] }}
+            {{ item[column.fieldOne] }}
           </span>
         </div>
       </div>
