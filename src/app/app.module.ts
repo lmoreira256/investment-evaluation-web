@@ -20,8 +20,6 @@ import {
   CurrencyMaskConfig,
   CURRENCY_MASK_CONFIG,
 } from 'ng2-currency-mask';
-import { StockListComponent } from './stock/stock-list/stock-list.component';
-import { ItemComponent } from './stock/stock-list/item/item.component';
 import { NewEarningDialogComponent } from './earning/new-earning-dialog/new-earning-dialog.component';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { NewStockDialogComponent } from './stock/new-stock-dialog/new-stock-dialog.component';
@@ -51,8 +49,6 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     PageNotFoundComponent,
     EarningComponent,
     HistoricTableComponent,
-    StockListComponent,
-    ItemComponent,
     NewEarningDialogComponent,
     NewStockDialogComponent,
     EditStockDrawerComponent,

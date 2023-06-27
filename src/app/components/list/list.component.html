@@ -1,3 +1,7 @@
 <div class="list" *ngIf="data">
-  <app-item-list *ngFor="let item of data"></app-item-list>
+  <app-item-list
+    *ngFor="let item of data"
+    [item]="item"
+    [columns]="columns"
+  ></app-item-list>
 </div>

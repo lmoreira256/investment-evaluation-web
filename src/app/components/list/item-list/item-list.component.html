@@ -1,3 +1,78 @@
 <div class="item-list">
-  <p>item-list works!</p>
+  <div *ngIf="item" class="content">
+    <div *ngFor="let column of columns">
+      <img
+        *ngIf="column.type == 'image'"
+        [src]="'./assets/active_logos/' + item[column.field] + '.png'"
+      />
+
+      <div *ngIf="column.type == 'info'" class="info">
+        <div>
+          <span class="title elipsis">{{ item[column.field] }}</span>
+          <br />
+          <span class="description elipsis">{{
+            item[column.description]
+          }}</span>
+        </div>
+      </div>
+
+      <div *ngIf="column.type == 'value-info'" class="value-info">
+        <span
+          [ngClass]="item[column.field] > 0 ? 'positive-info' : 'negative-info'"
+        >
+        </span>
+
+        <mat-icon *ngIf="item[column.field] > 0" class="icon positive">
+          arrow_upward
+        </mat-icon>
+
+        <mat-icon *ngIf="item[column.field] < 0" class="icon negative">
+          arrow_downward
+        </mat-icon>
+
+        <div>
+          <span
+            class="value"
+            [ngClass]="item[column.field] > 0 ? 'positive' : 'negative'"
+          >
+            {{ formatter.formatCurrency(item[column.field]) }}
+          </span>
+          <br />
+          <span
+            class="value"
+            [ngClass]="item[column.description] > 0 ? 'positive' : 'negative'"
+          >
+            {{ formatter.formatPercent(item[column.description]) }}
+          </span>
+        </div>
+      </div>
+
+      <div *ngIf="column.type == 'text'" class="text">
+        <div>
+          <span class="title">{{ column.name }}</span>
+          <br />
+
+          <span *ngIf="column.formatType == 'currency'" class="value">
+            {{ formatter.formatCurrency(item[column.field]) }}
+          </span>
+
+          <span *ngIf="column.formatType == 'stockType'" class="value">
+            {{ formatter.formatEnum(item[column.field]) }}
+          </span>
+
+          <span *ngIf="column.formatType == 'dateTime'" class="value">
+            {{ formatter.formatDateTime(item[column.field]) }}
+          </span>
+
+          <span *ngIf="column.formatType == 'date'" class="value">
+            {{ formatter.formatDate(item[column.field]) }}
+          </span>
+
+          <span *ngIf="column.formatType == ''" class="value">
+            {{ item[column.field] }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

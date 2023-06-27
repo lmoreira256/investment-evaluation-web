@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ITableColumn } from 'src/interfaces/ITableColumn';
+import { IListColumn } from 'src/interfaces/IListColumn';
 
 @Component({
   selector: 'app-list',
@@ -11,5 +11,5 @@ export class ListComponent {
   data = null as any;
 
   @Input()
-  columns: ITableColumn[] = null as any;
+  columns: IListColumn[] = null as any;
 }
