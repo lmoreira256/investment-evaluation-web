@@ -1,0 +1,99 @@
+.item-list {
+  height: 65px;
+  background: #ffffff;
+  margin: 15px 0;
+  padding: 15px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+
+  .content {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    justify-content: space-between;
+
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 5px;
+    }
+
+    .value {
+      font-weight: bold;
+    }
+
+    .info {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      width: 160px;
+
+      .title {
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      .description {
+        color: #989898;
+      }
+    }
+
+    .value-info {
+      display: flex;
+      width: 130px;
+      height: 100%;
+      align-items: center;
+
+      .positive-info,
+      .negative-info {
+        width: 5px;
+        height: 40px;
+      }
+
+      .positive-info {
+        background-color: #2a7bea;
+      }
+
+      .negative-info {
+        background-color: red;
+      }
+
+      .icon {
+        width: 30px;
+        height: 30px;
+        margin: 0 5px;
+        font-size: 32px;
+      }
+
+      .negative {
+        color: red;
+      }
+
+      .positive {
+        color: #2a7bea;
+      }
+    }
+
+    .text {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      width: 160px;
+
+      .title {
+        font-size: 18px;
+      }
+
+      .value {
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.item-list:hover {
+  border: 2px solid #0500f5;
+}

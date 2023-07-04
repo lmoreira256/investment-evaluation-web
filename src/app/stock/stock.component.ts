@@ -4,6 +4,7 @@ import { StockService } from 'src/services/stock.service';
 import Formatter from 'src/utils/Formatter';
 import { NewStockDialogComponent } from './new-stock-dialog/new-stock-dialog.component';
 import { MatDrawer } from '@angular/material/sidenav';
+import { IListColumn } from 'src/interfaces/IListColumn';
 
 @Component({
   selector: 'app-stock',
@@ -12,6 +13,72 @@ import { MatDrawer } from '@angular/material/sidenav';
 })
 export class StockComponent {
   items: any;
+
+  listColumns: IListColumn[] = [
+    {
+      fieldOne: 'active',
+      fieldTwo: '',
+      name: '',
+      type: 'image',
+      formatType: '',
+    },
+    {
+      fieldOne: 'active',
+      fieldTwo: 'description',
+      name: '',
+      type: 'info',
+      formatType: '',
+    },
+    {
+      fieldOne: 'cashReturn',
+      fieldTwo: 'profitability',
+      name: '',
+      type: 'value-info',
+      formatType: '',
+    },
+    {
+      fieldOne: 'amount',
+      fieldTwo: '',
+      name: 'Quantidade',
+      type: 'text',
+      formatType: '',
+    },
+    {
+      fieldOne: 'currentValue',
+      fieldTwo: '',
+      name: 'Valor Atual',
+      type: 'text',
+      formatType: 'currency',
+    },
+    {
+      fieldOne: 'purchaseValue',
+      fieldTwo: '',
+      name: 'Valor de Compra',
+      type: 'text',
+      formatType: 'currency',
+    },
+    {
+      fieldOne: 'averagePurchase',
+      fieldTwo: '',
+      name: 'Média de Compra',
+      type: 'text',
+      formatType: 'currency',
+    },
+    {
+      fieldOne: 'stockType',
+      fieldTwo: '',
+      name: 'Tipo',
+      type: 'text',
+      formatType: 'stockType',
+    },
+    {
+      fieldOne: 'updatedAt',
+      fieldTwo: '',
+      name: 'Última atualização',
+      type: 'text',
+      formatType: 'date',
+    },
+  ];
 
   @ViewChild('drawer', { static: true })
   drawer: MatDrawer;
@@ -53,5 +120,10 @@ export class StockComponent {
     this.stockService.listAll().subscribe((data) => {
       this.items = data;
     });
+  }
+
+  editStock(stock: any): void {
+    this.stockService.stockSelected = JSON.parse(JSON.stringify(stock));
+    this.drawer.toggle();
   }
 }
