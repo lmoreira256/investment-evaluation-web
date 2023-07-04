@@ -1,11 +1,11 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { StockService } from 'src/services/stock.service';
 import Formatter from 'src/utils/Formatter';
 import { NewStockDialogComponent } from './new-stock-dialog/new-stock-dialog.component';
-import { MatDrawer } from '@angular/material/sidenav';
 import { IListColumn } from 'src/interfaces/IListColumn';
 import { IActiveSummary } from 'src/interfaces/IActiveSummary';
+import { ActiveService } from 'src/services/active.service';
 
 @Component({
   selector: 'app-stock',
@@ -17,22 +17,22 @@ export class StockComponent {
 
   listColumns: IListColumn[] = [
     {
-      fieldOne: 'active',
+      fieldOne: 'name',
       fieldTwo: '',
       name: '',
       type: 'image',
       formatType: '',
     },
     {
-      fieldOne: 'active',
+      fieldOne: 'name',
       fieldTwo: 'description',
       name: '',
       type: 'info',
       formatType: '',
     },
     {
-      fieldOne: 'cashReturn',
-      fieldTwo: 'profitability',
+      fieldOne: 'resultValue',
+      fieldTwo: 'resultPercentageValue',
       name: '',
       type: 'value-info',
       formatType: '',
@@ -59,7 +59,7 @@ export class StockComponent {
       formatType: 'currency',
     },
     {
-      fieldOne: 'averagePurchase',
+      fieldOne: 'averageValue',
       fieldTwo: '',
       name: 'Média de Compra',
       type: 'text',
@@ -79,37 +79,40 @@ export class StockComponent {
   constructor(
     public dialog: MatDialog,
     public formatter: Formatter,
-    public stockService: StockService
+    public stockService: StockService,
+    public activeService: ActiveService
   ) {}
 
   ngOnInit() {
-    this.getStockSummary();
+    this.getSummary();
     this.getStocks();
   }
 
   saveStock() {
-    this.stockService.put(this.stockService.stockSelected).subscribe(() => {
-      this.stockService.stockSelected = null;
-    });
+    this.activeService
+      .update(this.activeService.activeSelected)
+      .subscribe(() => {
+        this.activeService.activeSelected = null;
+      });
   }
 
   createStock() {
     const dialogRef = this.dialog.open(NewStockDialogComponent);
 
     dialogRef.afterClosed().subscribe(() => {
-      this.getStockSummary();
+      this.getSummary();
       this.getStocks();
     });
   }
 
   getStocks() {
-    this.stockService.listOnlyStock().subscribe((data) => {
+    this.stockService.list().subscribe((data) => {
       this.items = data;
     });
   }
 
-  getStockSummary() {
-    this.stockService.getStockSummary().subscribe((data) => {
+  getSummary() {
+    this.stockService.summary().subscribe((data) => {
       this.summary = data;
     });
   }

@@ -4,14 +4,14 @@ import { HostService } from './host.service';
 @Injectable({
   providedIn: 'root',
 })
-export class StockService {
+export class RealEstateFundService {
   constructor(private hostService: HostService) {}
 
   list() {
-    return this.hostService.get('stock');
+    return this.hostService.get('real-estate-fund');
   }
 
   summary() {
-    return this.hostService.get('stock/summary');
+    return this.hostService.get('real-estate-fund/summary');
   }
 }

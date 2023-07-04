@@ -6,8 +6,8 @@
       <tr>
         <td>
           <mat-form-field>
-            <mat-label>Ativo</mat-label>
-            <input matInput [(ngModel)]="stock.active" name="active" />
+            <mat-label>Nome</mat-label>
+            <input matInput [(ngModel)]="active.name" name="name" />
           </mat-form-field>
         </td>
         <td>
@@ -15,7 +15,7 @@
             <mat-label>Descrição</mat-label>
             <input
               matInput
-              [(ngModel)]="stock.description"
+              [(ngModel)]="active.description"
               name="description"
             />
           </mat-form-field>
@@ -27,7 +27,7 @@
             <mat-label>Quantidade</mat-label>
             <input
               type="number"
-              [(ngModel)]="stock.amount"
+              [(ngModel)]="active.amount"
               matInput
               name="amount"
             />
@@ -36,7 +36,7 @@
         <td>
           <mat-form-field appearance="fill">
             <mat-label>Tipo</mat-label>
-            <mat-select [(ngModel)]="stock.stockType" name="stockType">
+            <mat-select [(ngModel)]="active.activeType" name="activeType">
               <mat-option value="STOCK">Ação</mat-option>
               <mat-option value="REAL_ESTATE_FUND">FII</mat-option>
               <mat-option value="BDR">BDR</mat-option>
@@ -50,7 +50,7 @@
             <mat-label>Valor de compra</mat-label>
             <input
               matInput
-              [(ngModel)]="stock.purchaseValue"
+              [(ngModel)]="active.purchaseValue"
               currencyMask
               name="purchaseValue"
             />
@@ -61,7 +61,7 @@
             <mat-label>Valor Atual</mat-label>
             <input
               matInput
-              [(ngModel)]="stock.currentValue"
+              [(ngModel)]="active.currentValue"
               currencyMask
               name="currentValue"
             />
@@ -74,9 +74,9 @@
             <mat-label>Média de compra</mat-label>
             <input
               matInput
-              [(ngModel)]="stock.averagePurchase"
+              [(ngModel)]="active.averageValue"
               currencyMask
-              name="averagePurchase"
+              name="averageValue"
             />
           </mat-form-field>
         </td>
@@ -89,17 +89,17 @@
     <h3>
       Retorno (R$):
       {{
-        stock.currentValue
-          ? formatter.formatCurrency(stock.currentValue - stock.purchaseValue)
+        active.currentValue
+          ? formatter.formatCurrency(active.currentValue - active.purchaseValue)
           : "R$ 0,00"
       }}
     </h3>
     <h3>
       Retorno (%):
       {{
-        stock.currentValue
+        active.currentValue
           ? formatter.formatPercent(
-              (stock.currentValue * 100) / stock.purchaseValue - 100
+              (active.currentValue * 100) / active.purchaseValue - 100
             )
           : "0,00%"
       }}

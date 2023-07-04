@@ -7,7 +7,7 @@
       <input
         type="number"
         matInput
-        [(ngModel)]="stockService.stockSelected.amount"
+        [(ngModel)]="activeService.activeSelected!.amount"
         name="amount"
       />
     </mat-form-field>
@@ -17,8 +17,8 @@
       <input
         matInput
         currencyMask
-        [(ngModel)]="stockService.stockSelected.averagePurchase"
-        name="averagePurchase"
+        [(ngModel)]="activeService.activeSelected!.averageValue"
+        name="averageValue"
       />
     </mat-form-field>
 
@@ -27,7 +27,7 @@
       <input
         matInput
         currencyMask
-        [(ngModel)]="stockService.stockSelected.purchaseValue"
+        [(ngModel)]="activeService.activeSelected!.purchaseValue"
         name="purchaseValue"
       />
     </mat-form-field>
@@ -37,7 +37,7 @@
       <input
         matInput
         currencyMask
-        [(ngModel)]="stockService.stockSelected.currentValue"
+        [(ngModel)]="activeService.activeSelected!.currentValue"
         name="currentValue"
       />
     </mat-form-field>

@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { MatDialogRef } from '@angular/material/dialog';
 import { IEarning } from 'src/interfaces/IEarning';
+import { ActiveService } from 'src/services/active.service';
 import { EarningService } from 'src/services/earning.service';
-import { StockService } from 'src/services/stock.service';
 import Formatter from 'src/utils/Formatter';
 
 @Component({
@@ -12,13 +12,13 @@ import Formatter from 'src/utils/Formatter';
   styleUrls: ['./new-earning-dialog.component.scss'],
 })
 export class NewEarningDialogComponent {
-  stocks: any;
+  actives: any;
   earning: IEarning = {} as IEarning;
 
   constructor(
     public formatter: Formatter,
     public dialogRef: MatDialogRef<NewEarningDialogComponent>,
-    private stockService: StockService,
+    private activeService: ActiveService,
     private earningService: EarningService
   ) {}
 
@@ -27,8 +27,8 @@ export class NewEarningDialogComponent {
   }
 
   getStocks() {
-    this.stockService.listAll().subscribe((data) => {
-      this.stocks = data;
+    this.activeService.list().subscribe((data) => {
+      this.actives = data;
     });
   }
 

@@ -1,6 +1,9 @@
 <mat-drawer-container autosize>
   <mat-drawer #drawer class="drawer-container" position="end" mode="over">
-    <app-edit-stock-drawer *ngIf="stockService.stockSelected" [drawer]="drawer">
+    <app-edit-stock-drawer
+      *ngIf="activeService.activeSelected"
+      [drawer]="drawer"
+    >
     </app-edit-stock-drawer>
   </mat-drawer>
 
@@ -16,7 +19,7 @@
         <app-list
           [data]="items"
           [columns]="listColumns"
-          [drawerFunction]="editStock"
+          [drawerFunction]="editActive"
           [drawer]="drawer"
         ></app-list>
       </div>

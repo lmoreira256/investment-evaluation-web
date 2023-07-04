@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { IStock } from 'src/interfaces/IStock';
+import { IActive } from 'src/interfaces/IActive';
+import { ActiveService } from 'src/services/active.service';
 import { StockService } from 'src/services/stock.service';
 import Formatter from 'src/utils/Formatter';
 
@@ -10,12 +11,12 @@ import Formatter from 'src/utils/Formatter';
   styleUrls: ['./new-stock-dialog.component.scss'],
 })
 export class NewStockDialogComponent {
-  stock: IStock = {} as IStock;
+  active: IActive = {} as IActive;
 
   constructor(
     public formatter: Formatter,
     public dialogRef: MatDialogRef<NewStockDialogComponent>,
-    private stockService: StockService
+    private activeService: ActiveService
   ) {}
 
   closeDialog(): void {
@@ -23,8 +24,7 @@ export class NewStockDialogComponent {
   }
 
   save() {
-    console.log('newStock: ', this.stock);
-    this.stockService.post(this.stock).subscribe(() => {
+    this.activeService.create(this.active).subscribe(() => {
       this.closeDialog();
     });
   }

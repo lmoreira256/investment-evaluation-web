@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
-import { StockService } from 'src/services/stock.service';
+import { ActiveService } from 'src/services/active.service';
 
 @Component({
   selector: 'app-edit-stock-drawer',
@@ -11,12 +11,14 @@ export class EditStockDrawerComponent {
   @Input()
   drawer: MatDrawer;
 
-  constructor(public stockService: StockService) {}
+  constructor(public activeService: ActiveService) {}
 
-  saveStock() {
-    this.stockService.put(this.stockService.stockSelected).subscribe(() => {
-      this.stockService.stockSelected = null;
-      this.drawer.toggle();
-    });
+  saveActive() {
+    this.activeService
+      .update(this.activeService.activeSelected)
+      .subscribe(() => {
+        this.activeService.activeSelected = null;
+        this.drawer.toggle();
+      });
   }
 }

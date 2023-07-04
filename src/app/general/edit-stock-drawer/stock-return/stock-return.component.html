@@ -7,8 +7,8 @@
       <span>
         {{
           formatter.formatCurrency(
-            stockService.stockSelected.currentValue -
-              stockService.stockSelected.purchaseValue
+            activeService.activeSelected!.currentValue -
+              activeService.activeSelected!.purchaseValue
           )
         }}
       </span>
@@ -18,10 +18,10 @@
       <span>Rentabilidade (%)</span>
       <span>
         {{
-          stockService.stockSelected.currentValue
+          activeService.activeSelected!.currentValue
             ? formatter.formatPercent(
-                (stockService.stockSelected.currentValue * 100) /
-                  stockService.stockSelected.purchaseValue -
+                (activeService.activeSelected!.currentValue * 100) /
+                  activeService.activeSelected!.purchaseValue -
                   100
               )
             : "0,00%"
@@ -32,8 +32,8 @@
     <div
       class="display"
       [ngClass]="
-        stockService.stockSelected.currentValue -
-          stockService.stockSelected.purchaseValue >
+        activeService.activeSelected!.currentValue -
+          activeService.activeSelected!.purchaseValue >
         0
           ? 'positive-border'
           : 'negative-border'
@@ -42,8 +42,8 @@
       <div
         class="display-content"
         [ngClass]="
-          stockService.stockSelected.currentValue -
-            stockService.stockSelected.purchaseValue >
+          activeService.activeSelected!.currentValue -
+            activeService.activeSelected!.purchaseValue >
           0
             ? 'positive-backgroud'
             : 'negative-backgroud'
@@ -54,17 +54,17 @@
           <span class="value">
             {{
               formatter.formatCurrency(
-                stockService.stockSelected.currentValue -
-                  stockService.stockSelected.purchaseValue
+                activeService.activeSelected!.currentValue -
+                  activeService.activeSelected!.purchaseValue
               )
             }}
           </span>
           <span class="percentage">
             ({{
-              stockService.stockSelected.currentValue
+              activeService.activeSelected!.currentValue
                 ? formatter.formatPercent(
-                    (stockService.stockSelected.currentValue * 100) /
-                      stockService.stockSelected.purchaseValue -
+                    (activeService.activeSelected!.currentValue * 100) /
+                      activeService.activeSelected!.purchaseValue -
                       100
                   )
                 : "0,00%"

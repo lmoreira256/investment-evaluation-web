@@ -1,6 +1,6 @@
 export interface IEarning {
   id: string;
-  stockId: string;
+  activeId: string;
   amountPaid: number;
   description: String;
   payday: Date;

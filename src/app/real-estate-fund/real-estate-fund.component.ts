@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { IActiveSummary } from 'src/interfaces/IActiveSummary';
-import { StockService } from 'src/services/stock.service';
 import Formatter from 'src/utils/Formatter';
 import { NewStockDialogComponent } from '../stock/new-stock-dialog/new-stock-dialog.component';
 import { IListColumn } from 'src/interfaces/IListColumn';
+import { RealEstateFundService } from 'src/services/real-estate-fund.service';
 
 @Component({
   selector: 'app-real-estate-fund',
@@ -16,22 +16,22 @@ export class RealEstateFundComponent {
 
   listColumns: IListColumn[] = [
     {
-      fieldOne: 'active',
+      fieldOne: 'name',
       fieldTwo: '',
       name: '',
       type: 'image',
       formatType: '',
     },
     {
-      fieldOne: 'active',
+      fieldOne: 'name',
       fieldTwo: 'description',
       name: '',
       type: 'info',
       formatType: '',
     },
     {
-      fieldOne: 'cashReturn',
-      fieldTwo: 'profitability',
+      fieldOne: 'resultValue',
+      fieldTwo: 'resultPercentageValue',
       name: '',
       type: 'value-info',
       formatType: '',
@@ -58,7 +58,7 @@ export class RealEstateFundComponent {
       formatType: 'currency',
     },
     {
-      fieldOne: 'averagePurchase',
+      fieldOne: 'averageValue',
       fieldTwo: '',
       name: 'Média de Compra',
       type: 'text',
@@ -78,7 +78,7 @@ export class RealEstateFundComponent {
   constructor(
     public dialog: MatDialog,
     public formatter: Formatter,
-    public stockService: StockService
+    public realEstateFundService: RealEstateFundService
   ) {}
 
   ngOnInit() {
@@ -87,7 +87,7 @@ export class RealEstateFundComponent {
   }
 
   getSummary() {
-    this.stockService.getRealEstateFundSummary().subscribe((data) => {
+    this.realEstateFundService.summary().subscribe((data) => {
       this.summary = data;
     });
   }
@@ -102,7 +102,7 @@ export class RealEstateFundComponent {
   }
 
   getList() {
-    this.stockService.listOnlyRealEstateFund().subscribe((data) => {
+    this.realEstateFundService.list().subscribe((data) => {
       this.items = data;
     });
   }

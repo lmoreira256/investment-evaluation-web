@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { StockService } from 'src/services/stock.service';
+import { ActiveService } from 'src/services/active.service';
 import Formatter from 'src/utils/Formatter';
 
 @Component({
@@ -8,5 +8,8 @@ import Formatter from 'src/utils/Formatter';
   styleUrls: ['./stock-value.component.scss'],
 })
 export class StockValueComponent {
-  constructor(public formatter: Formatter, public stockService: StockService) {}
+  constructor(
+    public formatter: Formatter,
+    public activeService: ActiveService
+  ) {}
 }

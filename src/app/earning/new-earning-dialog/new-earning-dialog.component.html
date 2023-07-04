@@ -5,9 +5,9 @@
     <div class="container">
       <mat-form-field appearance="fill">
         <mat-label>Ativo</mat-label>
-        <mat-select [(ngModel)]="earning.stockId" name="stockId">
-          <mat-option *ngFor="let stock of stocks" [value]="stock.id">
-            {{ stock.active }}
+        <mat-select [(ngModel)]="earning.activeId" name="activeId">
+          <mat-option *ngFor="let active of actives" [value]="active.id">
+            {{ active.name }}
           </mat-option>
         </mat-select>
       </mat-form-field>

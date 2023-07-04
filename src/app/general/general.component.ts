@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import { IActiveSummary } from 'src/interfaces/IActiveSummary';
 import { IListColumn } from 'src/interfaces/IListColumn';
-import { StockService } from 'src/services/stock.service';
+import { ActiveService } from 'src/services/active.service';
 import Formatter from 'src/utils/Formatter';
 
 @Component({
@@ -15,22 +15,22 @@ export class GeneralComponent {
 
   listColumns: IListColumn[] = [
     {
-      fieldOne: 'active',
+      fieldOne: 'name',
       fieldTwo: '',
       name: '',
       type: 'image',
       formatType: '',
     },
     {
-      fieldOne: 'active',
+      fieldOne: 'name',
       fieldTwo: 'description',
       name: '',
       type: 'info',
       formatType: '',
     },
     {
-      fieldOne: 'cashReturn',
-      fieldTwo: 'profitability',
+      fieldOne: 'resultValue',
+      fieldTwo: 'resultPercentageValue',
       name: '',
       type: 'value-info',
       formatType: '',
@@ -57,7 +57,7 @@ export class GeneralComponent {
       formatType: 'currency',
     },
     {
-      fieldOne: 'averagePurchase',
+      fieldOne: 'averageValue',
       fieldTwo: '',
       name: 'Média de Compra',
       type: 'text',
@@ -84,36 +84,39 @@ export class GeneralComponent {
 
   summary: IActiveSummary | any;
 
-  constructor(public formatter: Formatter, public stockService: StockService) {}
+  constructor(
+    public formatter: Formatter,
+    public activeService: ActiveService
+  ) {}
 
   ngOnInit() {
-    this.getGeneralSummary();
-    this.getStocks();
+    this.getSummary();
+    this.getActives();
     this.drawerEvent();
   }
 
   drawerEvent() {
     this.drawer.openedChange.subscribe((isOpen: boolean) => {
       if (!isOpen) {
-        this.getGeneralSummary();
-        this.getStocks();
+        this.getSummary();
+        this.getActives();
       }
     });
   }
 
-  getStocks() {
-    this.stockService.listAll().subscribe((data) => {
+  getActives() {
+    this.activeService.list().subscribe((data) => {
       this.items = data;
     });
   }
 
-  editStock(stock: any): void {
-    this.stockService.stockSelected = JSON.parse(JSON.stringify(stock));
+  editActive(active: any): void {
+    this.activeService.activeSelected = JSON.parse(JSON.stringify(active));
     this.drawer.toggle();
   }
 
-  getGeneralSummary() {
-    this.stockService.getGeneralSummary().subscribe((data) => {
+  getSummary() {
+    this.activeService.summary().subscribe((data) => {
       this.summary = data;
     });
   }

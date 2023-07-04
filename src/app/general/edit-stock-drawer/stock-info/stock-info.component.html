@@ -1,23 +1,23 @@
 <div class="stock-info">
   <img
     [src]="
-      './assets/active_logos/' + stockService.stockSelected.active + '.png'
+      './assets/active_logos/' + activeService.activeSelected!.name + '.png'
     "
   />
 
   <div class="information">
-    <h1>{{ stockService.stockSelected.active }}</h1>
-    <p>{{ stockService.stockSelected.description }}</p>
+    <h1>{{ activeService.activeSelected!.name }}</h1>
+    <p>{{ activeService.activeSelected!.description }}</p>
   </div>
   <div class="return-information">
     <mat-icon
       class="icon"
       [ngClass]="
-        stockService.stockSelected.cashReturn > 0 ? 'positive' : 'negative'
+        activeService.activeSelected!.resultValue > 0 ? 'positive' : 'negative'
       "
     >
       {{
-        stockService.stockSelected.cashReturn > 0
+        activeService.activeSelected!.resultValue > 0
           ? "arrow_upward"
           : "arrow_downward"
       }}
@@ -25,17 +25,27 @@
     <div class="return-value">
       <span
         [ngClass]="
-          stockService.stockSelected.cashReturn > 0 ? 'positive' : 'negative'
+          activeService.activeSelected!.resultValue > 0
+            ? 'positive'
+            : 'negative'
         "
       >
-        {{ formatter.formatCurrency(stockService.stockSelected.cashReturn) }}
+        {{
+          formatter.formatCurrency(activeService.activeSelected!.resultValue)
+        }}
       </span>
       <span
         [ngClass]="
-          stockService.stockSelected.profitability > 0 ? 'positive' : 'negative'
+          activeService.activeSelected!.resultPercentageValue > 0
+            ? 'positive'
+            : 'negative'
         "
       >
-        {{ formatter.formatPercent(stockService.stockSelected.profitability) }}
+        {{
+          formatter.formatPercent(
+            activeService.activeSelected!.resultPercentageValue
+          )
+        }}
       </span>
     </div>
   </div>
