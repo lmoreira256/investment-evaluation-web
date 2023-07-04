@@ -23,13 +23,16 @@ import {
 import { NewEarningDialogComponent } from './earning/new-earning-dialog/new-earning-dialog.component';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { NewStockDialogComponent } from './stock/new-stock-dialog/new-stock-dialog.component';
-import { EditStockDrawerComponent } from './stock/edit-stock-drawer/edit-stock-drawer.component';
-import { StockInfoComponent } from './stock/edit-stock-drawer/stock-info/stock-info.component';
-import { StockValueComponent } from './stock/edit-stock-drawer/stock-value/stock-value.component';
-import { StockReturnComponent } from './stock/edit-stock-drawer/stock-return/stock-return.component';
+import { EditStockDrawerComponent } from './general/edit-stock-drawer/edit-stock-drawer.component';
+import { StockInfoComponent } from './general/edit-stock-drawer/stock-info/stock-info.component';
+import { StockValueComponent } from './general/edit-stock-drawer/stock-value/stock-value.component';
+import { StockReturnComponent } from './general/edit-stock-drawer/stock-return/stock-return.component';
 import { TableComponent } from './components/table/table.component';
 import { ListComponent } from './components/list/list.component';
 import { ItemListComponent } from './components/list/item-list/item-list.component';
+import { GeneralComponent } from './general/general.component';
+import { RealEstateFundComponent } from './real-estate-fund/real-estate-fund.component';
+import { SummaryComponent } from './components/summary/summary.component';
 
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
   align: 'left',
@@ -58,6 +61,9 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     TableComponent,
     ListComponent,
     ItemListComponent,
+    GeneralComponent,
+    RealEstateFundComponent,
+    SummaryComponent,
   ],
   imports: [
     BrowserModule,

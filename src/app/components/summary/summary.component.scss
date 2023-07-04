@@ -1,0 +1,69 @@
+.summary {
+  width: 100%;
+  height: 130px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  display: grid;
+  align-items: center;
+
+  .title-content {
+    padding-top: 15px;
+    padding-left: 15px;
+
+    .general-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+
+  .summary-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+
+    .title {
+      font-size: 18px;
+    }
+
+    .value {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .value-info {
+      display: flex;
+      height: 100%;
+      align-items: center;
+
+      .positive-info,
+      .negative-info {
+        width: 5px;
+        height: 40px;
+      }
+
+      .positive-info {
+        background-color: #2a7bea;
+      }
+
+      .negative-info {
+        background-color: red;
+      }
+
+      .icon {
+        width: 30px;
+        height: 30px;
+        margin: 0 5px;
+        font-size: 32px;
+      }
+
+      .negative {
+        color: red;
+      }
+
+      .positive {
+        color: #2a7bea;
+      }
+    }
+  }
+}

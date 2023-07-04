@@ -1,0 +1,25 @@
+<mat-drawer-container autosize>
+  <mat-drawer #drawer class="drawer-container" position="end" mode="over">
+    <app-edit-stock-drawer *ngIf="stockService.stockSelected" [drawer]="drawer">
+    </app-edit-stock-drawer>
+  </mat-drawer>
+
+  <div class="general">
+    <div class="general-content">
+      <app-summary [summary]="summary" title="Resumo Geral"></app-summary>
+
+      <div class="title">
+        <h1>Todos Ativos:</h1>
+      </div>
+
+      <div class="active-list">
+        <app-list
+          [data]="items"
+          [columns]="listColumns"
+          [drawerFunction]="editStock"
+          [drawer]="drawer"
+        ></app-list>
+      </div>
+    </div>
+  </div>
+</mat-drawer-container>
