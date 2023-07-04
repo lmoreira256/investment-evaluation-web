@@ -121,4 +121,9 @@ export class StockComponent {
       this.items = data;
     });
   }
+
+  editStock(stock: any): void {
+    this.stockService.stockSelected = JSON.parse(JSON.stringify(stock));
+    this.drawer.toggle();
+  }
 }

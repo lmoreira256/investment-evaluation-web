@@ -3,5 +3,6 @@
     *ngFor="let item of data"
     [item]="item"
     [columns]="columns"
+    (click)="openDrawer(item)"
   ></app-item-list>
 </div>
