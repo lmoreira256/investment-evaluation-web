@@ -95,6 +95,7 @@ export class GeneralComponent {
   drawerEvent() {
     this.drawer.openedChange.subscribe((isOpen: boolean) => {
       if (!isOpen) {
+        this.getGeneralSummary();
         this.getStocks();
       }
     });
