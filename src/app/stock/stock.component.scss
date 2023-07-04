@@ -1,8 +1,8 @@
-.stock-table {
+.stock {
   height: 100vh;
   background-color: #f3f3f3;
 
-  .stock-table-content {
+  .stock-content {
     padding: 50px;
 
     h1 {
@@ -13,12 +13,6 @@
   }
 }
 
-.drawer-container {
-  width: 600px;
-  height: 100vh;
-  background: #f3f3f3;
-}
-
 .title {
   display: flex;
   justify-content: space-between;
@@ -27,7 +21,7 @@
   margin-top: 15px;
 }
 
-.stock-list {
+.list {
   width: 100%;
   height: calc(100vh - 305px);
   margin-top: 15px;

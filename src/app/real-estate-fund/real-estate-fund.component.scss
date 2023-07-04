@@ -1,0 +1,28 @@
+.real-estate-fund {
+  height: 100vh;
+  background-color: #f3f3f3;
+
+  .real-estate-fund-content {
+    padding: 50px;
+
+    h1 {
+      margin: 0;
+      font-size: 25px;
+      color: black;
+    }
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 40px;
+      margin-top: 15px;
+    }
+
+    .list {
+      width: 100%;
+      height: calc(100vh - 305px);
+      margin-top: 15px;
+    }
+  }
+}

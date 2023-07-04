@@ -66,13 +66,6 @@ export class StockComponent {
       formatType: 'currency',
     },
     {
-      fieldOne: 'stockType',
-      fieldTwo: '',
-      name: 'Tipo',
-      type: 'text',
-      formatType: 'stockType',
-    },
-    {
       fieldOne: 'updatedAt',
       fieldTwo: '',
       name: 'Última atualização',
