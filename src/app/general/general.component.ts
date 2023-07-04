@@ -1,17 +1,15 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { StockService } from 'src/services/stock.service';
-import Formatter from 'src/utils/Formatter';
-import { NewStockDialogComponent } from './new-stock-dialog/new-stock-dialog.component';
+import { Component, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import { IListColumn } from 'src/interfaces/IListColumn';
+import { StockService } from 'src/services/stock.service';
+import Formatter from 'src/utils/Formatter';
 
 @Component({
-  selector: 'app-stock',
-  templateUrl: './stock.component.html',
-  styleUrls: ['./stock.component.scss'],
+  selector: 'app-general',
+  templateUrl: './general.component.html',
+  styleUrls: ['./general.component.scss'],
 })
-export class StockComponent {
+export class GeneralComponent {
   items: any;
 
   listColumns: IListColumn[] = [
@@ -80,27 +78,21 @@ export class StockComponent {
     },
   ];
 
-  constructor(
-    public dialog: MatDialog,
-    public formatter: Formatter,
-    public stockService: StockService
-  ) {}
+  @ViewChild('drawer', { static: true })
+  drawer: MatDrawer;
+
+  constructor(public formatter: Formatter, public stockService: StockService) {}
 
   ngOnInit() {
     this.getStocks();
+    this.drawerEvent();
   }
 
-  saveStock() {
-    this.stockService.put(this.stockService.stockSelected).subscribe(() => {
-      this.stockService.stockSelected = null;
-    });
-  }
-
-  createStock() {
-    const dialogRef = this.dialog.open(NewStockDialogComponent);
-
-    dialogRef.afterClosed().subscribe(() => {
-      this.getStocks();
+  drawerEvent() {
+    this.drawer.openedChange.subscribe((isOpen: boolean) => {
+      if (!isOpen) {
+        this.getStocks();
+      }
     });
   }
 
@@ -108,5 +100,10 @@ export class StockComponent {
     this.stockService.listAll().subscribe((data) => {
       this.items = data;
     });
+  }
+
+  editStock(stock: any): void {
+    this.stockService.stockSelected = JSON.parse(JSON.stringify(stock));
+    this.drawer.toggle();
   }
 }
