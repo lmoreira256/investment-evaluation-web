@@ -5,6 +5,7 @@ import Formatter from 'src/utils/Formatter';
 import { NewStockDialogComponent } from './new-stock-dialog/new-stock-dialog.component';
 import { MatDrawer } from '@angular/material/sidenav';
 import { IListColumn } from 'src/interfaces/IListColumn';
+import { IActiveSummary } from 'src/interfaces/IActiveSummary';
 
 @Component({
   selector: 'app-stock',
@@ -80,6 +81,8 @@ export class StockComponent {
     },
   ];
 
+  summary: IActiveSummary | any;
+
   constructor(
     public dialog: MatDialog,
     public formatter: Formatter,
@@ -87,6 +90,7 @@ export class StockComponent {
   ) {}
 
   ngOnInit() {
+    this.getStockSummary();
     this.getStocks();
   }
 
@@ -100,13 +104,20 @@ export class StockComponent {
     const dialogRef = this.dialog.open(NewStockDialogComponent);
 
     dialogRef.afterClosed().subscribe(() => {
+      this.getStockSummary();
       this.getStocks();
     });
   }
 
   getStocks() {
-    this.stockService.listAll().subscribe((data) => {
+    this.stockService.listOnlyStock().subscribe((data) => {
       this.items = data;
+    });
+  }
+
+  getStockSummary() {
+    this.stockService.getStockSummary().subscribe((data) => {
+      this.summary = data;
     });
   }
 }

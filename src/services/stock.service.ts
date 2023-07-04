@@ -38,4 +38,20 @@ export class StockService {
   getGeneralSummary() {
     return this.hostService.get('stock/general-summary');
   }
+
+  getStockSummary() {
+    return this.hostService.get('stock/stock-summary');
+  }
+
+  getRealEstateFundSummary() {
+    return this.hostService.get('stock/real-estate-fund-summary');
+  }
+
+  listOnlyStock() {
+    return this.hostService.get('stock/only-stock');
+  }
+
+  listOnlyRealEstateFund() {
+    return this.hostService.get('stock/only-real-estate-fund');
+  }
 }

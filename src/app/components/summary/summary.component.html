@@ -54,7 +54,7 @@
         >
           {{
             formatter.formatPercent(
-              summary.currentValue - summary.purchaseValue
+              (summary.currentValue - summary.purchaseValue) * 100 / summary.purchaseValue
             )
           }}
         </span>
