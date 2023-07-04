@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
+import { IActiveSummary } from 'src/interfaces/IActiveSummary';
 import { IListColumn } from 'src/interfaces/IListColumn';
 import { StockService } from 'src/services/stock.service';
 import Formatter from 'src/utils/Formatter';
@@ -80,6 +81,12 @@ export class GeneralComponent {
 
   @ViewChild('drawer', { static: true })
   drawer: MatDrawer;
+
+  summary: IActiveSummary = {
+    amount: 1030,
+    currentValue: 17939.04,
+    purchaseValue: 18146.5,
+  };
 
   constructor(public formatter: Formatter, public stockService: StockService) {}
 

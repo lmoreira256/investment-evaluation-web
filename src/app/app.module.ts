@@ -32,7 +32,7 @@ import { ListComponent } from './components/list/list.component';
 import { ItemListComponent } from './components/list/item-list/item-list.component';
 import { GeneralComponent } from './general/general.component';
 import { RealEstateFundComponent } from './real-estate-fund/real-estate-fund.component';
-import { SumarryComponent } from './components/sumarry/sumarry.component';
+import { SummaryComponent } from './components/summary/summary.component';
 
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
   align: 'left',
@@ -63,7 +63,7 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     ItemListComponent,
     GeneralComponent,
     RealEstateFundComponent,
-    SumarryComponent,
+    SummaryComponent,
   ],
   imports: [
     BrowserModule,

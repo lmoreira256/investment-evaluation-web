@@ -1,0 +1,91 @@
+<div *ngIf="summary" class="summary">
+  <div *ngIf="title" class="title-content">
+    <span class="general-title">{{ title }}</span>
+  </div>
+
+  <div class="summary-content">
+    <div class="value-info">
+      <span
+        [ngClass]="
+          summary.currentValue - summary.purchaseValue > 0
+            ? 'positive-info'
+            : 'negative-info'
+        "
+      >
+      </span>
+
+      <mat-icon
+        *ngIf="summary.currentValue - summary.purchaseValue > 0"
+        class="icon positive"
+      >
+        arrow_upward
+      </mat-icon>
+
+      <mat-icon
+        *ngIf="summary.currentValue - summary.purchaseValue < 0"
+        class="icon negative"
+      >
+        arrow_downward
+      </mat-icon>
+
+      <div>
+        <span
+          class="value"
+          [ngClass]="
+            summary.currentValue - summary.purchaseValue > 0
+              ? 'positive'
+              : 'negative'
+          "
+        >
+          {{
+            formatter.formatCurrency(
+              summary.currentValue - summary.purchaseValue
+            )
+          }}
+        </span>
+        <br />
+        <span
+          class="value"
+          [ngClass]="
+            summary.currentValue - summary.purchaseValue > 0
+              ? 'positive'
+              : 'negative'
+          "
+        >
+          {{
+            formatter.formatPercent(
+              summary.currentValue - summary.purchaseValue
+            )
+          }}
+        </span>
+      </div>
+    </div>
+
+    <div>
+      <span class="title">Quantidade</span>
+      <br />
+
+      <span class="value">
+        {{ summary.amount }}
+      </span>
+    </div>
+
+    <div>
+      <span class="title">Valor Atual</span>
+      <br />
+
+      <span class="value">
+        {{ formatter.formatCurrency(summary.currentValue) }}
+      </span>
+    </div>
+
+    <div>
+      <span class="title">Valor de Compra</span>
+      <br />
+
+      <span class="value">
+        {{ formatter.formatCurrency(summary.purchaseValue) }}
+      </span>
+    </div>
+  </div>
+</div>
