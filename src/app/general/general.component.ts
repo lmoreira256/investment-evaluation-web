@@ -82,15 +82,12 @@ export class GeneralComponent {
   @ViewChild('drawer', { static: true })
   drawer: MatDrawer;
 
-  summary: IActiveSummary = {
-    amount: 1030,
-    currentValue: 17939.04,
-    purchaseValue: 18146.5,
-  };
+  summary: IActiveSummary | any;
 
   constructor(public formatter: Formatter, public stockService: StockService) {}
 
   ngOnInit() {
+    this.getGeneralSummary();
     this.getStocks();
     this.drawerEvent();
   }
@@ -112,5 +109,11 @@ export class GeneralComponent {
   editStock(stock: any): void {
     this.stockService.stockSelected = JSON.parse(JSON.stringify(stock));
     this.drawer.toggle();
+  }
+
+  getGeneralSummary() {
+    this.stockService.getGeneralSummary().subscribe((data) => {
+      this.summary = data;
+    });
   }
 }
