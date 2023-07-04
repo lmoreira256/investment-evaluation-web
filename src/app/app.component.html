@@ -1,22 +1,62 @@
 <mat-drawer-container class="container" autosize>
+  <mat-drawer class="sidenav" mode="side" opened>
+    <img src="../assets/money.png" />
 
-  <mat-drawer #drawer class="sidenav" mode="side" opened>
-    <img src="../assets/money.png" >
-    <div class="menu">
-      <a class="button" routerLink="/dashboard" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
+    <div>
+      <a
+        class="button"
+        routerLink="/dashboard"
+        routerLinkActive="activebutton"
+        ariaCurrentWhenActive="page"
+      >
         Dashboard
       </a>
-      <a class="button" routerLink="/stock" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
+
+      <mat-divider></mat-divider>
+
+      <span class="button title">Bolsa de Valores</span>
+
+      <a
+        class="button"
+        routerLink="/general"
+        routerLinkActive="activebutton"
+        ariaCurrentWhenActive="page"
+      >
+        Geral
+      </a>
+
+      <a
+        class="button"
+        routerLink="/stock"
+        routerLinkActive="activebutton"
+        ariaCurrentWhenActive="page"
+      >
         Ações
       </a>
-      <a class="button" routerLink="/earning" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
+
+      <a
+        class="button"
+        routerLink="/fii"
+        routerLinkActive="activebutton"
+        ariaCurrentWhenActive="page"
+      >
+        FII
+      </a>
+
+      <a
+        class="button"
+        routerLink="/earning"
+        routerLinkActive="activebutton"
+        ariaCurrentWhenActive="page"
+      >
         Dividendos
       </a>
+
+      <mat-divider></mat-divider>
     </div>
   </mat-drawer>
 
   <div class="sidenav-content">
     <router-outlet></router-outlet>
   </div>
-
 </mat-drawer-container>
