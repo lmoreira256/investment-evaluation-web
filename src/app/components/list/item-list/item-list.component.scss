@@ -94,6 +94,10 @@
   }
 }
 
-.item-list:hover {
+.postive-border:hover {
   border: 2px solid #0500f5;
+}
+
+.negative-border:hover {
+  border: 2px solid red;
 }

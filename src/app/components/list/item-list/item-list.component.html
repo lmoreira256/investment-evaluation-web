@@ -1,5 +1,9 @@
-<div class="item-list">
-  <div *ngIf="item" class="content">
+<div
+  *ngIf="item"
+  class="item-list"
+  [ngClass]="item.resultValue > 0 ? 'postive-border' : 'negative-border'"
+>
+  <div class="content">
     <div *ngFor="let column of columns">
       <img
         *ngIf="column.type == 'image'"
@@ -55,7 +59,7 @@
             {{ formatter.formatCurrency(item[column.fieldOne]) }}
           </span>
 
-          <span *ngIf="column.formatType == 'stockType'" class="value">
+          <span *ngIf="column.formatType == 'activeType'" class="value">
             {{ formatter.formatEnum(item[column.fieldOne]) }}
           </span>
 

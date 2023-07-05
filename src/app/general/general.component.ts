@@ -64,11 +64,11 @@ export class GeneralComponent {
       formatType: 'currency',
     },
     {
-      fieldOne: 'stockType',
+      fieldOne: 'activeType',
       fieldTwo: '',
       name: 'Tipo',
       type: 'text',
-      formatType: 'stockType',
+      formatType: 'activeType',
     },
     {
       fieldOne: 'updatedAt',

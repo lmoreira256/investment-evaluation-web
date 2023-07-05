@@ -10,6 +10,15 @@
   </div>
 
   <div class="summary-content">
+    <div>
+      <span class="title">Quantidade</span>
+      <br />
+
+      <span class="value">
+        {{ summary.amount }}
+      </span>
+    </div>
+
     <div class="value-info">
       <mat-icon class="icon">
         {{ summary.resultValue > 0 ? "arrow_upward" : "arrow_downward" }}
@@ -26,15 +35,6 @@
           {{ formatter.formatPercent(summary.resultPercentageValue) }}
         </span>
       </div>
-    </div>
-
-    <div>
-      <span class="title">Quantidade</span>
-      <br />
-
-      <span class="value">
-        {{ summary.amount }}
-      </span>
     </div>
 
     <div>
