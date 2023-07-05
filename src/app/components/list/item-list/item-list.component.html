@@ -22,12 +22,11 @@
         >
         </span>
 
-        <mat-icon *ngIf="item[column.fieldOne] > 0" class="icon positive">
-          arrow_upward
-        </mat-icon>
-
-        <mat-icon *ngIf="item[column.fieldOne] < 0" class="icon negative">
-          arrow_downward
+        <mat-icon
+          [ngClass]="item[column.fieldOne] > 0 ? 'positive' : 'negative'"
+          class="icon"
+        >
+          {{ item[column.fieldOne] > 0 ? "arrow_upward" : "arrow_downward" }}
         </mat-icon>
 
         <div>

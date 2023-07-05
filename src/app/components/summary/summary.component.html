@@ -6,57 +6,34 @@
   <div class="summary-content">
     <div class="value-info">
       <span
-        [ngClass]="
-          summary.currentValue - summary.purchaseValue > 0
-            ? 'positive-info'
-            : 'negative-info'
-        "
+        [ngClass]="summary.resultValue > 0 ? 'positive-info' : 'negative-info'"
       >
       </span>
 
       <mat-icon
-        *ngIf="summary.currentValue - summary.purchaseValue > 0"
-        class="icon positive"
+        [ngClass]="summary.resultValue > 0 ? 'positive' : 'negative'"
+        class="icon"
       >
-        arrow_upward
-      </mat-icon>
-
-      <mat-icon
-        *ngIf="summary.currentValue - summary.purchaseValue < 0"
-        class="icon negative"
-      >
-        arrow_downward
+        {{ summary.resultValue > 0 ? "arrow_upward" : "arrow_downward" }}
       </mat-icon>
 
       <div>
         <span
           class="value"
-          [ngClass]="
-            summary.currentValue - summary.purchaseValue > 0
-              ? 'positive'
-              : 'negative'
-          "
+          [ngClass]="summary.resultValue > 0 ? 'positive' : 'negative'"
         >
-          {{
-            formatter.formatCurrency(
-              summary.currentValue - summary.purchaseValue
-            )
-          }}
+          {{ formatter.formatCurrency(summary.resultValue) }}
         </span>
+
         <br />
+
         <span
           class="value"
           [ngClass]="
-            summary.currentValue - summary.purchaseValue > 0
-              ? 'positive'
-              : 'negative'
+            summary.resultPercentageValue > 0 ? 'positive' : 'negative'
           "
         >
-          {{
-            formatter.formatPercent(
-              (summary.currentValue - summary.purchaseValue) * 100 / summary.purchaseValue
-            )
-          }}
+          {{ formatter.formatPercent(summary.resultPercentageValue) }}
         </span>
       </div>
     </div>
