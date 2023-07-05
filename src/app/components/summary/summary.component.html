@@ -1,7 +1,7 @@
 <div
   *ngIf="summary"
   [ngClass]="
-    summary.resultValue > 0 ? 'positive-backgroud' : 'negative-backgroud'
+    summary.resultValue >= 0 ? 'positive-backgroud' : 'negative-backgroud'
   "
   class="summary"
 >
@@ -21,7 +21,7 @@
 
     <div class="value-info">
       <mat-icon class="icon">
-        {{ summary.resultValue > 0 ? "arrow_upward" : "arrow_downward" }}
+        {{ summary.resultValue >= 0 ? "arrow_upward" : "arrow_downward" }}
       </mat-icon>
 
       <div>

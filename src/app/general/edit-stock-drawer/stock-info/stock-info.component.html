@@ -14,11 +14,11 @@
     <mat-icon
       class="icon"
       [ngClass]="
-        activeService.activeSelected!.resultValue > 0 ? 'positive' : 'negative'
+        activeService.activeSelected!.resultValue >= 0 ? 'positive' : 'negative'
       "
     >
       {{
-        activeService.activeSelected!.resultValue > 0
+        activeService.activeSelected!.resultValue >= 0
           ? "arrow_upward"
           : "arrow_downward"
       }}
@@ -26,7 +26,7 @@
     <div class="return-value">
       <span
         [ngClass]="
-          activeService.activeSelected!.resultValue > 0
+          activeService.activeSelected!.resultValue >= 0
             ? 'positive'
             : 'negative'
         "
@@ -37,7 +37,7 @@
       </span>
       <span
         [ngClass]="
-          activeService.activeSelected!.resultPercentageValue > 0
+          activeService.activeSelected!.resultPercentageValue >= 0
             ? 'positive'
             : 'negative'
         "

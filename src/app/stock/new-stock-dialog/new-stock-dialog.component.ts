@@ -24,6 +24,11 @@ export class NewStockDialogComponent {
   }
 
   save() {
+    this.active.resultValue =
+      this.active.currentValue - this.active.purchaseValue;
+    this.active.resultPercentageValue =
+      ((this.active.currentValue - this.active.purchaseValue) / 100) * 100;
+
     this.activeService.create(this.active).subscribe(() => {
       this.closeDialog();
     });

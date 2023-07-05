@@ -1,7 +1,7 @@
 <div
   *ngIf="item"
   class="item-list"
-  [ngClass]="item.resultValue > 0 ? 'postive-border' : 'negative-border'"
+  [ngClass]="item.resultValue >= 0 ? 'postive-border' : 'negative-border'"
 >
   <div class="content">
     <div *ngFor="let column of columns">
@@ -21,29 +21,29 @@
       <div *ngIf="column.type == 'value-info'" class="value-info">
         <span
           [ngClass]="
-            item[column.fieldOne] > 0 ? 'positive-info' : 'negative-info'
+            item[column.fieldOne] >= 0 ? 'positive-info' : 'negative-info'
           "
         >
         </span>
 
         <mat-icon
-          [ngClass]="item[column.fieldOne] > 0 ? 'positive' : 'negative'"
+          [ngClass]="item[column.fieldOne] >= 0 ? 'positive' : 'negative'"
           class="icon"
         >
-          {{ item[column.fieldOne] > 0 ? "arrow_upward" : "arrow_downward" }}
+          {{ item[column.fieldOne] >= 0 ? "arrow_upward" : "arrow_downward" }}
         </mat-icon>
 
         <div>
           <span
             class="value"
-            [ngClass]="item[column.fieldOne] > 0 ? 'positive' : 'negative'"
+            [ngClass]="item[column.fieldOne] >= 0 ? 'positive' : 'negative'"
           >
             {{ formatter.formatCurrency(item[column.fieldOne]) }}
           </span>
           <br />
           <span
             class="value"
-            [ngClass]="item[column.fieldTwo] > 0 ? 'positive' : 'negative'"
+            [ngClass]="item[column.fieldTwo] >= 0 ? 'positive' : 'negative'"
           >
             {{ formatter.formatPercent(item[column.fieldTwo]) }}
           </span>

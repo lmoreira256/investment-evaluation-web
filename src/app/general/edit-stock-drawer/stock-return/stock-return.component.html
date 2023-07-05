@@ -33,7 +33,7 @@
       class="display"
       [ngClass]="
         activeService.activeSelected!.currentValue -
-          activeService.activeSelected!.purchaseValue >
+          activeService.activeSelected!.purchaseValue >=
         0
           ? 'positive-border'
           : 'negative-border'
@@ -43,7 +43,7 @@
         class="display-content"
         [ngClass]="
           activeService.activeSelected!.currentValue -
-            activeService.activeSelected!.purchaseValue >
+            activeService.activeSelected!.purchaseValue >=
           0
             ? 'positive-backgroud'
             : 'negative-backgroud'
