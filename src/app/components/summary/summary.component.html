@@ -1,38 +1,28 @@
-<div *ngIf="summary" class="summary">
+<div
+  *ngIf="summary"
+  [ngClass]="
+    summary.resultValue > 0 ? 'positive-backgroud' : 'negative-backgroud'
+  "
+  class="summary"
+>
   <div *ngIf="title" class="title-content">
     <span class="general-title">{{ title }}</span>
   </div>
 
   <div class="summary-content">
     <div class="value-info">
-      <span
-        [ngClass]="summary.resultValue > 0 ? 'positive-info' : 'negative-info'"
-      >
-      </span>
-
-      <mat-icon
-        [ngClass]="summary.resultValue > 0 ? 'positive' : 'negative'"
-        class="icon"
-      >
+      <mat-icon class="icon">
         {{ summary.resultValue > 0 ? "arrow_upward" : "arrow_downward" }}
       </mat-icon>
 
       <div>
-        <span
-          class="value"
-          [ngClass]="summary.resultValue > 0 ? 'positive' : 'negative'"
-        >
+        <span class="value">
           {{ formatter.formatCurrency(summary.resultValue) }}
         </span>
 
         <br />
 
-        <span
-          class="value"
-          [ngClass]="
-            summary.resultPercentageValue > 0 ? 'positive' : 'negative'
-          "
-        >
+        <span class="value">
           {{ formatter.formatPercent(summary.resultPercentageValue) }}
         </span>
       </div>
