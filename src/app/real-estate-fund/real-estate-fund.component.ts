@@ -44,6 +44,13 @@ export class RealEstateFundComponent {
       formatType: '',
     },
     {
+      fieldOne: 'objective',
+      fieldTwo: '',
+      name: 'Objetivo',
+      type: 'text',
+      formatType: '',
+    },
+    {
       fieldOne: 'currentValue',
       fieldTwo: '',
       name: 'Valor Atual',
@@ -63,13 +70,6 @@ export class RealEstateFundComponent {
       name: 'Média de Compra',
       type: 'text',
       formatType: 'currency',
-    },
-    {
-      fieldOne: 'updatedAt',
-      fieldTwo: '',
-      name: 'Última atualização',
-      type: 'text',
-      formatType: 'date',
     },
   ];
 

@@ -45,6 +45,13 @@ export class StockComponent {
       formatType: '',
     },
     {
+      fieldOne: 'objective',
+      fieldTwo: '',
+      name: 'Objetivo',
+      type: 'text',
+      formatType: '',
+    },
+    {
       fieldOne: 'currentValue',
       fieldTwo: '',
       name: 'Valor Atual',
@@ -64,13 +71,6 @@ export class StockComponent {
       name: 'Média de Compra',
       type: 'text',
       formatType: 'currency',
-    },
-    {
-      fieldOne: 'updatedAt',
-      fieldTwo: '',
-      name: 'Última atualização',
-      type: 'text',
-      formatType: 'date',
     },
   ];
 

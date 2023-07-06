@@ -24,11 +24,19 @@ export class EditStockDrawerComponent {
       });
   }
 
+  disabledActive() {
+    this.activeService.activeSelected!.enabled = false;
+
+    this.saveActive();
+  }
+
   updateActiveResultValues() {
     let active = this.activeService.activeSelected;
     active!.resultValue = active!.currentValue - active!.purchaseValue;
     active!.resultPercentageValue =
-      (active!.currentValue * 100) / active!.purchaseValue - 100;
+      active!.resultValue == 0
+        ? 0
+        : (active!.currentValue * 100) / active!.purchaseValue - 100;
 
     this.activeService.activeSelected = active;
   }

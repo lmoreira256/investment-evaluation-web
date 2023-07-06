@@ -12,4 +12,5 @@ export interface IActive {
   createdAt: Date;
   updatedAt: Date;
   enabled: Boolean;
+  objective: Number;
 }

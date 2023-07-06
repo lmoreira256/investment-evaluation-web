@@ -3,6 +3,16 @@
     <h2>Valor Patrimonial</h2>
 
     <mat-form-field>
+      <mat-label>Objetivo</mat-label>
+      <input
+        type="number"
+        matInput
+        [(ngModel)]="activeService.activeSelected!.objective"
+        name="objective"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
       <mat-label>Quantidade</mat-label>
       <input
         type="number"

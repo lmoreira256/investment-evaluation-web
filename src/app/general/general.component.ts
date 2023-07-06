@@ -43,6 +43,13 @@ export class GeneralComponent {
       formatType: '',
     },
     {
+      fieldOne: 'objective',
+      fieldTwo: '',
+      name: 'Objetivo',
+      type: 'text',
+      formatType: '',
+    },
+    {
       fieldOne: 'currentValue',
       fieldTwo: '',
       name: 'Valor Atual',
@@ -62,13 +69,6 @@ export class GeneralComponent {
       name: 'Média de Compra',
       type: 'text',
       formatType: 'currency',
-    },
-    {
-      fieldOne: 'activeType',
-      fieldTwo: '',
-      name: 'Tipo',
-      type: 'text',
-      formatType: 'activeType',
     },
     {
       fieldOne: 'updatedAt',

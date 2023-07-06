@@ -43,9 +43,11 @@
         "
       >
         {{
-          formatter.formatPercent(
-            activeService.activeSelected!.resultPercentageValue
-          )
+          activeService.activeSelected!.currentValue
+            ? formatter.formatPercent(
+                activeService.activeSelected!.resultPercentageValue
+              )
+            : "0,00%"
         }}
       </span>
     </div>
