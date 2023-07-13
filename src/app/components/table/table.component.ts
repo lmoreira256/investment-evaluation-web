@@ -2,7 +2,7 @@ import { Component, Input, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { IPageable } from 'src/interfaces/IPageable';
 import { ITableColumn } from 'src/interfaces/ITableColumn';
-import { HostService } from 'src/services/host.service';
+import { HostService } from 'src/app/services/host.service';
 import Formatter from 'src/utils/Formatter';
 
 @Component({

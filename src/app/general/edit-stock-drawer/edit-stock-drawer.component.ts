@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
-import { ActiveService } from 'src/services/active.service';
+import { ActiveService } from 'src/app/services/active.service';
 
 @Component({
   selector: 'app-edit-stock-drawer',

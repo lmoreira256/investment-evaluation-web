@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import { IActiveSummary } from 'src/interfaces/IActiveSummary';
 import { IListColumn } from 'src/interfaces/IListColumn';
-import { ActiveService } from 'src/services/active.service';
+import { ActiveService } from 'src/app/services/active.service';
 import Formatter from 'src/utils/Formatter';
 
 @Component({

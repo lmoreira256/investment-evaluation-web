@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { IActive } from 'src/interfaces/IActive';
-import { ActiveService } from 'src/services/active.service';
-import { StockService } from 'src/services/stock.service';
+import { ActiveService } from 'src/app/services/active.service';
 import Formatter from 'src/utils/Formatter';
 
 @Component({

@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IStockHistoricPageable } from 'src/interfaces/IStockHistoricPageable';
 
 @Injectable({
   providedIn: 'root',

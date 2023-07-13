@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActiveService } from 'src/services/active.service';
+import { ActiveService } from 'src/app/services/active.service';
 import Formatter from 'src/utils/Formatter';
 
 @Component({

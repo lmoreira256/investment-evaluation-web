@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { EarningService } from 'src/services/earning.service';
+import { EarningService } from 'src/app/services/earning.service';
 import Formatter from 'src/utils/Formatter';
 import { NewEarningDialogComponent } from '../new-earning-dialog/new-earning-dialog.component';
 import { ITableColumn } from 'src/interfaces/ITableColumn';

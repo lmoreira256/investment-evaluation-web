@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { StockService } from 'src/services/stock.service';
+import { StockService } from 'src/app/services/stock.service';
 import Formatter from 'src/utils/Formatter';
 import { NewStockDialogComponent } from './new-stock-dialog/new-stock-dialog.component';
 import { IListColumn } from 'src/interfaces/IListColumn';
 import { IActiveSummary } from 'src/interfaces/IActiveSummary';
-import { ActiveService } from 'src/services/active.service';
+import { ActiveService } from 'src/app/services/active.service';
 
 @Component({
   selector: 'app-stock',
