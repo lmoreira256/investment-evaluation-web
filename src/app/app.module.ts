@@ -34,6 +34,7 @@ import { RealEstateFundComponent } from './real-estate-fund/real-estate-fund.com
 import { SummaryComponent } from './components/summary/summary.component';
 import { CheckpointComponent } from './checkpoint/checkpoint.component';
 import { StockCheckpointComponent } from './stock-checkpoint/stock-checkpoint.component';
+import { RealEstateFundCheckpointComponent } from './pages/real-estate-fund-checkpoint/real-estate-fund-checkpoint.component';
 
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
   align: 'left',
@@ -67,6 +68,7 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     SummaryComponent,
     CheckpointComponent,
     StockCheckpointComponent,
+    RealEstateFundCheckpointComponent,
   ],
   imports: [
     BrowserModule,

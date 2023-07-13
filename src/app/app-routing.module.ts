@@ -8,12 +8,17 @@ import { GeneralComponent } from './general/general.component';
 import { RealEstateFundComponent } from './real-estate-fund/real-estate-fund.component';
 import { CheckpointComponent } from './checkpoint/checkpoint.component';
 import { StockCheckpointComponent } from './stock-checkpoint/stock-checkpoint.component';
+import { RealEstateFundCheckpointComponent } from './pages/real-estate-fund-checkpoint/real-estate-fund-checkpoint.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'general', component: GeneralComponent },
   { path: 'checkpoint', component: CheckpointComponent },
   { path: 'stock-checkpoint', component: StockCheckpointComponent },
+  {
+    path: 'real-estate-fund-checkpoint',
+    component: RealEstateFundCheckpointComponent,
+  },
   { path: 'real-estate-fund', component: RealEstateFundComponent },
   { path: 'stock', component: StockComponent },
   { path: 'earning', component: EarningComponent },
