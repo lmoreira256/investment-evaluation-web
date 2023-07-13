@@ -6,10 +6,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { StockComponent } from './stock/stock.component';
 import { GeneralComponent } from './general/general.component';
 import { RealEstateFundComponent } from './real-estate-fund/real-estate-fund.component';
+import { CheckpointComponent } from './checkpoint/checkpoint.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'general', component: GeneralComponent },
+  { path: 'checkpoint', component: CheckpointComponent },
   { path: 'real-estate-fund', component: RealEstateFundComponent },
   { path: 'stock', component: StockComponent },
   { path: 'earning', component: EarningComponent },

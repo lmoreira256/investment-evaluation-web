@@ -8,7 +8,6 @@ import { StockComponent } from './stock/stock.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { EarningComponent } from './earning/earning.component';
 import { HttpClientModule } from '@angular/common/http';
-import { StockHistoricService } from 'src/services/stock-historic.service';
 import { MaterialModule } from '../material.module';
 import { CustomMatPaginatorIntl } from 'src/config/CustomMatPaginatorIntl';
 import { MatPaginatorIntl } from '@angular/material/paginator';
@@ -33,6 +32,7 @@ import { ItemListComponent } from './components/list/item-list/item-list.compone
 import { GeneralComponent } from './general/general.component';
 import { RealEstateFundComponent } from './real-estate-fund/real-estate-fund.component';
 import { SummaryComponent } from './components/summary/summary.component';
+import { CheckpointComponent } from './checkpoint/checkpoint.component';
 
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
   align: 'left',
@@ -64,6 +64,7 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     GeneralComponent,
     RealEstateFundComponent,
     SummaryComponent,
+    CheckpointComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,7 +76,6 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     CurrencyMaskModule,
   ],
   providers: [
-    StockHistoricService,
     Formatter,
     {
       provide: MatPaginatorIntl,

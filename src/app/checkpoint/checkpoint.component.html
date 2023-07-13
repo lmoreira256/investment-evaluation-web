@@ -1,0 +1,14 @@
+<div class="checkpoint">
+  <div class="checkpoint-content">
+    <div class="title">
+      <h1>Checkpoint Geral</h1>
+      <button mat-raised-button color="primary" (click)="createCheckpoint()">
+        Criar checkpoint
+      </button>
+    </div>
+
+    <div class="list">
+      <app-list [data]="items" [columns]="listColumns"></app-list>
+    </div>
+  </div>
+</div>
