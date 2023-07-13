@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { EarningService } from 'src/app/services/earning.service';
 import Formatter from 'src/utils/Formatter';
 import { NewEarningDialogComponent } from '../new-earning-dialog/new-earning-dialog.component';
-import { ITableColumn } from 'src/interfaces/ITableColumn';
+import { ITableColumn } from 'src/app/interfaces/ITableColumn';
 import { TableComponent } from 'src/app/components/table/table.component';
 
 @Component({

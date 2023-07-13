@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IListColumn } from 'src/interfaces/IListColumn';
+import { IListColumn } from 'src/app/interfaces/IListColumn';
 import Formatter from 'src/utils/Formatter';
 
 @Component({

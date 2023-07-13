@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IEarning } from 'src/interfaces/IEarning';
+import { IEarning } from 'src/app/interfaces/IEarning';
 import { HostService } from './host.service';
 
 @Injectable({

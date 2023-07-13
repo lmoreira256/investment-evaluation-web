@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
-import { IListColumn } from 'src/interfaces/IListColumn';
+import { IListColumn } from 'src/app/interfaces/IListColumn';
 import { ActiveService } from 'src/app/services/active.service';
 
 @Component({

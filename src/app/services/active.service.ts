@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HostService } from './host.service';
-import { IActive } from 'src/interfaces/IActive';
+import { IActive } from 'src/app/interfaces/IActive';
 
 @Injectable({
   providedIn: 'root',

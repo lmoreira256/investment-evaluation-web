@@ -1,4 +1,4 @@
-import { StockTypeEnum } from "src/enums/StockHistoricTypeEnum"
+import { StockTypeEnum } from "src/app/enums/StockHistoricTypeEnum"
 
 export interface IStockHistoric {
     id: string

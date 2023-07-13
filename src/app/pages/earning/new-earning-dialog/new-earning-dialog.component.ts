@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { MatDialogRef } from '@angular/material/dialog';
-import { IEarning } from 'src/interfaces/IEarning';
+import { IEarning } from 'src/app/interfaces/IEarning';
 import { ActiveService } from 'src/app/services/active.service';
 import { EarningService } from 'src/app/services/earning.service';
 import Formatter from 'src/utils/Formatter';

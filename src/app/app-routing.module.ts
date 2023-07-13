@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { EarningComponent } from './earning/earning.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { StockComponent } from './stock/stock.component';
-import { GeneralComponent } from './general/general.component';
-import { RealEstateFundComponent } from './real-estate-fund/real-estate-fund.component';
-import { CheckpointComponent } from './checkpoint/checkpoint.component';
-import { StockCheckpointComponent } from './stock-checkpoint/stock-checkpoint.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { EarningComponent } from './pages/earning/earning.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { StockComponent } from './pages/stock/stock.component';
+import { GeneralComponent } from './pages/general/general.component';
+import { RealEstateFundComponent } from './pages/real-estate-fund/real-estate-fund.component';
+import { CheckpointComponent } from './pages/checkpoint/checkpoint.component';
+import { StockCheckpointComponent } from './pages/stock-checkpoint/stock-checkpoint.component';
 import { RealEstateFundCheckpointComponent } from './pages/real-estate-fund-checkpoint/real-estate-fund-checkpoint.component';
 
 const routes: Routes = [

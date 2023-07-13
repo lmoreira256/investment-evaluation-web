@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RealEstateFundCheckpointService } from 'src/app/services/real-estate-fund-checkpoint.service';
-import { ICheckpoint } from 'src/interfaces/ICheckpoint';
-import { IListColumn } from 'src/interfaces/IListColumn';
+import { ICheckpoint } from 'src/app/interfaces/ICheckpoint';
+import { IListColumn } from 'src/app/interfaces/IListColumn';
 
 @Component({
   selector: 'app-real-estate-fund-checkpoint',

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { StockTypeEnum } from 'src/enums/StockHistoricTypeEnum';
+import { StockTypeEnum } from 'src/app/enums/StockHistoricTypeEnum';
 
 @Injectable({
   providedIn: 'root',

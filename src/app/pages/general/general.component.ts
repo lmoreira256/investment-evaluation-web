@@ -1,17 +1,16 @@
-import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { IActiveSummary } from 'src/interfaces/IActiveSummary';
+import { Component, ViewChild } from '@angular/core';
+import { MatDrawer } from '@angular/material/sidenav';
+import { IActiveSummary } from 'src/app/interfaces/IActiveSummary';
+import { IListColumn } from 'src/app/interfaces/IListColumn';
+import { ActiveService } from 'src/app/services/active.service';
 import Formatter from 'src/utils/Formatter';
-import { NewStockDialogComponent } from '../stock/new-stock-dialog/new-stock-dialog.component';
-import { IListColumn } from 'src/interfaces/IListColumn';
-import { RealEstateFundService } from 'src/services/real-estate-fund.service';
 
 @Component({
-  selector: 'app-real-estate-fund',
-  templateUrl: './real-estate-fund.component.html',
-  styleUrls: ['./real-estate-fund.component.scss'],
+  selector: 'app-general',
+  templateUrl: './general.component.html',
+  styleUrls: ['./general.component.scss'],
 })
-export class RealEstateFundComponent {
+export class GeneralComponent {
   items: any;
 
   listColumns: IListColumn[] = [
@@ -71,39 +70,54 @@ export class RealEstateFundComponent {
       type: 'text',
       formatType: 'currency',
     },
+    {
+      fieldOne: 'updatedAt',
+      fieldTwo: '',
+      name: 'Última atualização',
+      type: 'text',
+      formatType: 'date',
+    },
   ];
+
+  @ViewChild('drawer', { static: true })
+  drawer: MatDrawer;
 
   summary: IActiveSummary | any;
 
   constructor(
-    public dialog: MatDialog,
     public formatter: Formatter,
-    public realEstateFundService: RealEstateFundService
+    public activeService: ActiveService
   ) {}
 
   ngOnInit() {
     this.getSummary();
-    this.getList();
+    this.getActives();
+    this.drawerEvent();
+  }
+
+  drawerEvent() {
+    this.drawer.openedChange.subscribe((isOpen: boolean) => {
+      if (!isOpen) {
+        this.getSummary();
+        this.getActives();
+      }
+    });
+  }
+
+  getActives() {
+    this.activeService.list().subscribe((data) => {
+      this.items = data;
+    });
+  }
+
+  editActive(active: any): void {
+    this.activeService.activeSelected = JSON.parse(JSON.stringify(active));
+    this.drawer.toggle();
   }
 
   getSummary() {
-    this.realEstateFundService.summary().subscribe((data) => {
+    this.activeService.summary().subscribe((data) => {
       this.summary = data;
-    });
-  }
-
-  create() {
-    const dialogRef = this.dialog.open(NewStockDialogComponent);
-
-    dialogRef.afterClosed().subscribe(() => {
-      this.getSummary();
-      this.getList();
-    });
-  }
-
-  getList() {
-    this.realEstateFundService.list().subscribe((data) => {
-      this.items = data;
     });
   }
 }

@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { ICheckpoint } from 'src/interfaces/ICheckpoint';
-import { IListColumn } from 'src/interfaces/IListColumn';
-import { StockCheckpointService } from '../services/stock-checkpoint.service';
+import { ICheckpoint } from 'src/app/interfaces/ICheckpoint';
+import { IListColumn } from 'src/app/interfaces/IListColumn';
+import { CheckpointService } from 'src/app/services/checkpoint.service';
 
 @Component({
-  selector: 'app-stock-checkpoint',
-  templateUrl: './stock-checkpoint.component.html',
-  styleUrls: ['./stock-checkpoint.component.scss'],
+  selector: 'app-checkpoint',
+  templateUrl: './checkpoint.component.html',
+  styleUrls: ['./checkpoint.component.scss'],
 })
-export class StockCheckpointComponent {
+export class CheckpointComponent {
   items: ICheckpoint[] | any;
 
   listColumns: IListColumn[] = [
@@ -49,21 +49,21 @@ export class StockCheckpointComponent {
     },
   ];
 
-  constructor(private stockCheckpointService: StockCheckpointService) {}
+  constructor(private checkpointService: CheckpointService) {}
 
   ngOnInit() {
-    this.getStockCheckpoint();
+    this.getCheckpoint();
   }
 
-  getStockCheckpoint() {
-    this.stockCheckpointService.list().subscribe((data) => {
+  getCheckpoint() {
+    this.checkpointService.list().subscribe((data) => {
       this.items = data;
     });
   }
 
-  createStockCheckpoint() {
-    this.stockCheckpointService.create().subscribe(() => {
-      this.getStockCheckpoint();
+  createCheckpoint() {
+    this.checkpointService.create().subscribe(() => {
+      this.getCheckpoint();
     });
   }
 }
