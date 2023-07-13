@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HostService } from './host.service';
-import { ICheckpoint } from 'src/interfaces/ICheckpoint';
+import { HostService } from '../../services/host.service';
 
 @Injectable({
   providedIn: 'root',

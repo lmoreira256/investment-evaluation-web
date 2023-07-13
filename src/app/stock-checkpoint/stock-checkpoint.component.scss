@@ -1,0 +1,27 @@
+.stock-checkpoint {
+  height: 100vh;
+  background-color: #f3f3f3;
+
+  .stock-checkpoint-content {
+    padding: 50px;
+
+    h1 {
+      margin: 0;
+      font-size: 25px;
+      color: black;
+    }
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 40px;
+    }
+
+    .list {
+      width: 100%;
+      height: calc(100vh - 155px);
+      margin-top: 15px;
+    }
+  }
+}
