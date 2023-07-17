@@ -1,0 +1,30 @@
+.dashboard {
+  height: 100vh;
+  background-color: #f3f3f3;
+
+  .dashboard-content {
+    padding: 50px;
+
+    ::-webkit-scrollbar {
+      height: 0px;
+      width: 0px;
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: transparent;
+    }
+
+    .charts {
+      width: 100%;
+      height: calc(100vh - 100px);
+      scroll-behavior: smooth;
+      display: block;
+      overflow-y: scroll;
+
+      .chart {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
