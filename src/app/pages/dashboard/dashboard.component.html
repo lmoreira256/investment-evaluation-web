@@ -1,3 +1,33 @@
 <div>
-  <h1>Dashboard</h1>
+  <app-line-chart
+    *ngIf="returnChartItems"
+    [data]="returnChartItems"
+    title="Gráfico de resultado"
+    valueX="createdAt"
+    valueY="resultValue"
+  ></app-line-chart>
+
+  <app-area-chart
+    *ngIf="equityChartItems"
+    [data]="equityChartItems"
+    title="Gráfico de patrimônio"
+    valueX="createdAt"
+    valueY="currentValue"
+  ></app-area-chart>
+
+  <app-column-chart
+    *ngIf="earningPerMonthChartItems"
+    [data]="earningPerMonthChartItems"
+    title="Dividendos por mês"
+    valueX="item"
+    valueY="totalValue"
+  ></app-column-chart>
+
+  <app-column-chart
+    *ngIf="earningPerActiveChartItems"
+    [data]="earningPerActiveChartItems"
+    title="Dividendos por ativo"
+    valueX="item"
+    valueY="totalValue"
+  ></app-column-chart>
 </div>

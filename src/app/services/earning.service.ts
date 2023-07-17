@@ -17,4 +17,12 @@ export class EarningService {
   create(earning: IEarning) {
     return this.hostService.post('earning', earning);
   }
+
+  summaryMonth() {
+    return this.hostService.get('earning/summary/month');
+  }
+
+  summaryActive() {
+    return this.hostService.get('earning/summary/active');
+  }
 }

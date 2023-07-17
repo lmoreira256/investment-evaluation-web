@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'real-estate-fund', component: RealEstateFundComponent },
   { path: 'stock', component: StockComponent },
   { path: 'earning', component: EarningComponent },
-  { path: '', redirectTo: '/general', pathMatch: 'full' },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 
