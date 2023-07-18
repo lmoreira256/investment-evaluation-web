@@ -21,6 +21,7 @@ export class RealEstateFundComponent {
       name: '',
       type: 'image',
       formatType: '',
+      with: '',
     },
     {
       fieldOne: 'name',
@@ -28,6 +29,7 @@ export class RealEstateFundComponent {
       name: '',
       type: 'info',
       formatType: '',
+      with: '',
     },
     {
       fieldOne: 'resultValue',
@@ -35,6 +37,7 @@ export class RealEstateFundComponent {
       name: '',
       type: 'value-info',
       formatType: '',
+      with: '',
     },
     {
       fieldOne: 'amount',
@@ -42,6 +45,7 @@ export class RealEstateFundComponent {
       name: 'Quantidade',
       type: 'text',
       formatType: '',
+      with: '',
     },
     {
       fieldOne: 'objective',
@@ -49,6 +53,7 @@ export class RealEstateFundComponent {
       name: 'Objetivo',
       type: 'text',
       formatType: '',
+      with: '',
     },
     {
       fieldOne: 'currentValue',
@@ -56,6 +61,7 @@ export class RealEstateFundComponent {
       name: 'Valor Atual',
       type: 'text',
       formatType: 'currency',
+      with: '',
     },
     {
       fieldOne: 'purchaseValue',
@@ -63,6 +69,7 @@ export class RealEstateFundComponent {
       name: 'Valor de Compra',
       type: 'text',
       formatType: 'currency',
+      with: '',
     },
     {
       fieldOne: 'averageValue',
@@ -70,6 +77,7 @@ export class RealEstateFundComponent {
       name: 'Média de Compra',
       type: 'text',
       formatType: 'currency',
+      with: '',
     },
   ];
 

@@ -20,6 +20,7 @@ export class GeneralComponent {
       name: '',
       type: 'image',
       formatType: '',
+      with: '',
     },
     {
       fieldOne: 'name',
@@ -27,6 +28,7 @@ export class GeneralComponent {
       name: '',
       type: 'info',
       formatType: '',
+      with: '',
     },
     {
       fieldOne: 'resultValue',
@@ -34,6 +36,7 @@ export class GeneralComponent {
       name: '',
       type: 'value-info',
       formatType: '',
+      with: '',
     },
     {
       fieldOne: 'amount',
@@ -41,6 +44,7 @@ export class GeneralComponent {
       name: 'Quantidade',
       type: 'text',
       formatType: '',
+      with: '',
     },
     {
       fieldOne: 'objective',
@@ -48,6 +52,7 @@ export class GeneralComponent {
       name: 'Objetivo',
       type: 'text',
       formatType: '',
+      with: '',
     },
     {
       fieldOne: 'currentValue',
@@ -55,6 +60,7 @@ export class GeneralComponent {
       name: 'Valor Atual',
       type: 'text',
       formatType: 'currency',
+      with: '',
     },
     {
       fieldOne: 'purchaseValue',
@@ -62,6 +68,7 @@ export class GeneralComponent {
       name: 'Valor de Compra',
       type: 'text',
       formatType: 'currency',
+      with: '',
     },
     {
       fieldOne: 'averageValue',
@@ -69,6 +76,7 @@ export class GeneralComponent {
       name: 'Média de Compra',
       type: 'text',
       formatType: 'currency',
+      with: '',
     },
     {
       fieldOne: 'updatedAt',
@@ -76,6 +84,7 @@ export class GeneralComponent {
       name: 'Última atualização',
       type: 'text',
       formatType: 'date',
+      with: '',
     },
   ];
 

@@ -22,6 +22,7 @@ export class StockComponent {
       name: '',
       type: 'image',
       formatType: '',
+      with: '',
     },
     {
       fieldOne: 'name',
@@ -29,6 +30,7 @@ export class StockComponent {
       name: '',
       type: 'info',
       formatType: '',
+      with: '',
     },
     {
       fieldOne: 'resultValue',
@@ -36,6 +38,7 @@ export class StockComponent {
       name: '',
       type: 'value-info',
       formatType: '',
+      with: '',
     },
     {
       fieldOne: 'amount',
@@ -43,6 +46,7 @@ export class StockComponent {
       name: 'Quantidade',
       type: 'text',
       formatType: '',
+      with: '',
     },
     {
       fieldOne: 'objective',
@@ -50,6 +54,7 @@ export class StockComponent {
       name: 'Objetivo',
       type: 'text',
       formatType: '',
+      with: '',
     },
     {
       fieldOne: 'currentValue',
@@ -57,6 +62,7 @@ export class StockComponent {
       name: 'Valor Atual',
       type: 'text',
       formatType: 'currency',
+      with: '',
     },
     {
       fieldOne: 'purchaseValue',
@@ -64,6 +70,7 @@ export class StockComponent {
       name: 'Valor de Compra',
       type: 'text',
       formatType: 'currency',
+      with: '',
     },
     {
       fieldOne: 'averageValue',
@@ -71,6 +78,7 @@ export class StockComponent {
       name: 'Média de Compra',
       type: 'text',
       formatType: 'currency',
+      with: '',
     },
   ];
 

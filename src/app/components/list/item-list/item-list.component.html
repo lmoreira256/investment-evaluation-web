@@ -1,10 +1,17 @@
 <div
   *ngIf="item"
   class="item-list"
-  [ngClass]="item.resultValue >= 0 ? 'postive-border' : 'negative-border'"
+  [ngClass]="
+    item.resultValue == null || item.resultValue >= 0
+      ? 'postive-border'
+      : 'negative-border'
+  "
 >
   <div class="content">
-    <div *ngFor="let column of columns">
+    <div
+      *ngFor="let column of columns"
+      [ngStyle]="{ width: column.with ? column.with : '' }"
+    >
       <img
         *ngIf="column.type == 'image'"
         [src]="'./assets/active_logos/' + item[column.fieldOne] + '.png'"
@@ -50,7 +57,11 @@
         </div>
       </div>
 
-      <div *ngIf="column.type == 'text'" class="text">
+      <div
+        *ngIf="column.type == 'text'"
+        [ngStyle]="{ width: column.with ? column.with : '' }"
+        class="text"
+      >
         <div>
           <span class="title">{{ column.name }}</span>
           <br />

@@ -18,6 +18,7 @@ export class CheckpointComponent {
       name: 'Quantidade',
       type: 'text',
       formatType: '',
+      with: '',
     },
     {
       fieldOne: 'resultValue',
@@ -25,6 +26,7 @@ export class CheckpointComponent {
       name: '',
       type: 'value-info',
       formatType: '',
+      with: '',
     },
     {
       fieldOne: 'currentValue',
@@ -32,6 +34,7 @@ export class CheckpointComponent {
       name: 'Valor Atual',
       type: 'text',
       formatType: 'currency',
+      with: '',
     },
     {
       fieldOne: 'purchaseValue',
@@ -39,6 +42,7 @@ export class CheckpointComponent {
       name: 'Valor de Compra',
       type: 'text',
       formatType: 'currency',
+      with: '',
     },
     {
       fieldOne: 'createdAt',
@@ -46,6 +50,7 @@ export class CheckpointComponent {
       name: 'Criação',
       type: 'text',
       formatType: 'date',
+      with: '',
     },
   ];
 

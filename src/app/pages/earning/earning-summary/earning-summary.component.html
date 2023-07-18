@@ -1,0 +1,43 @@
+<div *ngIf="earningSummary" class="summary">
+  <div class="title-content">
+    <span class="title">Resumo dos dividendos</span>
+  </div>
+
+  <div class="summary-content">
+    <div>
+      <span class="title">Total recebido</span>
+      <br />
+
+      <span class="value">
+        {{ formatter.formatCurrency(earningSummary.totalReceived) }}
+      </span>
+    </div>
+
+    <div>
+      <span class="title">Total no mês</span>
+      <br />
+
+      <span class="value">
+        {{ formatter.formatCurrency(earningSummary.totalLastMonth) }}
+      </span>
+    </div>
+
+    <div>
+      <span class="title">Total no ano</span>
+      <br />
+
+      <span class="value">
+        {{ formatter.formatCurrency(earningSummary.totalLastYear) }}
+      </span>
+    </div>
+
+    <div>
+      <span class="title">Rendimento</span>
+      <br />
+
+      <span class="value">
+        {{ formatter.formatPercent(earningSummary.performancePercentage) }}
+      </span>
+    </div>
+  </div>
+</div>

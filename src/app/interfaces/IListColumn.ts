@@ -4,4 +4,5 @@ export interface IListColumn {
   name: string;
   type: string;
   formatType: string;
+  with: string;
 }
