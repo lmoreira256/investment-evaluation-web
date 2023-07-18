@@ -18,6 +18,7 @@ export class RealEstateFundCheckpointComponent {
       name: 'Quantidade',
       type: 'text',
       formatType: '',
+      with: '',
     },
     {
       fieldOne: 'resultValue',
@@ -25,6 +26,7 @@ export class RealEstateFundCheckpointComponent {
       name: '',
       type: 'value-info',
       formatType: '',
+      with: '',
     },
     {
       fieldOne: 'currentValue',
@@ -32,6 +34,7 @@ export class RealEstateFundCheckpointComponent {
       name: 'Valor Atual',
       type: 'text',
       formatType: 'currency',
+      with: '',
     },
     {
       fieldOne: 'purchaseValue',
@@ -39,6 +42,7 @@ export class RealEstateFundCheckpointComponent {
       name: 'Valor de Compra',
       type: 'text',
       formatType: 'currency',
+      with: '',
     },
     {
       fieldOne: 'createdAt',
@@ -46,6 +50,7 @@ export class RealEstateFundCheckpointComponent {
       name: 'Criação',
       type: 'text',
       formatType: 'date',
+      with: '',
     },
   ];
 

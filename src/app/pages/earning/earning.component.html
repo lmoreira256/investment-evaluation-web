@@ -1,5 +1,16 @@
 <div class="earning">
   <div class="earning-content">
-    <app-historic-table />
+    <app-earning-summary></app-earning-summary>
+
+    <div class="content">
+      <div class="list">
+        <app-list [data]="earnings" [columns]="listColumns"></app-list>
+      </div>
+
+      <div class="infos">
+        <div class="info"></div>
+        <div class="info" style="background: yellow"></div>
+      </div>
+    </div>
   </div>
 </div>

@@ -8,10 +8,8 @@ import { HostService } from './host.service';
 export class EarningService {
   constructor(private hostService: HostService) {}
 
-  list(page: string) {
-    return this.hostService.get(
-      `earning${page.length > 0 ? '?page=' + page : ''}`
-    );
+  list() {
+    return this.hostService.get('earning');
   }
 
   create(earning: IEarning) {
@@ -24,5 +22,9 @@ export class EarningService {
 
   summaryActive() {
     return this.hostService.get('earning/summary/active');
+  }
+
+  earningSummary() {
+    return this.hostService.get('earning/summary');
   }
 }
