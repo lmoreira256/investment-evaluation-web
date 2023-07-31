@@ -22,4 +22,5 @@ export class EarningSummaryComponent {
       this.earningSummary = data;
     });
   }
+
 }

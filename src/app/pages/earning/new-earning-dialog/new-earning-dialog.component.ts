@@ -20,7 +20,7 @@ export class NewEarningDialogComponent {
     public dialogRef: MatDialogRef<NewEarningDialogComponent>,
     private activeService: ActiveService,
     private earningService: EarningService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.getStocks();
@@ -37,7 +37,6 @@ export class NewEarningDialogComponent {
   }
 
   save() {
-    console.log('this.earning: ', this.earning);
     this.earningService.create(this.earning).subscribe(() => {
       this.closeDialog();
     });

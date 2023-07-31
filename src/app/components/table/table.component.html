@@ -46,7 +46,7 @@
     *ngIf="showPaginator && data"
     (page)="handlePageEvent($event)"
     [length]="data.totalElements"
-    [pageSize]="10"
+    [pageSize]="data.size"
   >
   </mat-paginator>
 </div>

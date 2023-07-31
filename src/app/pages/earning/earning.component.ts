@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { IListColumn } from 'src/app/interfaces/IListColumn';
 import { EarningService } from 'src/app/services/earning.service';
+import { NewEarningDialogComponent } from './new-earning-dialog/new-earning-dialog.component';
 
 @Component({
   selector: 'app-earning',
@@ -9,10 +11,12 @@ import { EarningService } from 'src/app/services/earning.service';
 })
 export class EarningComponent {
   earnings: any;
+  earningsForActive: any;
+  earningsForMonth: any;
 
-  listColumns: IListColumn[] = [
+  earningListColumns: IListColumn[] = [
     {
-      fieldOne: 'stockName',
+      fieldOne: 'activeName',
       fieldTwo: '',
       name: 'Ativo',
       type: 'text',
@@ -45,13 +49,60 @@ export class EarningComponent {
     },
   ];
 
-  constructor(private earningService: EarningService) {
+  earningSummaryListColumns: IListColumn[] = [
+    {
+      fieldOne: 'item',
+      fieldTwo: '',
+      name: 'Ativo',
+      type: 'text',
+      formatType: '',
+      with: '80px',
+    }, {
+      fieldOne: 'totalValue',
+      fieldTwo: '',
+      name: 'Valor',
+      type: 'text',
+      formatType: 'currency',
+      with: '',
+    }
+  ]
+
+  constructor(
+    public earningService: EarningService,
+    private dialog: MatDialog
+  ) {
+    this.updateData();
+  }
+
+  updateData() {
     this.listEarnings();
+    this.listEarningsForActive();
+    this.listEarningsForMonth();
   }
 
   listEarnings() {
     this.earningService.list().subscribe((data: any) => {
       this.earnings = data;
+    });
+  }
+
+  listEarningsForActive() {
+    this.earningService.summaryActive().subscribe((data: any) => {
+      this.earningsForActive = data
+    })
+  }
+
+  listEarningsForMonth() {
+    this.earningService.summaryMonth().subscribe((data: any) => {
+      this.earningsForMonth = data
+    })
+  }
+
+  createEarning() {
+    const dialogRef = this.dialog.open(NewEarningDialogComponent);
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.updateData();
     });
   }
 }
