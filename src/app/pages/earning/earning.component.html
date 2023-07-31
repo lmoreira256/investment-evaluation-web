@@ -1,31 +1,39 @@
 <div class="earning">
-  <div class="earning-content">
+  <header>
     <app-earning-summary></app-earning-summary>
+  </header>
 
-    <div class="content">
+  <main>
+
+    <article>
+      <div class="title">
+        <h1>Dividendos:</h1>
+        <button mat-raised-button color="primary" (click)="createEarning()">
+          Adicionar dividendo
+        </button>
+      </div>
+
       <div class="list">
-        <div class="list-content">
-          <div class="earning-list-title">
-            <h1>Listagem de dividendos:</h1>
-            <button mat-raised-button color="primary" (click)="createEarning()">
-              Adicionar dividendo
-            </button>
-          </div>
-          <app-list [data]="earnings" [columns]="earningListColumns"></app-list>
-        </div>
+        <app-list [data]="earnings" [columns]="earningListColumns"></app-list>
       </div>
+    </article>
 
-      <div class="infos">
-        <div class="info">
-          <h1>Listagem de dividendos por ativo:</h1>
-          <app-list [data]="earningsForActive" [columns]="earningSummaryListColumns"></app-list>
-        </div>
+    <aside>
+      <h1>Dividendos por ativo:</h1>
 
-        <div class="info month">
-          <h1>Listagem de dividendos por mês:</h1>
-          <app-list [data]="earningsForMonth" [columns]="earningSummaryListColumns"></app-list>
-        </div>
+      <div class="list">
+        <app-list [data]="earningsForActive" [columns]="earningSummaryListColumns"></app-list>
       </div>
-    </div>
-  </div>
+    </aside>
+
+    <aside>
+      <h1>Dividendos por mês:</h1>
+
+      <div class="list">
+        <app-list [data]="earningsForMonth" [columns]="earningSummaryListColumns"></app-list>
+      </div>
+    </aside>
+
+  </main>
+
 </div>

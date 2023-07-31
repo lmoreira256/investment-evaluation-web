@@ -1,43 +1,35 @@
 .earning {
   height: 100vh;
-  background-color: #f3f3f3;
+  overflow: hidden;
 
-  .earning-content {
-    padding: 50px;
+  header {
+    padding: 50px 50px 0 50px;
+  }
 
-    .content {
+  main {
+    display: flex;
+    padding: 0 50px 50px 50px;
+    height: calc(100vh - 230px);
+  }
+
+  article {
+    width: 70%;
+    overflow: hidden;
+    padding: 15px 15px 0 0;
+
+    .title {
       display: flex;
-
-      .list {
-        width: 50%;
-        height: calc(100vh - 230px);
-        overflow: hidden;
-
-        .list-content {
-          padding-top: 15px;
-
-          .earning-list-title {
-            justify-content: space-between;
-            display: flex;
-          }
-        }
-      }
-
-      .infos {
-        width: 50%;
-        height: calc(100vh - 230px);
-      }
-
-      .info {
-        height: 50%;
-        padding: 15px 0 15px 15px;
-      }
-
-      .month {
-        margin-top: 33px;
-        height: calc(100vh - 685px);
-        padding: 15px 0 0 15px;
-      }
+      justify-content: space-between;
     }
+  }
+
+  .list {
+    height: calc(100vh - 164px);
+  }
+
+  aside {
+    width: 30%;
+    overflow: hidden;
+    padding: 15px 0 0 15px;
   }
 }
