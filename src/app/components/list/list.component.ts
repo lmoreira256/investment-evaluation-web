@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import { IListColumn } from 'src/app/interfaces/IListColumn';
+import { ActiveService } from 'src/app/services/active.service';
 
 @Component({
   selector: 'app-list',
@@ -20,7 +21,9 @@ export class ListComponent {
   @Input()
   drawerFunction: Function;
 
-  constructor() { }
+  constructor(
+    public activeService: ActiveService
+  ) { }
 
   openDrawer(item: any) {
     if (this.drawerFunction) {
