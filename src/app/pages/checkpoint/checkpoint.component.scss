@@ -4,24 +4,39 @@
 
   .checkpoint-content {
     padding: 50px;
+    display: flex;
 
-    h1 {
-      margin: 0;
-      font-size: 25px;
-      color: black;
+    .checkpoint-list:first-child {
+      padding-left: 0;
     }
 
-    .title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 40px;
+    .checkpoint-list:last-child {
+      padding-right: 0;
     }
 
-    .list {
-      width: 100%;
-      height: calc(100vh - 155px);
-      margin-top: 15px;
+    .checkpoint-list {
+      height: 100%;
+      width: 33%;
+      padding: 0 15px;
+
+      h1 {
+        margin: 0;
+        font-size: 25px;
+        color: black;
+      }
+
+      .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 40px;
+      }
+
+      .list {
+        width: 100%;
+        height: calc(100vh - 155px);
+        margin-top: 15px;
+      }
     }
   }
 }

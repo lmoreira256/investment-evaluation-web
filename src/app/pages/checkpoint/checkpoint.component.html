@@ -1,14 +1,35 @@
 <div class="checkpoint">
   <div class="checkpoint-content">
-    <div class="title">
-      <h1>Checkpoint Geral</h1>
-      <button mat-raised-button color="primary" (click)="createCheckpoint()">
-        Criar checkpoint
-      </button>
+
+    <div class="checkpoint-list">
+      <div class="title">
+        <h1>Checkpoint Geral</h1>
+      </div>
+
+      <div class="list">
+        <app-list [data]="items" [columns]="listColumns"></app-list>
+      </div>
     </div>
 
-    <div class="list">
-      <app-list [data]="items" [columns]="listColumns"></app-list>
+    <div class="checkpoint-list">
+      <div class="title">
+        <h1>Checkpoint de FII</h1>
+      </div>
+
+      <div class="list">
+        <app-list [data]="items" [columns]="listColumns"></app-list>
+      </div>
     </div>
+
+    <div class="checkpoint-list">
+      <div class="title">
+        <h1>Checkpoint de Ações</h1>
+      </div>
+
+      <div class="list">
+        <app-list [data]="items" [columns]="listColumns"></app-list>
+      </div>
+    </div>
+
   </div>
 </div>

@@ -13,14 +13,6 @@ export class CheckpointComponent {
 
   listColumns: IListColumn[] = [
     {
-      fieldOne: 'amount',
-      fieldTwo: '',
-      name: 'Quantidade',
-      type: 'text',
-      formatType: '',
-      with: '',
-    },
-    {
       fieldOne: 'resultValue',
       fieldTwo: 'resultPercentageValue',
       name: '',
@@ -37,14 +29,6 @@ export class CheckpointComponent {
       with: '',
     },
     {
-      fieldOne: 'purchaseValue',
-      fieldTwo: '',
-      name: 'Valor de Compra',
-      type: 'text',
-      formatType: 'currency',
-      with: '',
-    },
-    {
       fieldOne: 'createdAt',
       fieldTwo: '',
       name: 'Criação',
@@ -54,7 +38,7 @@ export class CheckpointComponent {
     },
   ];
 
-  constructor(private checkpointService: CheckpointService) {}
+  constructor(private checkpointService: CheckpointService) { }
 
   ngOnInit() {
     this.getCheckpoint();
@@ -66,9 +50,4 @@ export class CheckpointComponent {
     });
   }
 
-  createCheckpoint() {
-    this.checkpointService.create().subscribe(() => {
-      this.getCheckpoint();
-    });
-  }
 }

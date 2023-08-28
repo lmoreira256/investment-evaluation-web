@@ -33,8 +33,6 @@ import { GeneralComponent } from './pages/general/general.component';
 import { RealEstateFundComponent } from './pages/real-estate-fund/real-estate-fund.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { CheckpointComponent } from './pages/checkpoint/checkpoint.component';
-import { StockCheckpointComponent } from './pages/stock-checkpoint/stock-checkpoint.component';
-import { RealEstateFundCheckpointComponent } from './pages/real-estate-fund-checkpoint/real-estate-fund-checkpoint.component';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 import { LineChartComponent } from './components/line-chart/line-chart.component';
 import { AreaChartComponent } from './components/area-chart/area-chart.component';
@@ -72,8 +70,6 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     RealEstateFundComponent,
     SummaryComponent,
     CheckpointComponent,
-    StockCheckpointComponent,
-    RealEstateFundCheckpointComponent,
     LineChartComponent,
     AreaChartComponent,
     ColumnChartComponent,
@@ -100,4 +96,4 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
