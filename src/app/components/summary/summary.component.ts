@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { IActiveSummary } from 'src/app/interfaces/IActiveSummary';
+import { CheckpointService } from 'src/app/services/checkpoint.service';
 import Formatter from 'src/utils/Formatter';
 
 @Component({
@@ -14,5 +15,22 @@ export class SummaryComponent {
   @Input()
   title: String;
 
-  constructor(public formatter: Formatter) {}
+  @Input()
+  showButton: Boolean;
+
+  @Input()
+  buttonText: String;
+
+  @Input()
+  buttonFunction: Function;
+
+  constructor(
+    public formatter: Formatter,
+    public checkpointService: CheckpointService
+  ) { }
+
+  clickButton() {
+    debugger;
+    this.buttonFunction();
+  }
 }

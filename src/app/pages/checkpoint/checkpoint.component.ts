@@ -9,7 +9,9 @@ import { CheckpointService } from 'src/app/services/checkpoint.service';
   styleUrls: ['./checkpoint.component.scss'],
 })
 export class CheckpointComponent {
-  items: ICheckpoint[] | any;
+  checkpointList: ICheckpoint[] | any;
+  checkpointStockList: ICheckpoint[] | any;
+  checkpointRealEstateFundList: ICheckpoint[] | any;
 
   listColumns: IListColumn[] = [
     {
@@ -41,12 +43,20 @@ export class CheckpointComponent {
   constructor(private checkpointService: CheckpointService) { }
 
   ngOnInit() {
-    this.getCheckpoint();
+    this.getCheckpoints();
   }
 
-  getCheckpoint() {
+  getCheckpoints() {
     this.checkpointService.list().subscribe((data) => {
-      this.items = data;
+      this.checkpointList = data;
+    });
+
+    this.checkpointService.listStock().subscribe((data) => {
+      this.checkpointStockList = data;
+    });
+
+    this.checkpointService.listRealEstateFund().subscribe((data) => {
+      this.checkpointRealEstateFundList = data;
     });
   }
 

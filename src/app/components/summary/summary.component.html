@@ -1,12 +1,12 @@
-<div
-  *ngIf="summary"
-  [ngClass]="
+<div *ngIf="summary" [ngClass]="
     summary.resultValue >= 0 ? 'positive-backgroud' : 'negative-backgroud'
-  "
-  class="summary"
->
+  " class="summary">
   <div *ngIf="title" class="title-content">
     <span class="general-title">{{ title }}</span>
+
+    <button *ngIf="showButton" mat-raised-button color="primary" (click)="clickButton()">
+      {{ buttonText }}
+    </button>
   </div>
 
   <div class="summary-content">

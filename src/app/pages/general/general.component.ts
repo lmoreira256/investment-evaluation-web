@@ -3,6 +3,7 @@ import { MatDrawer } from '@angular/material/sidenav';
 import { IActiveSummary } from 'src/app/interfaces/IActiveSummary';
 import { IListColumn } from 'src/app/interfaces/IListColumn';
 import { ActiveService } from 'src/app/services/active.service';
+import { CheckpointService } from 'src/app/services/checkpoint.service';
 import Formatter from 'src/utils/Formatter';
 
 @Component({
@@ -95,8 +96,9 @@ export class GeneralComponent {
 
   constructor(
     public formatter: Formatter,
-    public activeService: ActiveService
-  ) {}
+    public activeService: ActiveService,
+    public checkpointService: CheckpointService
+  ) { }
 
   ngOnInit() {
     this.getSummary();
@@ -128,5 +130,10 @@ export class GeneralComponent {
     this.activeService.summary().subscribe((data) => {
       this.summary = data;
     });
+  }
+
+  createCheckpoint() {
+    debugger;
+    this.checkpointService.create();
   }
 }
