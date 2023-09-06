@@ -28,7 +28,7 @@ export class DashboardComponent {
       this.equityChartItems = data;
     });
 
-    this.earningService.summaryMonth().subscribe((data: any) => {
+    this.earningService.summaryMonth('').subscribe((data: any) => {
       this.earningPerMonthChartItems = data;
     });
 

@@ -93,7 +93,7 @@ export class EarningComponent {
   }
 
   listEarningsForMonth() {
-    this.earningService.summaryMonth().subscribe((data: any) => {
+    this.earningService.summaryMonth('DESC').subscribe((data: any) => {
       this.earningsForMonth = data
     })
   }

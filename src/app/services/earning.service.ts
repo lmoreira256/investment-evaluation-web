@@ -6,7 +6,7 @@ import { HostService } from './host.service';
   providedIn: 'root',
 })
 export class EarningService {
-  constructor(private hostService: HostService) {}
+  constructor(private hostService: HostService) { }
 
   list() {
     return this.hostService.get('earning');
@@ -16,8 +16,8 @@ export class EarningService {
     return this.hostService.post('earning', earning);
   }
 
-  summaryMonth() {
-    return this.hostService.get('earning/summary/month');
+  summaryMonth(sortDirection: String) {
+    return this.hostService.get(`earning/summary/month${sortDirection ? `?sortDirection=${sortDirection}` : ''}`);
   }
 
   summaryActive() {
