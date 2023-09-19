@@ -12,7 +12,6 @@ import { MaterialModule } from '../material.module';
 import { CustomMatPaginatorIntl } from 'src/config/CustomMatPaginatorIntl';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import Formatter from 'src/utils/Formatter';
-import { HistoricTableComponent } from './pages/earning/historic-table/historic-table.component';
 import { FormsModule } from '@angular/forms';
 import {
   CurrencyMaskModule,
@@ -56,7 +55,6 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     StockComponent,
     PageNotFoundComponent,
     EarningComponent,
-    HistoricTableComponent,
     NewEarningDialogComponent,
     NewStockDialogComponent,
     EditStockDrawerComponent,

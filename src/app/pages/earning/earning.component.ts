@@ -13,6 +13,7 @@ export class EarningComponent {
   earnings: any;
   earningsForActive: any;
   earningsForMonth: any;
+  earningSummary: any;
 
   earningListColumns: IListColumn[] = [
     {
@@ -78,6 +79,7 @@ export class EarningComponent {
     this.listEarnings();
     this.listEarningsForActive();
     this.listEarningsForMonth();
+    this.getEarningSummary();
   }
 
   listEarnings() {
@@ -105,4 +107,11 @@ export class EarningComponent {
       this.updateData();
     });
   }
+
+  getEarningSummary() {
+    this.earningService.earningSummary().subscribe((data: any) => {
+      this.earningSummary = data;
+    });
+  }
+
 }

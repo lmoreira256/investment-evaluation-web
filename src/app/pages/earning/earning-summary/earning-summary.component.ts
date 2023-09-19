@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { EarningService } from 'src/app/services/earning.service';
+import { Component, Input } from '@angular/core';
 import Formatter from 'src/utils/Formatter';
 
 @Component({
@@ -8,19 +7,19 @@ import Formatter from 'src/utils/Formatter';
   styleUrls: ['./earning-summary.component.scss'],
 })
 export class EarningSummaryComponent {
+
+  @Input()
   earningSummary: any;
 
-  constructor(
-    public formatter: Formatter,
-    private earningService: EarningService
-  ) {
-    this.getEarningSummary();
-  }
+  @Input()
+  getEarningSummary: any;
 
-  getEarningSummary() {
-    this.earningService.earningSummary().subscribe((data: any) => {
-      this.earningSummary = data;
-    });
+  constructor(
+    public formatter: Formatter
+  ) {
+    if (this.getEarningSummary) {
+      this.getEarningSummary();
+    }
   }
 
 }
