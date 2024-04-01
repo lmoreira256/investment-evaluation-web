@@ -1,9 +1,7 @@
 <div class="stock-info">
-  <img
-    [src]="
+  <img [src]="
       './assets/active_logos/' + activeService.activeSelected!.name + '.png'
-    "
-  />
+    " />
 
   <div class="information">
     <h1>{{ activeService.activeSelected!.name }}</h1>
@@ -11,43 +9,32 @@
   </div>
 
   <div class="return-information">
-    <mat-icon
-      class="icon"
-      [ngClass]="
+    <mat-icon class="icon" [ngClass]="
         activeService.activeSelected!.resultValue >= 0 ? 'positive' : 'negative'
-      "
-    >
+      ">
       {{
-        activeService.activeSelected!.resultValue >= 0
-          ? "arrow_upward"
-          : "arrow_downward"
+      activeService.activeSelected!.resultValue >= 0
+      ? "arrow_upward"
+      : "arrow_downward"
       }}
     </mat-icon>
     <div class="return-value">
-      <span
-        [ngClass]="
+      <span [ngClass]="
           activeService.activeSelected!.resultValue >= 0
             ? 'positive'
             : 'negative'
-        "
-      >
+        ">
         {{
-          formatter.formatCurrency(activeService.activeSelected!.resultValue)
+        formatter.formatCurrency(activeService.activeSelected!.resultValue)
         }}
       </span>
-      <span
-        [ngClass]="
+      <span [ngClass]="
           activeService.activeSelected!.resultPercentageValue >= 0
             ? 'positive'
             : 'negative'
-        "
-      >
+        ">
         {{
-          activeService.activeSelected!.currentValue
-            ? formatter.formatPercent(
-                activeService.activeSelected!.resultPercentageValue
-              )
-            : "0,00%"
+        formatter.formatPercent( activeService.activeSelected!.resultPercentageValue ) || "0,00%"
         }}
       </span>
     </div>

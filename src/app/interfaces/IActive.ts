@@ -2,7 +2,7 @@ export interface IActive {
   id: String;
   name: String;
   description: String;
-  amount: Number;
+  amount: number;
   currentValue: number;
   resultValue: number;
   resultPercentageValue: number;
@@ -13,4 +13,5 @@ export interface IActive {
   updatedAt: Date;
   enabled: Boolean;
   objective: Number;
+  actualValue: number;
 }

@@ -32,6 +32,7 @@ export class EditStockDrawerComponent {
 
   updateActiveResultValues() {
     let active = this.activeService.activeSelected;
+    active!.currentValue = active!.amount * active!.actualValue;
     active!.resultValue = active!.currentValue - active!.purchaseValue;
     active!.resultPercentageValue =
       active!.resultValue == 0

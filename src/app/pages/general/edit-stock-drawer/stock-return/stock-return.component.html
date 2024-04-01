@@ -1,77 +1,31 @@
 <div class="stock-return">
   <div class="stock-return-content">
-    <h2>Lucro e Prejuízo</h2>
 
-    <div class="info">
-      <span>Rentabilidade (R$)</span>
-      <span>
-        {{
-          formatter.formatCurrency(
-            activeService.activeSelected!.currentValue -
-              activeService.activeSelected!.purchaseValue
-          )
-        }}
-      </span>
-    </div>
-    <mat-divider></mat-divider>
-    <div class="info">
-      <span>Rentabilidade (%)</span>
-      <span>
-        {{
-          activeService.activeSelected!.currentValue
-            ? formatter.formatPercent(
-                (activeService.activeSelected!.currentValue * 100) /
-                  activeService.activeSelected!.purchaseValue -
-                  100
-              )
-            : "0,00%"
-        }}
-      </span>
-    </div>
+    <div class="display">
 
-    <div
-      class="display"
-      [ngClass]="
-        activeService.activeSelected!.currentValue -
-          activeService.activeSelected!.purchaseValue >=
-        0
-          ? 'positive-border'
-          : 'negative-border'
-      "
-    >
-      <div
-        class="display-content"
-        [ngClass]="
-          activeService.activeSelected!.currentValue -
-            activeService.activeSelected!.purchaseValue >=
-          0
-            ? 'positive-backgroud'
-            : 'negative-backgroud'
-        "
-      >
-        <span class="total">Total</span>
+      <div class="display-content neutral-background">
+        <span class="title">Posição Atual</span>
         <div>
           <span class="value">
-            {{
-              formatter.formatCurrency(
-                activeService.activeSelected!.currentValue -
-                  activeService.activeSelected!.purchaseValue
-              )
-            }}
-          </span>
-          <span class="percentage">
-            ({{
-              activeService.activeSelected!.currentValue
-                ? formatter.formatPercent(
-                    (activeService.activeSelected!.currentValue * 100) /
-                      activeService.activeSelected!.purchaseValue -
-                      100
-                  )
-                : "0,00%"
-            }})
+            {{ getCurrentValueFormatted() }}
           </span>
         </div>
       </div>
+
+      <div class="display-content" [ngClass]="getProfitabilityBackgroundClass()">
+        <span class="title">Total</span>
+        <div class="align-values">
+          <span class="value">
+            {{ getCurrencyProfitability() }}
+          </span>
+          <br>
+          <span class="percentage">
+            ({{ getPercentageProfitability() }})
+          </span>
+        </div>
+      </div>
+
     </div>
+
   </div>
 </div>
