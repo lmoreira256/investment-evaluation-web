@@ -13,11 +13,7 @@
         <td>
           <mat-form-field>
             <mat-label>Descrição</mat-label>
-            <input
-              matInput
-              [(ngModel)]="active.description"
-              name="description"
-            />
+            <input matInput [(ngModel)]="active.description" name="description" />
           </mat-form-field>
         </td>
       </tr>
@@ -25,12 +21,7 @@
         <td>
           <mat-form-field>
             <mat-label>Quantidade</mat-label>
-            <input
-              type="number"
-              [(ngModel)]="active.amount"
-              matInput
-              name="amount"
-            />
+            <input type="number" [(ngModel)]="active.quantity" matInput name="quantity" />
           </mat-form-field>
         </td>
         <td>
@@ -48,23 +39,13 @@
         <td>
           <mat-form-field>
             <mat-label>Valor de compra</mat-label>
-            <input
-              matInput
-              [(ngModel)]="active.purchaseValue"
-              currencyMask
-              name="purchaseValue"
-            />
+            <input matInput [(ngModel)]="active.costValue" currencyMask name="costValue" />
           </mat-form-field>
         </td>
         <td>
           <mat-form-field>
             <mat-label>Valor Atual</mat-label>
-            <input
-              matInput
-              [(ngModel)]="active.currentValue"
-              currencyMask
-              name="currentValue"
-            />
+            <input matInput [(ngModel)]="active.currentValue" currencyMask name="currentValue" />
           </mat-form-field>
         </td>
       </tr>
@@ -72,23 +53,13 @@
         <td>
           <mat-form-field>
             <mat-label>Média de compra</mat-label>
-            <input
-              matInput
-              [(ngModel)]="active.averageValue"
-              currencyMask
-              name="averageValue"
-            />
+            <input matInput [(ngModel)]="active.averageCost" currencyMask name="averageCost" />
           </mat-form-field>
         </td>
         <td>
           <mat-form-field>
             <mat-label>Objetivo</mat-label>
-            <input
-              type="number"
-              [(ngModel)]="active.objective"
-              matInput
-              name="objective"
-            />
+            <input type="number" [(ngModel)]="active.objective" matInput name="objective" />
           </mat-form-field>
         </td>
       </tr>
@@ -100,19 +71,19 @@
     <h3>
       Retorno (R$):
       {{
-        active.currentValue
-          ? formatter.formatCurrency(active.currentValue - active.purchaseValue)
-          : "R$ 0,00"
+      active.currentValue
+      ? formatter.formatCurrency(active.currentValue - active.costValue)
+      : "R$ 0,00"
       }}
     </h3>
     <h3>
       Retorno (%):
       {{
-        active.currentValue
-          ? formatter.formatPercent(
-              (active.currentValue * 100) / active.purchaseValue - 100
-            )
-          : "0,00%"
+      active.currentValue
+      ? formatter.formatPercent(
+      (active.currentValue * 100) / active.costValue - 100
+      )
+      : "0,00%"
       }}
     </h3>
   </div>

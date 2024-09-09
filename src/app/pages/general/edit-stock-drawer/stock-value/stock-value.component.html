@@ -4,52 +4,27 @@
 
     <mat-form-field>
       <mat-label>Objetivo</mat-label>
-      <input
-        type="number"
-        matInput
-        [(ngModel)]="activeService.activeSelected!.objective"
-        name="objective"
-      />
+      <input type="number" matInput [(ngModel)]="activeService.activeSelected!.objective" name="objective" />
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Quantidade</mat-label>
-      <input
-        type="number"
-        matInput
-        [(ngModel)]="activeService.activeSelected!.amount"
-        name="amount"
-      />
+      <input type="number" matInput [(ngModel)]="activeService.activeSelected!.quantity" name="quantity" />
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Média de compra</mat-label>
-      <input
-        matInput
-        currencyMask
-        [(ngModel)]="activeService.activeSelected!.averageValue"
-        name="averageValue"
-      />
+      <input matInput currencyMask [(ngModel)]="activeService.activeSelected!.averageCost" name="averageCost" />
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Valor de compra</mat-label>
-      <input
-        matInput
-        currencyMask
-        [(ngModel)]="activeService.activeSelected!.purchaseValue"
-        name="purchaseValue"
-      />
+      <input matInput currencyMask [(ngModel)]="activeService.activeSelected!.costValue" name="costValue" />
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Cotação atual</mat-label>
-      <input
-        matInput
-        currencyMask
-        [(ngModel)]="activeService.activeSelected!.actualValue"
-        name="actualValue"
-      />
+      <input matInput currencyMask [(ngModel)]="activeService.activeSelected!.currentPrice" name="currentPrice" />
     </mat-form-field>
   </div>
 </div>

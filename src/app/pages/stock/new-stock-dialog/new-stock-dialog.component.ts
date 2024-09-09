@@ -16,17 +16,17 @@ export class NewStockDialogComponent {
     public formatter: Formatter,
     public dialogRef: MatDialogRef<NewStockDialogComponent>,
     private activeService: ActiveService
-  ) {}
+  ) { }
 
   closeDialog(): void {
     this.dialogRef.close();
   }
 
   save() {
-    this.active.resultValue =
-      this.active.currentValue - this.active.purchaseValue;
-    this.active.resultPercentageValue =
-      ((this.active.currentValue - this.active.purchaseValue) / 100) * 100;
+    this.active.netResult =
+      this.active.currentValue - this.active.costValue;
+    this.active.percentageResult =
+      ((this.active.currentValue - this.active.costValue) / 100) * 100;
 
     this.activeService.create(this.active).subscribe(() => {
       this.closeDialog();

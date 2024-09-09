@@ -20,11 +20,11 @@ export class StockReturnComponent {
   }
 
   getPercentageProfitability() {
-    let purchaseValue = this.activeService.activeSelected!.purchaseValue;
+    let costValue = this.activeService.activeSelected!.costValue;
     let currentValue = this.getCurrentValue();
 
     return currentValue
-      ? this.formatter.formatPercent(currentValue * 100 / purchaseValue - 100)
+      ? this.formatter.formatPercent(currentValue * 100 / costValue - 100)
       : '0,00%';
   }
 
@@ -39,14 +39,14 @@ export class StockReturnComponent {
   }
 
   private getCurrentValue() {
-    let actualValue = this.activeService.activeSelected!.actualValue || 0;
-    let amount = this.activeService.activeSelected!.amount;
+    let actualValue = this.activeService.activeSelected!.currentPrice || 0;
+    let amount = this.activeService.activeSelected!.quantity;
 
     return amount * actualValue;
   }
 
   private getProfitabilityValue() {
-    let purchaseValue = this.activeService.activeSelected!.purchaseValue;
+    let purchaseValue = this.activeService.activeSelected!.costValue;
     let currentValue = this.getCurrentValue();
 
     return currentValue - purchaseValue;

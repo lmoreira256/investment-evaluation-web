@@ -2,16 +2,16 @@ export interface IActive {
   id: string;
   name: string;
   description: String;
-  amount: number;
+  quantity: number;
   currentValue: number;
-  resultValue: number;
-  resultPercentageValue: number;
-  purchaseValue: number;
-  averageValue: Number;
+  netResult: number;
+  percentageResult: number;
+  costValue: number;
+  averageCost: Number;
   activeType: Number;
   createdAt: Date;
   updatedAt: Date;
   enabled: Boolean;
   objective: Number;
-  actualValue: number;
+  currentPrice: number;
 }
