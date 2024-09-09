@@ -1,36 +1,33 @@
-<mat-drawer-container class="container" autosize>
-  <mat-drawer class="sidenav" mode="side" opened>
-    <img src="../assets/money.png" />
+<div class="top-menu">
+  <img src="../assets/money.png" />
 
-    <div>
-      <a class="button" routerLink="/dashboard" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
-        Dashboard
-      </a>
+  <div class="buttons">
+    <a class="button" routerLink="/dashboard" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
+      Dashboard
+    </a>
 
-      <a class="button" routerLink="/general" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
-        Geral
-      </a>
+    <a class="button" routerLink="/general" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
+      Geral
+    </a>
 
-      <a class="button" routerLink="/stock" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
-        Ações
-      </a>
+    <a class="button" routerLink="/stock" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
+      Ações
+    </a>
 
-      <a class="button" routerLink="/real-estate-fund" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
-        FII
-      </a>
+    <a class="button" routerLink="/real-estate-fund" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
+      FII
+    </a>
 
-      <a class="button" routerLink="/earning" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
-        Dividendos
-      </a>
+    <a class="button" routerLink="/earning" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
+      Dividendos
+    </a>
 
-      <a class="button" routerLink="/checkpoint" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
-        Checkpoints
-      </a>
-
-    </div>
-  </mat-drawer>
-
-  <div class="sidenav-content">
-    <router-outlet></router-outlet>
+    <a class="button" routerLink="/checkpoint" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
+      Checkpoints
+    </a>
   </div>
-</mat-drawer-container>
+</div>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
