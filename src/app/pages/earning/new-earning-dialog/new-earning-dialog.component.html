@@ -3,7 +3,7 @@
   <mat-divider></mat-divider>
   <form>
     <div class="container">
-      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-form-field appearance="fill">
         <mat-label>Ativo</mat-label>
         <input type="text" matInput [ngModel]="getSelectedOption(earning.activeId)"
           (ngModelChange)="onNgModelChange($event)" [formControl]="myControl" [matAutocomplete]="auto">
