@@ -1,5 +1,5 @@
 .checkpoint {
-  height: 100vh;
+  height: calc(100vh - 75px);
   background-color: #f3f3f3;
 
   .checkpoint-content {
@@ -34,7 +34,7 @@
 
       .list {
         width: 100%;
-        height: calc(100vh - 155px);
+        height: calc(100vh - 230px);
         margin-top: 15px;
       }
     }

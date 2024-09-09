@@ -1,5 +1,5 @@
 .stock {
-  height: 100vh;
+  height: calc(100vh - 75px);
   background-color: #f3f3f3;
 
   .stock-content {
@@ -23,6 +23,6 @@
 
 .list {
   width: 100%;
-  height: calc(100vh - 305px);
+  height: calc(100vh - 380px);
   margin-top: 15px;
 }

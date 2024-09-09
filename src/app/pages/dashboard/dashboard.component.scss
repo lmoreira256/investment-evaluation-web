@@ -1,6 +1,7 @@
 .dashboard {
-  height: 100vh;
+  height: calc(100vh - 75px);
   background-color: #f3f3f3;
+  overflow-y: hidden;
 
   .dashboard-content {
     padding: 50px;
@@ -17,7 +18,7 @@
 
     .charts {
       width: 100%;
-      height: calc(100vh - 100px);
+      height: calc(100vh - 175px);
       scroll-behavior: smooth;
       display: block;
       overflow-y: scroll;

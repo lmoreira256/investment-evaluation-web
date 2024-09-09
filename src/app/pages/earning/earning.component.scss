@@ -1,5 +1,5 @@
 .earning {
-  height: 100vh;
+  height: calc(100vh - 75px);
   overflow: hidden;
 
   header {
@@ -9,7 +9,7 @@
   main {
     display: flex;
     padding: 0 50px 50px 50px;
-    height: calc(100vh - 230px);
+    height: calc(100vh - 305px);
   }
 
   article {
@@ -24,7 +24,7 @@
   }
 
   .list {
-    height: calc(100vh - 164px);
+    height: calc(100vh - 239px);
   }
 
   aside {
