@@ -1,6 +1,6 @@
 export interface IActive {
-  id: String;
-  name: String;
+  id: string;
+  name: string;
   description: String;
   amount: number;
   currentValue: number;
