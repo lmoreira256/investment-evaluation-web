@@ -11,7 +11,7 @@ export class EditStockDrawerComponent {
   @Input()
   drawer: MatDrawer;
 
-  constructor(public activeService: ActiveService) {}
+  constructor(public activeService: ActiveService) { }
 
   saveActive() {
     this.updateActiveResultValues();
@@ -32,12 +32,12 @@ export class EditStockDrawerComponent {
 
   updateActiveResultValues() {
     let active = this.activeService.activeSelected;
-    active!.currentValue = active!.amount * active!.actualValue;
-    active!.resultValue = active!.currentValue - active!.purchaseValue;
-    active!.resultPercentageValue =
-      active!.resultValue == 0
+    active!.currentValue = active!.quantity * active!.currentPrice;
+    active!.netResult = active!.currentValue - active!.costValue;
+    active!.percentageResult =
+      active!.netResult == 0
         ? 0
-        : (active!.currentValue * 100) / active!.purchaseValue - 100;
+        : (active!.currentValue * 100) / active!.costValue - 100;
 
     this.activeService.activeSelected = active;
   }

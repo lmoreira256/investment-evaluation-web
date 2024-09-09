@@ -10,31 +10,31 @@
 
   <div class="return-information">
     <mat-icon class="icon" [ngClass]="
-        activeService.activeSelected!.resultValue >= 0 ? 'positive' : 'negative'
+        activeService.activeSelected!.netResult >= 0 ? 'positive' : 'negative'
       ">
       {{
-      activeService.activeSelected!.resultValue >= 0
+      activeService.activeSelected!.netResult >= 0
       ? "arrow_upward"
       : "arrow_downward"
       }}
     </mat-icon>
     <div class="return-value">
       <span [ngClass]="
-          activeService.activeSelected!.resultValue >= 0
+          activeService.activeSelected!.netResult >= 0
             ? 'positive'
             : 'negative'
         ">
         {{
-        formatter.formatCurrency(activeService.activeSelected!.resultValue)
+        formatter.formatCurrency(activeService.activeSelected!.netResult)
         }}
       </span>
       <span [ngClass]="
-          activeService.activeSelected!.resultPercentageValue >= 0
+          activeService.activeSelected!.percentageResult >= 0
             ? 'positive'
             : 'negative'
         ">
         {{
-        formatter.formatPercent( activeService.activeSelected!.resultPercentageValue ) || "0,00%"
+        formatter.formatPercent( activeService.activeSelected!.percentageResult ) || "0,00%"
         }}
       </span>
     </div>

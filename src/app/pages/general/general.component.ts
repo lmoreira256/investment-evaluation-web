@@ -32,15 +32,15 @@ export class GeneralComponent {
       with: '',
     },
     {
-      fieldOne: 'resultValue',
-      fieldTwo: 'resultPercentageValue',
+      fieldOne: 'netResult',
+      fieldTwo: 'percentageResult',
       name: '',
       type: 'value-info',
       formatType: '',
       with: '',
     },
     {
-      fieldOne: 'amount',
+      fieldOne: 'quantity',
       fieldTwo: '',
       name: 'Quantidade',
       type: 'text',
@@ -64,7 +64,7 @@ export class GeneralComponent {
       with: '',
     },
     {
-      fieldOne: 'purchaseValue',
+      fieldOne: 'costValue',
       fieldTwo: '',
       name: 'Valor de Compra',
       type: 'text',
@@ -72,7 +72,7 @@ export class GeneralComponent {
       with: '',
     },
     {
-      fieldOne: 'averageValue',
+      fieldOne: 'averageCost',
       fieldTwo: '',
       name: 'Média de Compra',
       type: 'text',
