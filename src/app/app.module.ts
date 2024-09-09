@@ -37,6 +37,7 @@ import { LineChartComponent } from './components/line-chart/line-chart.component
 import { AreaChartComponent } from './components/area-chart/area-chart.component';
 import { ColumnChartComponent } from './components/column-chart/column-chart.component';
 import { EarningSummaryComponent } from './pages/earning/earning-summary/earning-summary.component';
+import { BuyComponent } from './pages/buy/buy.component';
 
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
   align: 'left',
@@ -72,6 +73,7 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     AreaChartComponent,
     ColumnChartComponent,
     EarningSummaryComponent,
+    BuyComponent,
   ],
   imports: [
     BrowserModule,

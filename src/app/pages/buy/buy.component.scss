@@ -1,0 +1,22 @@
+.buy {
+  height: calc(100vh - 75px);
+  background-color: #f3f3f3;
+  overflow-y: hidden;
+
+  .content {
+    padding: 50px;
+
+    .title {
+      display: flex;
+      align-items: center;
+      height: 40px;
+      margin-top: 15px;
+    }
+
+    .list {
+      width: 100%;
+      height: calc(100vh - 245px);
+      margin-top: 15px;
+    }
+  }
+}
