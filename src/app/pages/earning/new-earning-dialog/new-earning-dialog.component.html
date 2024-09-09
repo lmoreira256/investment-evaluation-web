@@ -3,36 +3,27 @@
   <mat-divider></mat-divider>
   <form>
     <div class="container">
-      <mat-form-field appearance="fill">
+      <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Ativo</mat-label>
-        <mat-select [(ngModel)]="earning.activeId" name="activeId">
-          <mat-option *ngFor="let active of actives" [value]="active.id">
-            {{ active.name }}
+        <input type="text" matInput [ngModel]="getSelectedOption(earning.activeId)"
+          (ngModelChange)="onNgModelChange($event)" [formControl]="myControl" [matAutocomplete]="auto">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" [displayWith]="displayFn"
+          (optionSelected)="optionSelected($event)">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{ option.name }}
           </mat-option>
-        </mat-select>
+        </mat-autocomplete>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>Valor</mat-label>
-        <input
-          matInput
-          currencyMask
-          [(ngModel)]="earning.amountPaid"
-          name="amountPaid"
-        />
+        <input matInput currencyMask [(ngModel)]="earning.amountPaid" name="amountPaid" />
       </mat-form-field>
 
       <mat-form-field appearance="fill" class="calendario">
         <mat-label>Data de Pagamento</mat-label>
-        <input
-          matInput
-          [matDatepicker]="picker"
-          (dateInput)="changePayDay($event)"
-        />
-        <mat-datepicker-toggle
-          matIconSuffix
-          [for]="picker"
-        ></mat-datepicker-toggle>
+        <input matInput [matDatepicker]="picker" (dateInput)="changePayDay($event)" />
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 

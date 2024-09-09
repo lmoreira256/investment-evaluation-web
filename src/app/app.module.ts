@@ -12,7 +12,7 @@ import { MaterialModule } from '../material.module';
 import { CustomMatPaginatorIntl } from 'src/config/CustomMatPaginatorIntl';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import Formatter from 'src/utils/Formatter';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   CurrencyMaskModule,
   CurrencyMaskConfig,
@@ -82,6 +82,7 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     FormsModule,
     CurrencyMaskModule,
     CanvasJSAngularChartsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     Formatter,
