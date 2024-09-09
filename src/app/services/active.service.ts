@@ -8,7 +8,7 @@ import { IActive } from 'src/app/interfaces/IActive';
 export class ActiveService {
   public activeSelected: IActive | null;
 
-  constructor(private hostService: HostService) {}
+  constructor(private hostService: HostService) { }
 
   create(active: IActive) {
     return this.hostService.post('active', active);
@@ -24,5 +24,9 @@ export class ActiveService {
 
   summary() {
     return this.hostService.get('active/summary');
+  }
+
+  activesToBuy() {
+    return this.hostService.get('active/actives-to-buy');
   }
 }

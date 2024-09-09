@@ -14,4 +14,5 @@ export interface IActive {
   enabled: Boolean;
   objective: Number;
   currentPrice: number;
+  quantityToBuy: number;
 }

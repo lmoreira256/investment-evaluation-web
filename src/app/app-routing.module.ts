@@ -7,6 +7,7 @@ import { StockComponent } from './pages/stock/stock.component';
 import { GeneralComponent } from './pages/general/general.component';
 import { RealEstateFundComponent } from './pages/real-estate-fund/real-estate-fund.component';
 import { CheckpointComponent } from './pages/checkpoint/checkpoint.component';
+import { BuyComponent } from './pages/buy/buy.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'real-estate-fund', component: RealEstateFundComponent },
   { path: 'stock', component: StockComponent },
   { path: 'earning', component: EarningComponent },
+  { path: 'buy', component: BuyComponent },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
