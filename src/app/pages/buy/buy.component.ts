@@ -60,6 +60,14 @@ export class BuyComponent {
       with: '',
     },
     {
+      fieldOne: 'currentPrice',
+      fieldTwo: '',
+      name: 'Preço atual',
+      type: 'text',
+      formatType: 'currency',
+      with: '',
+    },
+    {
       fieldOne: 'netResult',
       fieldTwo: 'percentageResult',
       name: '',
