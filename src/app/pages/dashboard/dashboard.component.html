@@ -7,13 +7,42 @@
       </div>
 
       <div class="chart">
+        <app-line-chart *ngIf="stockReturnChartItems" [data]="stockReturnChartItems"
+          title="Gráfico de resultado em Ações" valueX="createdAt" valueY="resultValue"></app-line-chart>
+      </div>
+
+      <div class="chart">
+        <app-line-chart *ngIf="realEstateFundReturnChartItems" [data]="realEstateFundReturnChartItems"
+          title="Gráfico de resultado em FII" valueX="createdAt" valueY="resultValue"></app-line-chart>
+      </div>
+
+      <div class="chart">
         <app-area-chart *ngIf="equityChartItems" [data]="equityChartItems" title="Gráfico de patrimônio"
           valueX="createdAt" valueY="currentValue"></app-area-chart>
       </div>
 
       <div class="chart">
-        <app-pie-chart *ngIf="profilePercentage" [data]="profilePercentage"
-          title="Gráfico de porcentagem na carteira"></app-pie-chart>
+        <app-area-chart *ngIf="stockReturnChartItems" [data]="stockReturnChartItems"
+          title="Gráfico de patrimônio em Ações" valueX="createdAt" valueY="currentValue"></app-area-chart>
+      </div>
+
+      <div class="chart">
+        <app-area-chart *ngIf="realEstateFundReturnChartItems" [data]="realEstateFundReturnChartItems"
+          title="Gráfico de patrimônio em FII" valueX="createdAt" valueY="currentValue"></app-area-chart>
+      </div>
+
+      <div class="chart">
+        <div style="display: flex; width: 100%;">
+          <div style="width: 50%;">
+            <app-pie-chart *ngIf="profilePercentage" [data]="profilePercentage"
+              title="Gráfico de porcentagem na carteira"></app-pie-chart>
+          </div>
+
+          <div style="width: 50%;">
+            <app-pie-chart *ngIf="activePercentage" [data]="activePercentage"
+              title="Gráfico de porcentagem por ativo"></app-pie-chart>
+          </div>
+        </div>
       </div>
 
       <div class="chart">

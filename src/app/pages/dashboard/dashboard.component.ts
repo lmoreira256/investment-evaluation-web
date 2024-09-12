@@ -10,10 +10,13 @@ import { EarningService } from 'src/app/services/earning.service';
 })
 export class DashboardComponent {
   returnChartItems: any;
+  stockReturnChartItems: any;
+  realEstateFundReturnChartItems: any;
   equityChartItems: any;
   earningPerMonthChartItems: any;
   earningPerActiveChartItems: any;
   profilePercentage: any;
+  activePercentage: any;
 
   constructor(
     private checkpointService: CheckpointService,
@@ -24,11 +27,18 @@ export class DashboardComponent {
   ngOnInit() {
     this.getCheckpoint();
     this.getPrortifolioPercentage();
+    this.getActivePercentage();
   }
 
   getPrortifolioPercentage() {
     this.activeService.getPortfolioPercentage().subscribe((data: any) => {
-      this.profilePercentage = data
+      this.profilePercentage = data;
+    });
+  }
+
+  getActivePercentage() {
+    this.activeService.getActivePercentage().subscribe((data: any) => {
+      this.activePercentage = data;
     });
   }
 
@@ -36,6 +46,14 @@ export class DashboardComponent {
     this.checkpointService.list().subscribe((data: any) => {
       this.returnChartItems = data;
       this.equityChartItems = data;
+    });
+
+    this.checkpointService.listStock().subscribe((data: any) => {
+      this.stockReturnChartItems = data;
+    });
+
+    this.checkpointService.listRealEstateFund().subscribe((data: any) => {
+      this.realEstateFundReturnChartItems = data;
     });
 
     this.earningService.summaryMonth('').subscribe((data: any) => {

@@ -33,4 +33,8 @@ export class ActiveService {
   getPortfolioPercentage() {
     return this.hostService.get('active/get-portfolio-percentage');
   }
+
+  getActivePercentage() {
+    return this.hostService.get('active/get-active-percentage');
+  }
 }
