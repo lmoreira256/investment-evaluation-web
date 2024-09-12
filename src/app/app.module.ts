@@ -7,7 +7,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { StockComponent } from './pages/stock/stock.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { EarningComponent } from './pages/earning/earning.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from '../material.module';
 import { CustomMatPaginatorIntl } from 'src/config/CustomMatPaginatorIntl';
 import { MatPaginatorIntl } from '@angular/material/paginator';
@@ -38,6 +38,9 @@ import { AreaChartComponent } from './components/area-chart/area-chart.component
 import { ColumnChartComponent } from './components/column-chart/column-chart.component';
 import { EarningSummaryComponent } from './pages/earning/earning-summary/earning-summary.component';
 import { BuyComponent } from './pages/buy/buy.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LoaderComponent } from './components/loader/loader.component';
+import { HttpLoaderInterceptor } from './services/interceptors/http-loader.interceptor';
 
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
   align: 'left',
@@ -74,6 +77,7 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     ColumnChartComponent,
     EarningSummaryComponent,
     BuyComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,6 +89,7 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     CurrencyMaskModule,
     CanvasJSAngularChartsModule,
     ReactiveFormsModule,
+    MatSnackBarModule,
   ],
   providers: [
     Formatter,
@@ -94,6 +99,11 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     },
     { provide: CURRENCY_MASK_CONFIG, useValue: CustomCurrencyMaskConfig },
     { provide: MAT_DATE_LOCALE, useValue: 'pt-br' },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpLoaderInterceptor,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent],
 })

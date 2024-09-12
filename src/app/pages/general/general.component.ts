@@ -4,6 +4,7 @@ import { IActiveSummary } from 'src/app/interfaces/IActiveSummary';
 import { IListColumn } from 'src/app/interfaces/IListColumn';
 import { ActiveService } from 'src/app/services/active.service';
 import { CheckpointService } from 'src/app/services/checkpoint.service';
+import { SnackbarService } from 'src/app/services/snackbar.service';
 import Formatter from 'src/utils/Formatter';
 
 @Component({
@@ -97,7 +98,8 @@ export class GeneralComponent {
   constructor(
     public formatter: Formatter,
     public activeService: ActiveService,
-    public checkpointService: CheckpointService
+    public checkpointService: CheckpointService,
+    private snackbarService: SnackbarService,
   ) { }
 
   ngOnInit() {
@@ -133,7 +135,7 @@ export class GeneralComponent {
   }
 
   createCheckpoint() {
-    debugger;
     this.checkpointService.create();
+    this.snackbarService.showSuccess('Checkpoint criado com sucesso!');
   }
 }
