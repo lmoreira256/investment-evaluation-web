@@ -29,4 +29,8 @@ export class ActiveService {
   activesToBuy() {
     return this.hostService.get('active/actives-to-buy');
   }
+
+  getPortfolioPercentage() {
+    return this.hostService.get('active/get-portfolio-percentage');
+  }
 }

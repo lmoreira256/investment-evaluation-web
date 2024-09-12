@@ -41,6 +41,7 @@ import { BuyComponent } from './pages/buy/buy.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LoaderComponent } from './components/loader/loader.component';
 import { HttpLoaderInterceptor } from './services/interceptors/http-loader.interceptor';
+import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
   align: 'left',
@@ -78,6 +79,7 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     EarningSummaryComponent,
     BuyComponent,
     LoaderComponent,
+    PieChartComponent,
   ],
   imports: [
     BrowserModule,

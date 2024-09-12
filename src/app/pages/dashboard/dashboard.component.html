@@ -2,42 +2,27 @@
   <div class="dashboard-content">
     <div class="charts">
       <div class="chart">
-        <app-line-chart
-          *ngIf="returnChartItems"
-          [data]="returnChartItems"
-          title="Gráfico de resultado"
-          valueX="createdAt"
-          valueY="resultValue"
-        ></app-line-chart>
+        <app-line-chart *ngIf="returnChartItems" [data]="returnChartItems" title="Gráfico de resultado"
+          valueX="createdAt" valueY="resultValue"></app-line-chart>
       </div>
 
       <div class="chart">
-        <app-area-chart
-          *ngIf="equityChartItems"
-          [data]="equityChartItems"
-          title="Gráfico de patrimônio"
-          valueX="createdAt"
-          valueY="currentValue"
-        ></app-area-chart>
+        <app-area-chart *ngIf="equityChartItems" [data]="equityChartItems" title="Gráfico de patrimônio"
+          valueX="createdAt" valueY="currentValue"></app-area-chart>
       </div>
 
       <div class="chart">
-        <app-column-chart
-          *ngIf="earningPerMonthChartItems"
-          [data]="earningPerMonthChartItems"
-          title="Dividendos por mês"
-          valueX="item"
-          valueY="totalValue"
-        ></app-column-chart>
+        <app-pie-chart *ngIf="profilePercentage" [data]="profilePercentage"
+          title="Gráfico de porcentagem na carteira"></app-pie-chart>
       </div>
 
-      <app-column-chart
-        *ngIf="earningPerActiveChartItems"
-        [data]="earningPerActiveChartItems"
-        title="Dividendos por ativo"
-        valueX="item"
-        valueY="totalValue"
-      ></app-column-chart>
+      <div class="chart">
+        <app-column-chart *ngIf="earningPerMonthChartItems" [data]="earningPerMonthChartItems"
+          title="Dividendos por mês" valueX="item" valueY="totalValue"></app-column-chart>
+      </div>
+
+      <app-column-chart *ngIf="earningPerActiveChartItems" [data]="earningPerActiveChartItems"
+        title="Dividendos por ativo" valueX="item" valueY="totalValue"></app-column-chart>
     </div>
   </div>
 </div>
